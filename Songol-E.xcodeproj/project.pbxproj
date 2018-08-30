@@ -1,0 +1,589 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
+		AF2C411721383C0C000E4215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* ViewController.swift */; };
+		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
+		AF2C411C21383C0D000E4215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411B21383C0D000E4215 /* Assets.xcassets */; };
+		AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */; };
+		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
+		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF2C412621383C0D000E4215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF2C410921383C0C000E4215 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF2C411021383C0C000E4215;
+			remoteInfo = "Songol-E";
+		};
+		AF2C413121383C0D000E4215 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF2C410921383C0C000E4215 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF2C411021383C0C000E4215;
+			remoteInfo = "Songol-E";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF2C411621383C0C000E4215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF2C411921383C0C000E4215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF2C411B21383C0D000E4215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF2C411E21383C0D000E4215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF2C412021383C0D000E4215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF2C412521383C0D000E4215 /* Songol-ETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Songol-ETests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2C412921383C0D000E4215 /* Songol_ETests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songol_ETests.swift; sourceTree = "<group>"; };
+		AF2C412B21383C0D000E4215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF2C413021383C0D000E4215 /* Songol-EUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Songol-EUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2C413421383C0D000E4215 /* Songol_EUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songol_EUITests.swift; sourceTree = "<group>"; };
+		AF2C413621383C0D000E4215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF2C410E21383C0C000E4215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412221383C0D000E4215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412D21383C0D000E4215 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF2C410821383C0C000E4215 = {
+			isa = PBXGroup;
+			children = (
+				AF2C411321383C0C000E4215 /* Songol-E */,
+				AF2C412821383C0D000E4215 /* Songol-ETests */,
+				AF2C413321383C0D000E4215 /* Songol-EUITests */,
+				AF2C411221383C0C000E4215 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF2C411221383C0C000E4215 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C411121383C0C000E4215 /* Songol-E.app */,
+				AF2C412521383C0D000E4215 /* Songol-ETests.xctest */,
+				AF2C413021383C0D000E4215 /* Songol-EUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF2C411321383C0C000E4215 /* Songol-E */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
+				AF2C411621383C0C000E4215 /* ViewController.swift */,
+				AF2C411821383C0C000E4215 /* Main.storyboard */,
+				AF2C411B21383C0D000E4215 /* Assets.xcassets */,
+				AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */,
+				AF2C412021383C0D000E4215 /* Info.plist */,
+			);
+			path = "Songol-E";
+			sourceTree = "<group>";
+		};
+		AF2C412821383C0D000E4215 /* Songol-ETests */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C412921383C0D000E4215 /* Songol_ETests.swift */,
+				AF2C412B21383C0D000E4215 /* Info.plist */,
+			);
+			path = "Songol-ETests";
+			sourceTree = "<group>";
+		};
+		AF2C413321383C0D000E4215 /* Songol-EUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C413421383C0D000E4215 /* Songol_EUITests.swift */,
+				AF2C413621383C0D000E4215 /* Info.plist */,
+			);
+			path = "Songol-EUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF2C411021383C0C000E4215 /* Songol-E */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF2C413921383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-E" */;
+			buildPhases = (
+				AF2C410D21383C0C000E4215 /* Sources */,
+				AF2C410E21383C0C000E4215 /* Frameworks */,
+				AF2C410F21383C0C000E4215 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Songol-E";
+			productName = "Songol-E";
+			productReference = AF2C411121383C0C000E4215 /* Songol-E.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF2C412421383C0D000E4215 /* Songol-ETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF2C413C21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-ETests" */;
+			buildPhases = (
+				AF2C412121383C0D000E4215 /* Sources */,
+				AF2C412221383C0D000E4215 /* Frameworks */,
+				AF2C412321383C0D000E4215 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF2C412721383C0D000E4215 /* PBXTargetDependency */,
+			);
+			name = "Songol-ETests";
+			productName = "Songol-ETests";
+			productReference = AF2C412521383C0D000E4215 /* Songol-ETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF2C412F21383C0D000E4215 /* Songol-EUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF2C413F21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-EUITests" */;
+			buildPhases = (
+				AF2C412C21383C0D000E4215 /* Sources */,
+				AF2C412D21383C0D000E4215 /* Frameworks */,
+				AF2C412E21383C0D000E4215 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF2C413221383C0D000E4215 /* PBXTargetDependency */,
+			);
+			name = "Songol-EUITests";
+			productName = "Songol-EUITests";
+			productReference = AF2C413021383C0D000E4215 /* Songol-EUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF2C410921383C0C000E4215 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "최민섭";
+				TargetAttributes = {
+					AF2C411021383C0C000E4215 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					AF2C412421383C0D000E4215 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = AF2C411021383C0C000E4215;
+					};
+					AF2C412F21383C0D000E4215 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = AF2C411021383C0C000E4215;
+					};
+				};
+			};
+			buildConfigurationList = AF2C410C21383C0C000E4215 /* Build configuration list for PBXProject "Songol-E" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF2C410821383C0C000E4215;
+			productRefGroup = AF2C411221383C0C000E4215 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF2C411021383C0C000E4215 /* Songol-E */,
+				AF2C412421383C0D000E4215 /* Songol-ETests */,
+				AF2C412F21383C0D000E4215 /* Songol-EUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF2C410F21383C0C000E4215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */,
+				AF2C411C21383C0D000E4215 /* Assets.xcassets in Resources */,
+				AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412321383C0D000E4215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412E21383C0D000E4215 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF2C410D21383C0C000E4215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2C411721383C0C000E4215 /* ViewController.swift in Sources */,
+				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412121383C0D000E4215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF2C412C21383C0D000E4215 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF2C412721383C0D000E4215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF2C411021383C0C000E4215 /* Songol-E */;
+			targetProxy = AF2C412621383C0D000E4215 /* PBXContainerItemProxy */;
+		};
+		AF2C413221383C0D000E4215 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF2C411021383C0C000E4215 /* Songol-E */;
+			targetProxy = AF2C413121383C0D000E4215 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF2C411821383C0C000E4215 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF2C411921383C0C000E4215 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF2C411E21383C0D000E4215 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF2C413721383C0D000E4215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF2C413821383C0D000E4215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF2C413A21383C0D000E4215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-E/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-E";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AF2C413B21383C0D000E4215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-E/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-E";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AF2C413D21383C0D000E4215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-ETests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-ETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songol-E.app/Songol-E";
+			};
+			name = Debug;
+		};
+		AF2C413E21383C0D000E4215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-ETests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-ETests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Songol-E.app/Songol-E";
+			};
+			name = Release;
+		};
+		AF2C414021383C0D000E4215 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-EUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-EUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Songol-E";
+			};
+			name = Debug;
+		};
+		AF2C414121383C0D000E4215 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CJ9DCX3V4H;
+				INFOPLIST_FILE = "Songol-EUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kau.com.Songol-EUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Songol-E";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF2C410C21383C0C000E4215 /* Build configuration list for PBXProject "Songol-E" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2C413721383C0D000E4215 /* Debug */,
+				AF2C413821383C0D000E4215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF2C413921383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-E" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2C413A21383C0D000E4215 /* Debug */,
+				AF2C413B21383C0D000E4215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF2C413C21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-ETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2C413D21383C0D000E4215 /* Debug */,
+				AF2C413E21383C0D000E4215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF2C413F21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-EUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF2C414021383C0D000E4215 /* Debug */,
+				AF2C414121383C0D000E4215 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AF2C410921383C0C000E4215 /* Project object */;
+}
