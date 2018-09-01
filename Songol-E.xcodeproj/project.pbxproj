@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28FF90C21A9C9C9D5895E63B /* Pods_Songol_EUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */; };
+		57F4324E7F757A1D4595701E /* Pods_Songol_ETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */; };
+		940D3DCA509EC7FD1C2FF00E /* Pods_Songol_E.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */; };
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* ViewController.swift */; };
 		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
@@ -15,6 +18,12 @@
 		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
 		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
 		AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C414521383C6F000E4215 /* SWRevealViewController.m */; };
+		AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */; };
+		AFDC156C213A6A3200DD18E9 /* ChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */; };
+		AFDC156E213A6A8900DD18E9 /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */; };
+		AFDC1570213A6A9300DD18E9 /* ChineseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */; };
+		AFDC1572213A6AA700DD18E9 /* DugbbokiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */; };
+		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
@@ -40,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		035E91CEB4FF71351F0C45BF /* Pods-Songol-EUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-EUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-EUITests/Pods-Songol-EUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_ETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B9E657D8FFEC3A5EAF1CFB0 /* Pods-Songol-E.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-E.release.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E.release.xcconfig"; sourceTree = "<group>"; };
+		5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_EUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E8C5B33A4F0DE8B58893D00 /* Pods-Songol-E.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-E.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E.debug.xcconfig"; sourceTree = "<group>"; };
 		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2C411621383C0C000E4215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,11 +70,21 @@
 		AF2C414321383C6E000E4215 /* Songol-E-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Songol-E-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF2C414421383C6F000E4215 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF2C414521383C6F000E4215 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenViewController.swift; sourceTree = "<group>"; };
+		AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
+		AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseViewController.swift; sourceTree = "<group>"; };
+		AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DugbbokiViewController.swift; sourceTree = "<group>"; };
+		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		AFF0B84021384E5900D5F9DB /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
+		C7CABEA4655633195E64264F /* Pods-Songol-ETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-ETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-ETests/Pods-Songol-ETests.release.xcconfig"; sourceTree = "<group>"; };
+		E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_E.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6A2DE10BF07D4E13DFED1D9 /* Pods-Songol-ETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-ETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-ETests/Pods-Songol-ETests.debug.xcconfig"; sourceTree = "<group>"; };
+		FCAF34026223228E02F6201D /* Pods-Songol-EUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-EUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-EUITests/Pods-Songol-EUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940D3DCA509EC7FD1C2FF00E /* Pods_Songol_E.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F4324E7F757A1D4595701E /* Pods_Songol_ETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,12 +108,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28FF90C21A9C9C9D5895E63B /* Pods_Songol_EUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0144616A4A81C2CCEB5414B6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E8C5B33A4F0DE8B58893D00 /* Pods-Songol-E.debug.xcconfig */,
+				4B9E657D8FFEC3A5EAF1CFB0 /* Pods-Songol-E.release.xcconfig */,
+				F6A2DE10BF07D4E13DFED1D9 /* Pods-Songol-ETests.debug.xcconfig */,
+				C7CABEA4655633195E64264F /* Pods-Songol-ETests.release.xcconfig */,
+				035E91CEB4FF71351F0C45BF /* Pods-Songol-EUITests.debug.xcconfig */,
+				FCAF34026223228E02F6201D /* Pods-Songol-EUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		672E569D96520BDD41673FD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */,
+				2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */,
+				5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF2C410821383C0C000E4215 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +145,8 @@
 				AF2C412821383C0D000E4215 /* Songol-ETests */,
 				AF2C413321383C0D000E4215 /* Songol-EUITests */,
 				AF2C411221383C0C000E4215 /* Products */,
+				0144616A4A81C2CCEB5414B6 /* Pods */,
+				672E569D96520BDD41673FD2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +163,7 @@
 		AF2C411321383C0C000E4215 /* Songol-E */ = {
 			isa = PBXGroup;
 			children = (
+				AFDC156A213A69CB00DD18E9 /* DeliveryChildView */,
 				AF2C414221383C5A000E4215 /* Supporting Files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
 				AF2C411621383C0C000E4215 /* ViewController.swift */,
@@ -122,7 +175,9 @@
 				AF2C411B21383C0D000E4215 /* Assets.xcassets */,
 				AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */,
 				AF2C412021383C0D000E4215 /* Info.plist */,
+				AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */,
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
+				AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */,
 			);
 			path = "Songol-E";
 			sourceTree = "<group>";
@@ -155,6 +210,17 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AFDC156A213A69CB00DD18E9 /* DeliveryChildView */ = {
+			isa = PBXGroup;
+			children = (
+				AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */,
+				AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */,
+				AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */,
+				AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */,
+			);
+			path = DeliveryChildView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2C413921383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-E" */;
 			buildPhases = (
+				B84784635604BD1A8437F7B7 /* [CP] Check Pods Manifest.lock */,
 				AF2C410D21383C0C000E4215 /* Sources */,
 				AF2C410E21383C0C000E4215 /* Frameworks */,
 				AF2C410F21383C0C000E4215 /* Resources */,
+				387B7DB29F3ABCC6EAC5EE84 /* [CP] Embed Pods Frameworks */,
+				21FD85644515F7D404F6574B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,6 +248,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2C413C21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-ETests" */;
 			buildPhases = (
+				680BFEDD0D9601C3798AB52E /* [CP] Check Pods Manifest.lock */,
 				AF2C412121383C0D000E4215 /* Sources */,
 				AF2C412221383C0D000E4215 /* Frameworks */,
 				AF2C412321383C0D000E4215 /* Resources */,
@@ -197,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF2C413F21383C0D000E4215 /* Build configuration list for PBXNativeTarget "Songol-EUITests" */;
 			buildPhases = (
+				F2483C01FC856E09C5C9D917 /* [CP] Check Pods Manifest.lock */,
 				AF2C412C21383C0D000E4215 /* Sources */,
 				AF2C412D21383C0D000E4215 /* Frameworks */,
 				AF2C412E21383C0D000E4215 /* Resources */,
@@ -261,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */,
+				AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */,
 				AF2C411C21383C0D000E4215 /* Assets.xcassets in Resources */,
 				AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */,
 			);
@@ -282,16 +354,126 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21FD85644515F7D404F6574B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		387B7DB29F3ABCC6EAC5EE84 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		680BFEDD0D9601C3798AB52E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Songol-ETests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B84784635604BD1A8437F7B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Songol-E-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2483C01FC856E09C5C9D917 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Songol-EUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AF2C410D21383C0C000E4215 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFDC1570213A6A9300DD18E9 /* ChineseViewController.swift in Sources */,
 				AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */,
+				AFDC156C213A6A3200DD18E9 /* ChickenViewController.swift in Sources */,
 				AF2C411721383C0C000E4215 /* ViewController.swift in Sources */,
 				AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */,
+				AFDC156E213A6A8900DD18E9 /* PizzaViewController.swift in Sources */,
 				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
 				AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */,
+				AFDC1572213A6AA700DD18E9 /* DugbbokiViewController.swift in Sources */,
+				AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */,
 				AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */,
 				AFF0B84321384E5A00D5F9DB /* CalendarViewController.swift in Sources */,
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
@@ -465,6 +647,7 @@
 		};
 		AF2C413A21383C0D000E4215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E8C5B33A4F0DE8B58893D00 /* Pods-Songol-E.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -486,6 +669,7 @@
 		};
 		AF2C413B21383C0D000E4215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B9E657D8FFEC3A5EAF1CFB0 /* Pods-Songol-E.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -506,6 +690,7 @@
 		};
 		AF2C413D21383C0D000E4215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6A2DE10BF07D4E13DFED1D9 /* Pods-Songol-ETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -527,6 +712,7 @@
 		};
 		AF2C413E21383C0D000E4215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7CABEA4655633195E64264F /* Pods-Songol-ETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -548,6 +734,7 @@
 		};
 		AF2C414021383C0D000E4215 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 035E91CEB4FF71351F0C45BF /* Pods-Songol-EUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -568,6 +755,7 @@
 		};
 		AF2C414121383C0D000E4215 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCAF34026223228E02F6201D /* Pods-Songol-EUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

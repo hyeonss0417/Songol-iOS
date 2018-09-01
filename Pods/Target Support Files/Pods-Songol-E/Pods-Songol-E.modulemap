@@ -1,0 +1,6 @@
+framework module Pods_Songol_E {
+  umbrella header "Pods-Songol-E-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -43,6 +43,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         case 4:
             performSegue(withIdentifier: "dish", sender: nil)
             break;
+        case 5:
+            performSegue(withIdentifier: "delivery", sender: nil)
+            break;
         default:
             break;
         }
