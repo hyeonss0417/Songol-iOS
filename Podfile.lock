@@ -58,6 +58,7 @@ PODS:
   - GoogleUtilities/Reachability (5.2.2):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.2.0)
+  - ImageScrollView (1.5)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -70,6 +71,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - FirebaseUI/Auth
+  - ImageScrollView
   - XLPagerTabStrip (from `https://github.com/KelvinJin/XLPagerTabStrip`, branch `swift3`)
 
 SPEC REPOS:
@@ -85,6 +87,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - GTMSessionFetcher
+    - ImageScrollView
     - leveldb-library
     - nanopb
 
@@ -110,10 +113,11 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  ImageScrollView: 22b3ad3f215a227403eee376fd226559516390b4
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   XLPagerTabStrip: 87b8b705f9a7178e76a063ffaa2d70045944a965
 
-PODFILE CHECKSUM: cf2eefb56ebe42a12fcb4ce0bd4285bdcc4147b0
+PODFILE CHECKSUM: 61258bf629b53bf81d6f825668d3f90f3e20cf6f
 
 COCOAPODS: 1.5.3

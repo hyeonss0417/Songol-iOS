@@ -18,17 +18,23 @@
 		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
 		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
 		AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C414521383C6F000E4215 /* SWRevealViewController.m */; };
+		AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */; };
+		AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */; };
+		AF3D5CFA213D4F2F0090F6A9 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */; };
+		AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */; };
+		AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF800156213FBB1300EB1E41 /* LoginViewController.swift */; };
+		AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */; };
 		AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */; };
-		AFDC156C213A6A3200DD18E9 /* ChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */; };
-		AFDC156E213A6A8900DD18E9 /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */; };
-		AFDC1570213A6A9300DD18E9 /* ChineseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */; };
-		AFDC1572213A6AA700DD18E9 /* DugbbokiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */; };
 		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
+		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
+		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
+		AFE49860213C28430066D36E /* ProfessorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
 		AFF0B84321384E5A00D5F9DB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */; };
 		AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B84021384E5900D5F9DB /* DishViewController.swift */; };
+		AFF650F4213BC173006840C8 /* DeliveryFoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF650F3213BC173006840C8 /* DeliveryFoodModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,17 +76,23 @@
 		AF2C414321383C6E000E4215 /* Songol-E-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Songol-E-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF2C414421383C6F000E4215 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF2C414521383C6F000E4215 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryChildDetailViewController.swift; sourceTree = "<group>"; };
+		AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageDownloading.swift; sourceTree = "<group>"; };
+		AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
+		AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaseViewController.swift; sourceTree = "<group>"; };
+		AF800156213FBB1300EB1E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMajorViewController.swift; sourceTree = "<group>"; };
 		AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
-		AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenViewController.swift; sourceTree = "<group>"; };
-		AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
-		AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseViewController.swift; sourceTree = "<group>"; };
-		AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DugbbokiViewController.swift; sourceTree = "<group>"; };
 		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
+		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
+		AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorInfoViewController.swift; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
 		AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		AFF0B84021384E5900D5F9DB /* DishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DishViewController.swift; sourceTree = "<group>"; };
+		AFF650F3213BC173006840C8 /* DeliveryFoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryFoodModel.swift; sourceTree = "<group>"; };
 		C7CABEA4655633195E64264F /* Pods-Songol-ETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-ETests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-ETests/Pods-Songol-ETests.release.xcconfig"; sourceTree = "<group>"; };
 		E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_E.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A2DE10BF07D4E13DFED1D9 /* Pods-Songol-ETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-ETests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-ETests/Pods-Songol-ETests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,8 +175,11 @@
 		AF2C411321383C0C000E4215 /* Songol-E */ = {
 			isa = PBXGroup;
 			children = (
-				AFDC156A213A69CB00DD18E9 /* DeliveryChildView */,
-				AF2C414221383C5A000E4215 /* Supporting Files */,
+				AF3D5CF6213D4B800090F6A9 /* utils */,
+				AFE4985C213C17BA0066D36E /* librarySeatChildView */,
+				AF60E9F5213BC08200B6EF56 /* models */,
+				AFDC156A213A69CB00DD18E9 /* deliveryChildView */,
+				AF2C414221383C5A000E4215 /* supporting files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
 				AF2C411621383C0C000E4215 /* ViewController.swift */,
 				AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */,
@@ -178,6 +193,9 @@
 				AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */,
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
 				AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */,
+				AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */,
+				AF800156213FBB1300EB1E41 /* LoginViewController.swift */,
+				AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */,
 			);
 			path = "Songol-E";
 			sourceTree = "<group>";
@@ -200,25 +218,49 @@
 			path = "Songol-EUITests";
 			sourceTree = "<group>";
 		};
-		AF2C414221383C5A000E4215 /* Supporting Files */ = {
+		AF2C414221383C5A000E4215 /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
 				AF2C414421383C6F000E4215 /* SWRevealViewController.h */,
 				AF2C414521383C6F000E4215 /* SWRevealViewController.m */,
 				AF2C414321383C6E000E4215 /* Songol-E-Bridging-Header.h */,
 			);
-			path = "Supporting Files";
+			path = "supporting files";
 			sourceTree = "<group>";
 		};
-		AFDC156A213A69CB00DD18E9 /* DeliveryChildView */ = {
+		AF3D5CF6213D4B800090F6A9 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				AFDC156B213A6A3200DD18E9 /* ChickenViewController.swift */,
-				AFDC156D213A6A8900DD18E9 /* PizzaViewController.swift */,
-				AFDC156F213A6A9300DD18E9 /* ChineseViewController.swift */,
-				AFDC1571213A6AA700DD18E9 /* DugbbokiViewController.swift */,
+				AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */,
+				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
 			);
-			path = DeliveryChildView;
+			path = utils;
+			sourceTree = "<group>";
+		};
+		AF60E9F5213BC08200B6EF56 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AFF650F3213BC173006840C8 /* DeliveryFoodModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		AFDC156A213A69CB00DD18E9 /* deliveryChildView */ = {
+			isa = PBXGroup;
+			children = (
+				AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */,
+				AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */,
+				AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */,
+			);
+			path = deliveryChildView;
+			sourceTree = "<group>";
+		};
+		AFE4985C213C17BA0066D36E /* librarySeatChildView */ = {
+			isa = PBXGroup;
+			children = (
+				AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */,
+			);
+			path = librarySeatChildView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,15 +402,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
 			);
@@ -386,6 +424,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageScrollView/ImageScrollView.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -394,6 +433,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -464,19 +504,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFDC1570213A6A9300DD18E9 /* ChineseViewController.swift in Sources */,
+				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
+				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,
 				AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */,
-				AFDC156C213A6A3200DD18E9 /* ChickenViewController.swift in Sources */,
 				AF2C411721383C0C000E4215 /* ViewController.swift in Sources */,
+				AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */,
 				AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */,
-				AFDC156E213A6A8900DD18E9 /* PizzaViewController.swift in Sources */,
 				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
 				AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */,
-				AFDC1572213A6AA700DD18E9 /* DugbbokiViewController.swift in Sources */,
 				AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */,
 				AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */,
+				AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */,
+				AF3D5CFA213D4F2F0090F6A9 /* ImageZoomViewController.swift in Sources */,
 				AFF0B84321384E5A00D5F9DB /* CalendarViewController.swift in Sources */,
+				AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */,
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
+				AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */,
+				AFE49860213C28430066D36E /* ProfessorInfoViewController.swift in Sources */,
+				AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */,
+				AFF650F4213BC173006840C8 /* DeliveryFoodModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

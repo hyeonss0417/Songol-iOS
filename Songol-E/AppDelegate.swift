@@ -13,6 +13,8 @@ import FirebaseUI
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+   let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
+    
     var window: UIWindow?
 
 
@@ -22,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authUI = FUIAuth.defaultAuthUI()
         // You need to adopt a FUIAuthDelegate protocol to receive callback
         authUI?.delegate = self as? FUIAuthDelegate
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : blueInspireColor]
+        
         return true
     }
 

@@ -11,15 +11,18 @@ import XLPagerTabStrip
 
 class DeliveryViewController: ButtonBarPagerTabStripViewController {
 
-    let blueInspireColor = UIColor(red:0.27, green:0.47, blue:0.73, alpha:1.0)
-    let oldCellColor = UIColor(displayP3Red: 1, green: 1, blue: 1, alpha: 0.6)
+ let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
+ let oldCellColor = UIColor(displayP3Red: 0.07, green: 0.27, blue: 0.53, alpha: 0.4)
     
     override func viewDidLoad() {
         // change selected bar color
-        settings.style.buttonBarBackgroundColor = blueInspireColor
-        settings.style.buttonBarItemBackgroundColor = blueInspireColor
-        settings.style.selectedBarBackgroundColor = .white
-        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 18)
+        
+        self.title = "배달음식"
+        
+        settings.style.buttonBarBackgroundColor = .white
+        settings.style.buttonBarItemBackgroundColor = .white
+        settings.style.selectedBarBackgroundColor = blueInspireColor
+        settings.style.buttonBarItemFont = .boldSystemFont(ofSize: 15)
         settings.style.selectedBarHeight = 2.0
         settings.style.buttonBarMinimumLineSpacing = 0
         settings.style.buttonBarItemTitleColor = .black
@@ -31,33 +34,33 @@ class DeliveryViewController: ButtonBarPagerTabStripViewController {
         changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = self?.oldCellColor
-            newCell?.label.textColor = .white
+            newCell?.label.textColor = self?.blueInspireColor
         }
         super.viewDidLoad()
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        let child_1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chicken")
-        let child_2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pizza")
-        let child_3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "chinese")
-        let child_4 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "dugbboki")
-        return [child_1, child_2, child_3, child_4]
+    
+        let child_1 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryBaseViewController
+        child_1.setCategory(category: "치킨")
+        
+        let child_2 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryBaseViewController
+        child_2.setCategory(category: "피자")
+        
+        let child_3 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryBaseViewController
+        child_3.setCategory(category: "중식")
+        
+        let child_4 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryBaseViewController
+        child_4.setCategory(category: "떡볶이")
+        
+        let child_5 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryBaseViewController
+        child_5.setCategory(category: "기타")
+        
+        return [child_1, child_2, child_3, child_4, child_5]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

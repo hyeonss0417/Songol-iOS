@@ -8,6 +8,8 @@ target 'Songol-E' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'FirebaseUI/Auth'
+  pod 'ImageScrollView'
+
   # Pods for Songol-E
 
   target 'Songol-ETests' do

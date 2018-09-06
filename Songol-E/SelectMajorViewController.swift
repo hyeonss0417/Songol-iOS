@@ -1,15 +1,14 @@
 //
-//  ChineseViewController.swift
+//  SelectMajorViewController.swift
 //  Songol-E
 //
-//  Created by 최민섭 on 2018. 9. 1..
+//  Created by 최민섭 on 2018. 9. 7..
 //  Copyright © 2018년 최민섭. All rights reserved.
 //
 
 import UIKit
-import XLPagerTabStrip
 
-class ChineseViewController: UIViewController, IndicatorInfoProvider{
+class SelectMajorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +21,6 @@ class ChineseViewController: UIViewController, IndicatorInfoProvider{
         // Dispose of any resources that can be recreated.
     }
     
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "중식")
-    }
 
     /*
     // MARK: - Navigation

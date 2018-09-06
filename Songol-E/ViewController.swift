@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var navMenuButton: UIBarButtonItem!
+    let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
     
-    let imgs_menu = [#imageLiteral(resourceName: "main_board"), #imageLiteral(resourceName: "main_board_major"), #imageLiteral(resourceName: "main_library_seat"), #imageLiteral(resourceName: "main_calendar"), #imageLiteral(resourceName: "main_dish"), #imageLiteral(resourceName: "main_delivery"), #imageLiteral(resourceName: "main_time_table"), #imageLiteral(resourceName: "main_chat"), #imageLiteral(resourceName: "main_professor")]
+    @IBOutlet weak var navMenuButton: UIBarButtonItem!
+
+    
+    let imgs_menu = [#imageLiteral(resourceName: "main_board_"), #imageLiteral(resourceName: "main_board_major_"), #imageLiteral(resourceName: "main_library_seat_"), #imageLiteral(resourceName: "main_calendar_"), #imageLiteral(resourceName: "main_dish_"), #imageLiteral(resourceName: "main_delivery_"), #imageLiteral(resourceName: "main_time_table_"), #imageLiteral(resourceName: "main_chat_"), #imageLiteral(resourceName: "main_professor_")]
     let icons_menu = [#imageLiteral(resourceName: "main_board_icon"), #imageLiteral(resourceName: "main_board_major_icon"), #imageLiteral(resourceName: "main_library_seat_icon"), #imageLiteral(resourceName: "main_calendar_icon"), #imageLiteral(resourceName: "main_dish_icon"), #imageLiteral(resourceName: "main_delivery_icon"), #imageLiteral(resourceName: "main_time_table_icon"), #imageLiteral(resourceName: "main_chat_icon"), #imageLiteral(resourceName: "main_professor_icon")]
     let str_menu = ["게시판","과별 게시판", "열람실 좌석현황", "학사 일정", "식단표", "배달음식", "시간표", "오픈 채팅","교수님 정보"]
     
@@ -46,6 +49,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         case 5:
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
+        case 8:
+            performSegue(withIdentifier: "professorInfo", sender: nil)
+            break;
+            
         default:
             break;
         }
@@ -70,11 +77,40 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        viewInit()
+    }
+    
+    func viewInit(){
+        self.navigationItem.leftBarButtonItem?.tintColor = blueInspireColor
+        
+        //it doesnt work.....
+        self.navigationItem.backBarButtonItem?.tintColor = blueInspireColor
+        
+        //remove border
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        //remove back button title
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
         navMenuButton.target = self.revealViewController()
-        navMenuButton.action = Selector("revealToggle:")
+        navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+   
+        //set RevealView Event
     self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
+        bgrClickEvent()
+    }
+    
+    @IBOutlet weak var imageBgr: UIImageView!
+    func bgrClickEvent(){
+        imageBgr.isUserInteractionEnabled = true
+        imageBgr.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("buttonTapped")))
+    }
+    
+    @objc func buttonTapped(){
+        performSegue(withIdentifier: "login", sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
