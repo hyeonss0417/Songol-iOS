@@ -15,6 +15,10 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var labelPW: UITextField!
     
+    @IBAction func guestButtonOnClick(_ sender: Any) {
+        performSegue(withIdentifier: "selectMajor", sender: nil)
+    }
+    
     var userID:String?
     var userPW:String?
     

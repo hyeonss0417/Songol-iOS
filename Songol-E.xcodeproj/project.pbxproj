@@ -24,6 +24,7 @@
 		AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */; };
 		AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF800156213FBB1300EB1E41 /* LoginViewController.swift */; };
 		AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */; };
+		AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80015A2142582500EB1E41 /* RadioButton.swift */; };
 		AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */; };
 		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
@@ -82,6 +83,7 @@
 		AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaseViewController.swift; sourceTree = "<group>"; };
 		AF800156213FBB1300EB1E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMajorViewController.swift; sourceTree = "<group>"; };
+		AF80015A2142582500EB1E41 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			children = (
 				AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */,
 				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
+				AF80015A2142582500EB1E41 /* RadioButton.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */,
 				AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */,
 				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
+				AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */,
 				AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */,
 				AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */,
 				AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */,

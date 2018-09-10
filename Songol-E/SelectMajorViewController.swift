@@ -9,27 +9,67 @@
 import UIKit
 
 class SelectMajorViewController: UIViewController {
-
+    
+    var preSelectedBtn: UIButton?
+    
+    @IBAction func changeMajor(_ sender: Any) {
+        guard let button = sender as? UIButton else {
+            return
+        }
+        
+        preSelectedBtn?.backgroundColor = UIColor.clear
+        preSelectedBtn = button
+        
+        if  button.tag == 10{
+            //start main viewController with User Data
+        }
+        
+        button.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        print(button.currentTitle!)
+        
+//        switch button.tag {
+//        case 1:
+//            print("경영")
+//            break
+//        case 2:
+//            print("교물")
+//            break
+//        case 3:
+//            print("소프트")
+//            break
+//        case 4:
+//            print("재료")
+//            break
+//        case 5:
+//            print("운항")
+//            break
+//        case 6:
+//            print("운항")
+//            break
+//        case 7:
+//            print("운항")
+//            break
+//        case 8:
+//            print("운항")
+//            break
+//        case 9:
+//            print("운항")
+//            break
+//        case 10:
+//            print("운항")
+//            break
+//        default:
+//            print("Unknown language")
+//            return
+//        }
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
