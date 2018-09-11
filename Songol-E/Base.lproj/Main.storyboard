@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QZ9-fB-vO8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="seG-k8-uve">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -124,7 +124,6 @@
                         <segue destination="dKN-bD-aH0" kind="show" identifier="seat" id="EnM-8h-Daa"/>
                         <segue destination="Igb-Tf-61T" kind="show" identifier="delivery" id="ZAL-or-saC"/>
                         <segue destination="42Q-AU-drX" kind="show" identifier="professorInfo" id="IDv-lC-6ei"/>
-                        <segue destination="seG-k8-uve" kind="show" identifier="login" id="y6n-Dc-dzL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -175,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="110" width="414" height="626"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NavTableCell" id="Kf5-kU-PPS" customClass="NavTableCell" customModule="Songol_E" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NavTableCell" id="Kf5-kU-PPS" customClass="NavTableCell" customModule="Songol_E" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kf5-kU-PPS" id="LeG-EC-eFp">
@@ -257,7 +256,7 @@
                                 </connections>
                             </webView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_kau_logo" translatesAutoresizingMaskIntoConstraints="NO" id="rFw-c2-OxG">
-                                <rect key="frame" x="87" y="194" width="240" height="95"/>
+                                <rect key="frame" x="87" y="150" width="240" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rFw-c2-OxG" secondAttribute="height" multiplier="48:19" id="EDj-9v-IN7"/>
                                     <constraint firstAttribute="height" constant="95" id="d18-kr-Cqy"/>
@@ -265,7 +264,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="dZe-F5-2iE">
-                                <rect key="frame" x="80" y="314" width="254" height="50"/>
+                                <rect key="frame" x="80" y="270" width="254" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="hKJ-LA-4OB"/>
                                     <constraint firstAttribute="height" constant="50" id="pCv-Mq-e1d"/>
@@ -275,7 +274,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qs4-dm-uK8">
-                                <rect key="frame" x="80" y="369" width="254" height="50"/>
+                                <rect key="frame" x="80" y="325" width="254" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gYl-YS-ZDa"/>
                                     <constraint firstAttribute="width" constant="254" id="j1s-iI-xvw"/>
@@ -285,7 +284,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scd-9h-4aS">
-                                <rect key="frame" x="168.66666666666666" y="443" width="77" height="39"/>
+                                <rect key="frame" x="168.66666666666666" y="399" width="77" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -295,7 +294,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrV-bo-l38">
-                                <rect key="frame" x="252" y="510" width="110" height="30"/>
+                                <rect key="frame" x="252" y="466" width="110" height="30"/>
                                 <state key="normal" title="Guest로 입장하기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -327,6 +326,7 @@
                         <outlet property="labelPW" destination="Qs4-dm-uK8" id="VKD-kk-Tu1"/>
                         <outlet property="webView" destination="VXe-fg-ReG" id="z80-2Z-B8T"/>
                         <segue destination="c9A-jK-4aJ" kind="show" identifier="selectMajor" id="p65-CI-Son"/>
+                        <segue destination="QZ9-fB-vO8" kind="show" identifier="SWReveal" id="z8p-xv-h7U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iu6-Fy-076" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq3-Pm-Y0h">
-                                <rect key="frame" x="138" y="176" width="138" height="112"/>
+                                <rect key="frame" x="138" y="139.33333333333334" width="138" height="119.33333333333334"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="교물">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,7 +352,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XI1-ax-Aa5">
-                                <rect key="frame" x="276" y="176" width="138" height="112"/>
+                                <rect key="frame" x="276" y="139.33333333333334" width="138" height="119.33333333333334"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="소프트">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -362,7 +362,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTs-cw-Evm">
-                                <rect key="frame" x="0.0" y="176" width="138" height="112"/>
+                                <rect key="frame" x="0.0" y="139.33333333333334" width="138" height="119.33333333333334"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="경영">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -372,7 +372,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cC1-m6-XET">
-                                <rect key="frame" x="138" y="400" width="138" height="112"/>
+                                <rect key="frame" x="138" y="378" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="항전정">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -382,7 +382,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ber-8P-gYT">
-                                <rect key="frame" x="276" y="400" width="138" height="112"/>
+                                <rect key="frame" x="276" y="378" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="자전">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -392,7 +392,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vta-g7-F80">
-                                <rect key="frame" x="0.0" y="400" width="138" height="112"/>
+                                <rect key="frame" x="0.0" y="378" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="항우기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -402,7 +402,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuF-L8-r9j">
-                                <rect key="frame" x="138" y="288" width="138" height="112"/>
+                                <rect key="frame" x="138" y="258.66666666666669" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="운항">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -412,7 +412,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG9-11-XkV">
-                                <rect key="frame" x="276" y="288" width="138" height="112"/>
+                                <rect key="frame" x="276" y="258.66666666666669" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="영어">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -422,7 +422,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3V-n2-W7t">
-                                <rect key="frame" x="0.0" y="288" width="138" height="112"/>
+                                <rect key="frame" x="0.0" y="258.66666666666669" width="138" height="119.33333333333331"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="재료">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,14 +432,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-4E-JHo">
-                                <rect key="frame" x="0.0" y="64" width="414" height="112"/>
+                                <rect key="frame" x="0.0" y="19.999999999999993" width="414" height="119.33333333333331"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvC-6l-G6z">
-                                <rect key="frame" x="0.0" y="512" width="414" height="112"/>
+                                <rect key="frame" x="0.0" y="497.33333333333331" width="414" height="119.33333333333331"/>
                                 <subviews>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7n-UD-1Lf">
-                                        <rect key="frame" x="154.33333333333334" y="40" width="107.00000000000003" height="33"/>
+                                        <rect key="frame" x="154.33333333333334" y="43.666666666666686" width="107.00000000000003" height="33"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="송골이 시작하기">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -456,7 +456,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqC-53-xdy">
-                                <rect key="frame" x="0.0" y="624" width="414" height="112"/>
+                                <rect key="frame" x="0.0" y="616.66666666666663" width="414" height="119.33333333333337"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -764,7 +764,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryTableCell" rowHeight="81" id="Wxu-ho-B35" customClass="DeliveryTableViewCell" customModule="Songol_E" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliveryTableCell" rowHeight="81" id="Wxu-ho-B35" customClass="DeliveryTableViewCell" customModule="Songol_E" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wxu-ho-B35" id="4BF-Kj-Ne2">

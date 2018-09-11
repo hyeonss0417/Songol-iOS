@@ -11,6 +11,16 @@ import UIKit
 class SelectMajorViewController: UIViewController {
     
     var preSelectedBtn: UIButton?
+    var username, password:String?
+    var userInfo:UserInfo?
+    var major : String?
+    
+    func storeUserInfo(){
+        //store UserInfo
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: userInfo)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(encodedData, forKey: "key1")
+    }
     
     @IBAction func changeMajor(_ sender: Any) {
         guard let button = sender as? UIButton else {
@@ -19,49 +29,28 @@ class SelectMajorViewController: UIViewController {
         
         preSelectedBtn?.backgroundColor = UIColor.clear
         preSelectedBtn = button
+        major = button.currentTitle
         
-        if  button.tag == 10{
+        if  button.tag == 10 && major != nil{
             //start main viewController with User Data
+            userInfo = UserInfo(major: major!, pw: password!, snumber: "have to figure out", username: username!)
+            performSegue(withIdentifier: "SWReveal", sender: nil)
         }
         
         button.backgroundColor = UIColor.white.withAlphaComponent(0.5)
         print(button.currentTitle!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        switch button.tag {
-//        case 1:
-//            print("경영")
-//            break
-//        case 2:
-//            print("교물")
-//            break
-//        case 3:
-//            print("소프트")
-//            break
-//        case 4:
-//            print("재료")
-//            break
-//        case 5:
-//            print("운항")
-//            break
-//        case 6:
-//            print("운항")
-//            break
-//        case 7:
-//            print("운항")
-//            break
-//        case 8:
-//            print("운항")
-//            break
-//        case 9:
-//            print("운항")
-//            break
-//        case 10:
-//            print("운항")
-//            break
-//        default:
-//            print("Unknown language")
-//            return
-//        }
+        if segue.identifier == "SWReveal"{
+            storeUserInfo()
+        }
+    }
+    
+    public func setUserData(username: String, password:String){
+        self.username = username
+        self.password = password
     }
     
     override func viewDidLoad() {

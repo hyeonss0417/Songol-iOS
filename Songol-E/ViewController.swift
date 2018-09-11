@@ -9,15 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
+    
     let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
     
     @IBOutlet weak var navMenuButton: UIBarButtonItem!
-
     
     let imgs_menu = [#imageLiteral(resourceName: "main_board_"), #imageLiteral(resourceName: "main_board_major_"), #imageLiteral(resourceName: "main_library_seat_"), #imageLiteral(resourceName: "main_calendar_"), #imageLiteral(resourceName: "main_dish_"), #imageLiteral(resourceName: "main_delivery_"), #imageLiteral(resourceName: "main_time_table_"), #imageLiteral(resourceName: "main_chat_"), #imageLiteral(resourceName: "main_professor_")]
     let icons_menu = [#imageLiteral(resourceName: "main_board_icon"), #imageLiteral(resourceName: "main_board_major_icon"), #imageLiteral(resourceName: "main_library_seat_icon"), #imageLiteral(resourceName: "main_calendar_icon"), #imageLiteral(resourceName: "main_dish_icon"), #imageLiteral(resourceName: "main_delivery_icon"), #imageLiteral(resourceName: "main_time_table_icon"), #imageLiteral(resourceName: "main_chat_icon"), #imageLiteral(resourceName: "main_professor_icon")]
     let str_menu = ["게시판","과별 게시판", "열람실 좌석현황", "학사 일정", "식단표", "배달음식", "시간표", "오픈 채팅","교수님 정보"]
+    
+    var userinfo:UserInfo?
+
+    public func getUserInfo(){
+        
+        let decoded  = UserDefaults.standard.object(forKey: "key1") as! Data
+        userinfo = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UserInfo
+    }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         //image counting
@@ -74,10 +81,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // 컬럼 여백
         return 1
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        print("im in")
+        
+        getUserInfo()
+        
         viewInit()
     }
     

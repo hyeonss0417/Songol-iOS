@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class LoginViewController: UIViewController,UIWebViewDelegate {
+    
+    public var userInfo:UserInfo?
+    
     @IBOutlet weak var webView: UIWebView!
     
     @IBOutlet weak var labelID: UITextField!
@@ -40,7 +45,6 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             
             let url = URL(string: stringURL)
             webView.loadRequest(URLRequest(url: url!))
-            webView.scalesPageToFit = true
         }
     }
     
@@ -94,6 +98,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
                 
             }else{
                 print("done!!")
+                firebaseLoginWithEmail()
             }
         }
         
@@ -111,8 +116,62 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             
             check = 1
         }
-    
     }
+    
+    func firebaseLoginWithEmail(){
+        
+        Auth.auth().signIn(withEmail: labelID.text!+"@kau.ac.kr", password: labelPW.text!) { (user, error) in
+            if user != nil{//login success
+                self.performSegue(withIdentifier: "SWReveal", sender: nil)
+            }else{//login failed
+                print("login failed!")
+                print(error)
+                self.firebaseCreateUserWithEmail(count: 0)
+            }
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SWReveal" {
+            userInfo = UserInfo(major: "", pw: "", snumber: "", username: labelID.text)
+            
+            storeUserInfo()
+            
+        }else if segue.identifier == "selectMajor" {
+           
+            if let destinationVC = segue.destination as? SelectMajorViewController {
+                destinationVC.setUserData(username: labelID.text!, password: labelPW.text!)
+            }
+        }
+    }
+    
+    func storeUserInfo(){
+        //store UserInfo
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: userInfo)
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(encodedData, forKey: "key1")
+    }
+    
+    
+    func firebaseCreateUserWithEmail(count: Int){
+        var temp:String = ""
+        if count != 0 {
+            temp = temp + String(count)
+        }
+        
+        Auth.auth().createUser(withEmail: self.labelID.text!+temp+"@kau.ac.kr", password: self.labelPW.text!+temp) { (user, error) in
+                
+            if user !=  nil{//register success
+                print("success!")
+                self.performSegue(withIdentifier: "selectMajor", sender: nil)
+            }else if count < 10 {// failed
+                print("create failed!")
+                self.firebaseCreateUserWithEmail(count: count+1)
+            }
+        }
+    }
+    
     
     
 
@@ -121,3 +180,4 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 }
+
