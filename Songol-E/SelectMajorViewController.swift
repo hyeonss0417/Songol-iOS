@@ -34,6 +34,9 @@ class SelectMajorViewController: UIViewController {
         if  button.tag == 10 && major != nil{
             //start main viewController with User Data
             userInfo = UserInfo(major: major!, pw: password!, snumber: "have to figure out", username: username!)
+            
+            //have to make firebase DB 
+            
             performSegue(withIdentifier: "SWReveal", sender: nil)
         }
         

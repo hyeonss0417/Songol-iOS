@@ -18,6 +18,7 @@
 		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
 		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
 		AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C414521383C6F000E4215 /* SWRevealViewController.m */; };
+		AF3213AA2147FFE50079FF54 /* OpenChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */; };
 		AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */; };
 		AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */; };
 		AF3D5CFA213D4F2F0090F6A9 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */; };
@@ -79,6 +80,7 @@
 		AF2C414321383C6E000E4215 /* Songol-E-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Songol-E-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF2C414421383C6F000E4215 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF2C414521383C6F000E4215 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
 		AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryChildDetailViewController.swift; sourceTree = "<group>"; };
 		AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageDownloading.swift; sourceTree = "<group>"; };
 		AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */,
 				AF800156213FBB1300EB1E41 /* LoginViewController.swift */,
 				AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */,
+				AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */,
 			);
 			path = "Songol-E";
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */,
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
 				AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */,
+				AF3213AA2147FFE50079FF54 /* OpenChatViewController.swift in Sources */,
 				AFE49860213C28430066D36E /* ProfessorInfoViewController.swift in Sources */,
 				AFAA7FF7214636DC00160004 /* AESencrypt&decrypt.swift in Sources */,
 				AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */,

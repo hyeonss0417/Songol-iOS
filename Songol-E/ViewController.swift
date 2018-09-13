@@ -56,6 +56,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         case 5:
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
+        case 7:
+            performSegue(withIdentifier: "chat", sender: nil)
+            break;
         case 8:
             performSegue(withIdentifier: "professorInfo", sender: nil)
             break;
@@ -115,13 +118,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     @IBOutlet weak var imageBgr: UIImageView!
     func bgrClickEvent(){
-        imageBgr.isUserInteractionEnabled = true
-        imageBgr.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("buttonTapped")))
+//        imageBgr.isUserInteractionEnabled = true
+//        imageBgr.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("buttonTapped")))
     }
     
-    @objc func buttonTapped(){
-        performSegue(withIdentifier: "login", sender: nil)
-    }
+//    @objc func buttonTapped(){
+//        performSegue(withIdentifier: "login", sender: nil)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
