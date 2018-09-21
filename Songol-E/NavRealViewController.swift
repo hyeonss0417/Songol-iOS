@@ -42,18 +42,18 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.rowHeight = 60
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            performSegue(withIdentifier: "developer", sender: nil)
-            
-            break;
-        default:
-            break;
-        }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationNavigation = segue.destination as! UINavigationController
+        
+        let destinationViewController = destinationNavigation.topViewController as! ViewController
+        
+        destinationViewController.positionValue = arrayStr[self.tableView.indexPathForSelectedRow!.row]
+        
     }
     
 }
+
 
 class NavTableCell:UITableViewCell{
     @IBOutlet weak var cellImage: UIImageView!

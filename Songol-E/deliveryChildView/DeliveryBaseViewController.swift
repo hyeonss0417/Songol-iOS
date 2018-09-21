@@ -72,7 +72,7 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
     func tableViewChangeListener(cell:DeliveryTableViewCell, indexPath: IndexPath){
         cell.labelTitle.text = deliveryFoodArrays[indexPath.row].foodName
         cell.labelNumber.text = deliveryFoodArrays[indexPath.row].number
-        cell.imageLogo.contentMode = .scaleAspectFit
+        
         cell.imageLogo.layer.borderWidth = 1
         cell.imageLogo.layer.masksToBounds = false
         cell.imageLogo.layer.borderColor = UIColor.white.cgColor
@@ -93,8 +93,9 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
     }
     
     func readDeliveryList(category:String){
-        
+
         dbRef.child("Delivery").child(category).observe(.childAdded, with: { (snapshot) in
+            
             let value = snapshot.value as? NSDictionary
             
             let deliveryFoodModel = DeliveryFoodModel(foodName: value?["foodName"] as? String ?? "", avg_speedScore: value?["avg_speedScore"] as? String ?? "",avg_tasteScore: value?["avg_tasteScore"] as? String ?? "",imgLogo_url: value?["imgLogo_url"] as? String ?? "",imgMenu_url: value?["imgMenu_url"] as? String ?? "",number: value?["number"] as? String ?? "",s_time: value?["s_time"] as? String ?? "")

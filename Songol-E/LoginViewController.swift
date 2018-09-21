@@ -133,9 +133,9 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == "SWReveal" {
-            userInfo = UserInfo(major: "", pw: "", snumber: "", username: labelID.text)
-            
+            userInfo = UserInfo(major: "", pw: labelPW.text, snumber: "", username: labelID.text)
             storeUserInfo()
             
         }else if segue.identifier == "selectMajor" {

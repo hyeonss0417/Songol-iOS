@@ -1,14 +1,14 @@
 //
-//  DeveloperViewController.swift
-//  Songol
+//  SplashViewController.swift
+//  Songol-E
 //
-//  Created by 최민섭 on 2018. 8. 29..
+//  Created by 최민섭 on 2018. 9. 21..
 //  Copyright © 2018년 최민섭. All rights reserved.
 //
 
 import UIKit
 
-class DeveloperViewController: UIViewController {
+class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
