@@ -14,8 +14,10 @@ class UserInfo : NSObject, NSCoding{
     var pw:String?
     var snumber:String?
     var username:String?
+    var uid: String?
     
-    init(major:String, pw:String?, snumber:String?, username:String?) {
+    init(uid:String, major:String, pw:String?, snumber:String?, username:String?) {
+        self.uid = uid
         self.major = major
         self.pw = pw
         self.snumber = snumber
@@ -25,6 +27,7 @@ class UserInfo : NSObject, NSCoding{
     // MARK: - NSCoding
     required init(coder aDecoder: NSCoder) {
 
+        uid = aDecoder.decodeObject(forKey: "uid") as! String
         major = aDecoder.decodeObject(forKey: "major") as! String
         pw = aDecoder.decodeObject(forKey: "pw") as! String
         snumber = aDecoder.decodeObject(forKey: "snumber") as! String
@@ -32,7 +35,10 @@ class UserInfo : NSObject, NSCoding{
         
     }
     
+  
     func encode(with aCoder: NSCoder) {
+        
+        aCoder.encode(uid, forKey: "uid")
         aCoder.encode(major, forKey: "major")
         aCoder.encode(pw, forKey: "pw")
         aCoder.encode(snumber, forKey: "snumber")

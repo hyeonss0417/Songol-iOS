@@ -30,11 +30,11 @@ class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollection
             
             let snum:String = accountInfo.getSnumberFromImageSrc(img: willChangeIcon!)
             
-            navVC?.changeView(imgSource: (willChangeIcon)!, label: accountInfo.usernameSelection(snum: snum))
+            navVC?.changeView(imgSource: (willChangeIcon)!, label: accountInfo.usernameSelection(snum: snum), snum: snum)
             
             //have to firebase DB change
             
-            userinfo = UserInfo(major: (userinfo.major)!, pw: userinfo.pw, snumber: snum, username: userinfo.username)
+            userinfo = UserInfo(uid: userinfo.uid!, major: (userinfo.major)!, pw: userinfo.pw, snumber: snum, username: userinfo.username)
             accountInfo.storeUserInfo(userInfo: userinfo)
             
             dismiss(animated: false, completion: nil)

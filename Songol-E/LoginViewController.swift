@@ -29,6 +29,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     var userID:String?
     var userPW:String?
+    var uid:String?
     
     @IBAction func LoginButtonOnClick(_ sender: Any) {
         check = 0
@@ -162,9 +163,10 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
                 userinfo.append(data.value as! String)
             }
             
-            var userInfo = UserInfo(major: userinfo[0], pw: self.userPW, snumber: userinfo[2], username: self.userID)
+            var userInfo = UserInfo(uid: uid, major: userinfo[0], pw: self.userPW, snumber: userinfo[2], username: self.userID)
 
         AccountInfo().storeUserInfo(userInfo: userInfo)
+        
 
         self.performSegue(withIdentifier: "SWReveal", sender: nil)
 
@@ -178,10 +180,10 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         
         if segue.identifier == "selectMajor" {
             if let destinationVC = segue.destination as? SelectMajorViewController {
-                destinationVC.setUserData(username: labelID.text!, password: labelPW.text!)
+                destinationVC.setUserData(uid: uid!, username: labelID.text!, password: labelPW.text!)
             }
         }else if segue.identifier == "guestLogin" {
-            AccountInfo().storeUserInfo(userInfo: UserInfo(major: "", pw: "", snumber:"0000", username:"guest"))
+            AccountInfo().storeUserInfo(userInfo: UserInfo(uid: "", major: "", pw: "", snumber:"0000", username:"guest"))
         }
     }
 
@@ -196,6 +198,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
                 
             if user !=  nil{//register success
                 print("success!")
+                self.uid = Auth.auth().currentUser?.uid
                 self.performSegue(withIdentifier: "selectMajor", sender: nil)
             }else if count < 10 {// failed
                 print("create failed!")

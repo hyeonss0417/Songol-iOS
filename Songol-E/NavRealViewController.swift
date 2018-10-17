@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -72,12 +74,18 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    public func changeView(imgSource:UIImage, label:String)
+    public func changeView(imgSource:UIImage, label:String, snum:String)
     {
         //firebase userinfo change
         
         labelUserName.text = label
         imgUserIcon.image = imgSource
+        
+        
+        
+    }
+    
+    func changeUserSnum(snum: String){
         
     }
     

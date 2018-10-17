@@ -15,6 +15,8 @@ class SelectMajorViewController: UIViewController, UIWebViewDelegate {
     var username, password:String?
     var userInfo:UserInfo?
     var major : String?
+    var uid:String?
+    
     @IBOutlet weak var mWebView: UIWebView!
     
     func storeUserInfo(){
@@ -44,7 +46,7 @@ class SelectMajorViewController: UIViewController, UIWebViewDelegate {
         
         if  button.tag == 10 && major != nil {
             //start main viewController with User Data
-            userInfo = UserInfo(major: major!, pw: password!, snumber: "1111", username: username!)
+            userInfo = UserInfo(uid:uid!, major: major!, pw: password!, snumber: "1111", username: username!)
             
             //have to make firebase DB 
             
@@ -61,7 +63,8 @@ class SelectMajorViewController: UIViewController, UIWebViewDelegate {
         }
     }
     
-    public func setUserData(username: String, password:String){
+    public func setUserData(uid:String, username: String, password:String){
+        self.uid = uid
         self.username = username
         self.password = password
     }
