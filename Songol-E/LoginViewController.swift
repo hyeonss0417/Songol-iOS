@@ -8,13 +8,14 @@
 
 import UIKit
 import FirebaseAuth
-
+import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController,UIWebViewDelegate {
     
+    private var dbRef : DatabaseReference! // 인스턴스 변수
+    
     private let log:String = "LogTag"
-
-    public var userInfo:UserInfo?
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -76,7 +77,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     func initView(){
         labelID.placeholder = "Portal ID"
         labelPW.placeholder = "Portal PW"
-        
+        dbRef = Database.database().reference()
     }
     
     
@@ -139,7 +140,8 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         
         Auth.auth().signIn(withEmail: labelID.text!+"@kau.ac.kr", password: labelPW.text!) { (user, error) in
             if user != nil{//login success
-                self.performSegue(withIdentifier: "SWReveal", sender: nil)
+                
+                self.readUserInfo(uid: (Auth.auth().currentUser?.uid)!)
              //   self.performSegue(withIdentifier: "selectMajor", sender: nil)
             }else{//login failed
                 print("login failed!")
@@ -149,30 +151,40 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         }
     }
     
+    func readUserInfo(uid: String){
+        
+        dbRef.child("Users/"+uid).observe(.value, with: {(snapshot) in
+            
+            var userinfo =  [String]()
+            
+            for child in snapshot.children{
+                let data = child as! DataSnapshot
+                userinfo.append(data.value as! String)
+            }
+            
+            var userInfo = UserInfo(major: userinfo[0], pw: self.userPW, snumber: userinfo[2], username: self.userID)
+
+        AccountInfo().storeUserInfo(userInfo: userInfo)
+
+        self.performSegue(withIdentifier: "SWReveal", sender: nil)
+
+        }){(error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "SWReveal" {
-            userInfo = UserInfo(major: "", pw: labelPW.text, snumber: "1111", username: labelID.text)
-            storeUserInfo()
-            
-        }else if segue.identifier == "selectMajor" {
-           
+        if segue.identifier == "selectMajor" {
             if let destinationVC = segue.destination as? SelectMajorViewController {
                 destinationVC.setUserData(username: labelID.text!, password: labelPW.text!)
             }
         }else if segue.identifier == "guestLogin" {
-            userInfo = UserInfo(major: "", pw: "", snumber:"0000", username:"guest")
-            storeUserInfo()
+            AccountInfo().storeUserInfo(userInfo: UserInfo(major: "", pw: "", snumber:"0000", username:"guest"))
         }
     }
-    
-    func storeUserInfo(){
-        //store UserInfo
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: userInfo)
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(encodedData, forKey: "key1")
-    }
+
 
     func firebaseCreateUserWithEmail(count: Int){
         var temp:String = ""

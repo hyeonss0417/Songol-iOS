@@ -108,7 +108,7 @@ class OpenChatParentViewController: UITableViewController{
         }){(error) in
             print(error.localizedDescription)
         }
-}
+    }
     
     func dateToStringFormat(date: Date) -> String{
         let dateFormatterGet = DateFormatter()
