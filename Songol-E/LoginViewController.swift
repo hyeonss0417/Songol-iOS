@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController,UIWebViewDelegate {
     
+    private let log:String = "LogTag"
+
     public var userInfo:UserInfo?
     
     @IBOutlet weak var webView: UIWebView!
@@ -21,7 +23,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet weak var labelPW: UITextField!
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
-        performSegue(withIdentifier: "selectMajor", sender: nil)
+        performSegue(withIdentifier: "guestLogin", sender: nil)
     }
     
     var userID:String?
@@ -47,30 +49,44 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             webView.loadRequest(URLRequest(url: url!))
         }
     }
-    
+        
     var check:Int = 0
     
-    let stringURL :String = "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp&refer_page="
+//    let stringURL :String = "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp&refer_page="
+
+    let stringURL : String = "https://www.kau.ac.kr/page/login.jsp?ppage=&target_page=act_Portal_Check.jsp@chk1-1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        removeCookies()
+        
         initView()
+    }
+    
+    func removeCookies(){
+        let cookie = HTTPCookie.self
+        let cookieJar = HTTPCookieStorage.shared
+        
+        for cookie in cookieJar.cookies! {
+            cookieJar.deleteCookie(cookie)
+        }
     }
     
     func initView(){
         labelID.placeholder = "Portal ID"
         labelPW.placeholder = "Portal PW"
+        
     }
     
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        print(request.url)
+        print(log, request.url)
         
         if check == 1 {
             check = 2
-            if request.url?.absoluteString == "https://www.kau.ac.kr/page/act_login.jsp"{
+            if request.url?.absoluteString == "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp"{
                 webView.loadRequest(URLRequest(url: URL(string: stringURL)!))
             }
         }
@@ -84,7 +100,6 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             check = 3
             
             if webView.request?.url?.absoluteString == stringURL{
-                print("failed!!")
                 
                 let alertController = UIAlertController(title: "포털 사이트 로그인에 실패하였습니다.",message: "ID/PW 확인 후 재로그인 하십시오.", preferredStyle: UIAlertControllerStyle.alert)
                 
@@ -97,12 +112,14 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
                 self.present(alertController,animated: true,completion: nil)
                 
             }else{
-                print("done!!")
+                print(log, "done!!")
                 firebaseLoginWithEmail()
             }
         }
         
         if  check==0{
+            
+            print(log, "in??")
 
             let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(userID!)\';"
 
@@ -113,7 +130,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             self.webView.stringByEvaluatingJavaScript(from: loadUsernameJS)
             self.webView.stringByEvaluatingJavaScript(from: loadPasswordJS)
             self.webView.stringByEvaluatingJavaScript(from: onClickEventJS)
-            
+
             check = 1
         }
     }
@@ -123,6 +140,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         Auth.auth().signIn(withEmail: labelID.text!+"@kau.ac.kr", password: labelPW.text!) { (user, error) in
             if user != nil{//login success
                 self.performSegue(withIdentifier: "SWReveal", sender: nil)
+             //   self.performSegue(withIdentifier: "selectMajor", sender: nil)
             }else{//login failed
                 print("login failed!")
                 print(error)
@@ -135,7 +153,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "SWReveal" {
-            userInfo = UserInfo(major: "", pw: labelPW.text, snumber: "", username: labelID.text)
+            userInfo = UserInfo(major: "", pw: labelPW.text, snumber: "1111", username: labelID.text)
             storeUserInfo()
             
         }else if segue.identifier == "selectMajor" {
@@ -143,6 +161,9 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             if let destinationVC = segue.destination as? SelectMajorViewController {
                 destinationVC.setUserData(username: labelID.text!, password: labelPW.text!)
             }
+        }else if segue.identifier == "guestLogin" {
+            userInfo = UserInfo(major: "", pw: "", snumber:"0000", username:"guest")
+            storeUserInfo()
         }
     }
     
@@ -152,8 +173,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         let userDefaults = UserDefaults.standard
         userDefaults.set(encodedData, forKey: "key1")
     }
-    
-    
+
     func firebaseCreateUserWithEmail(count: Int){
         var temp:String = ""
         if count != 0 {
@@ -172,6 +192,21 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         }
     }
     
+    func getCookies(){
+        let cookieStorage = HTTPCookieStorage.shared
+        let cookies = cookieStorage.cookies as! [HTTPCookie]
+        
+        var jsessionID: HTTPCookie?
+        
+        print("tagg Cookies.count: \(cookies.count)")
+        for cookie in cookies {
+            print("tagg name: \(cookie.name) value: \(cookie.value)")
+            if cookie.name == "JSESSIONID"{
+                jsessionID = cookie
+            }
+            
+        }
+    }
     
     
 

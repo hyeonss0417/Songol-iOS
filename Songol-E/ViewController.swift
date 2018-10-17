@@ -86,8 +86,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        print("im in")
         
         getUserInfo()
         
@@ -100,18 +98,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let decoded  = UserDefaults.standard.object(forKey: "key1") as! Data
         userinfo = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UserInfo
         
-        removeCookies()
-        
-        let url = URL(string: stringURL)
-        webView.loadRequest(URLRequest(url: url!))
+        if userinfo?.username != "guest" {
+            let url = URL(string: stringURL)
+            webView.loadRequest(URLRequest(url: url!))
+        }
     }
     
     func viewInit(){
                 
         self.navigationItem.leftBarButtonItem?.tintColor = blueInspireColor
-        
-        //it doesnt work.....
-        self.navigationItem.backBarButtonItem?.tintColor = blueInspireColor
         
         //remove border
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
@@ -124,16 +119,44 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
    
         //set RevealView Event
-    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         bgrClickEvent()
     }
     
     func initRevealView(){
+        
         if positionValue != nil{
-            
             performSegue(withIdentifier: positionValue!, sender: nil)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "동아리"{
+            if let destinationVC = segue.destination as? WebInfoViewController {
+                destinationVC.setWebInfo(barTitle: "동아리 정보", url: "http://www.kau.ac.kr/onestopservice/soss_student_group_aero.html")
+            }
+        }
+//        else if segue.identifier == "화전역 열차 시간표"{
+//            if let destinationVC = segue.destination as? WebInfoViewController {
+//                destinationVC.setWebInfo(barTitle: "화전역 열차 시간표", url: "https://m.search.naver.com/search.naver?query=%ED%99%94%EC%A0%84%EC%97%AD&where=m&sm=mtp_hty")
+//            }
+//        }
+        else if segue.identifier == "도서관 도서 검색"{
+            if let destinationVC = segue.destination as? WebInfoViewController {
+                destinationVC.setWebInfo(barTitle: "도서관 도서 검색", url: "http://lib.kau.ac.kr/HAULMS/SlimaDL.csp?HLOC=HAULMS&COUNT=2kij25cp00&Kor=1&frmDLL=frmDLL.csp?Left=Left02&frmDLR=Search/SearchC.csp?Gate=DA")
+            }
+        }else if segue.identifier == "스터디룸 예약현황"{
+            if let destinationVC = segue.destination as? WebInfoViewController {
+                destinationVC.setWebInfo(barTitle: "스터디룸 예약현황", url: "http://lib.kau.ac.kr/haulms/haulms/SRResv.csp")
+            }
+        }else if segue.identifier == "로그아웃"{
+            UserDefaults.standard.set(nil, forKey: "key1")
+            removeCookiesAndCaches()
             
+            let url = URL(string: stringURL)
+            check = 6
+            webView.loadRequest(URLRequest(url: url!))
         }
     }
     
@@ -147,22 +170,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        performSegue(withIdentifier: "login", sender: nil)
 //    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBOutlet weak var webView: UIWebView!
     
     var check = 0
     
-    func removeCookies(){
+    func removeCookiesAndCaches(){
         let cookie = HTTPCookie.self
         let cookieJar = HTTPCookieStorage.shared
         
         for cookie in cookieJar.cookies! {
             cookieJar.deleteCookie(cookie)
         }
+    
+        URLCache.shared.removeAllCachedResponses()
+        URLCache.shared.diskCapacity = 0
+        URLCache.shared.memoryCapacity = 0
+        
     }
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
@@ -222,10 +245,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
-    
-    
-    
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
     
 }
 
@@ -235,4 +257,6 @@ class CustomCell:UICollectionViewCell{
     @IBOutlet weak var label: UILabel!
     
 }
+
+
 

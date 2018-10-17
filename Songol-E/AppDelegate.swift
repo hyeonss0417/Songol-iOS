@@ -14,6 +14,8 @@ import FirebaseAuth
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    let log:String = "LogTag"
+    
    let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
     
     var window: UIWindow?
@@ -39,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     public func getUserInfo(){
         
         let decoded  = UserDefaults.standard.object(forKey: "key1") as? Data
-        
         if decoded == nil{
             self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
         }else {

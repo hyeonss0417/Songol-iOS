@@ -28,19 +28,19 @@ class DeliveryChildDetailViewController: UIViewController {
         URLImageDownloading().downloadImage(from: URL(string: (deliveryInfo?.imgMenu_url)!)!, imageView: imageMenu)
 
         imageMenu.isUserInteractionEnabled = true
-        imageMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("buttonTapped")))
+//        imageMenu.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("buttonTapped")))
     }
     
-    @objc func buttonTapped() {
-          performSegue(withIdentifier: "imageZoom", sender: nil)
-    }
+//    @objc func buttonTapped() {
+//          performSegue(withIdentifier: "imageZoom", sender: nil)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "imageZoom" {
-            if let destinationVC = segue.destination as? ImageZoomViewController {
-                destinationVC.setImageUrl(url: (deliveryInfo?.imgMenu_url)!)
-            }
-        }
+//        if segue.identifier == "imageZoom" {
+//            if let destinationVC = segue.destination as? ImageZoomViewController {
+//                destinationVC.setImageUrl(url: (deliveryInfo?.imgMenu_url)!)
+//            }
+//        }
     }
 
     override func didReceiveMemoryWarning() {
