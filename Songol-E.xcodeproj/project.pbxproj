@@ -13,6 +13,9 @@
 		AF06542E215509D80085B830 /* OpenChatParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06542D215509D80085B830 /* OpenChatParentViewController.swift */; };
 		AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */; };
 		AF1BBE062176FA110056FD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE052176FA110056FD2A /* Constants.swift */; };
+		AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */; };
+		AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */; };
+		AF2C0B612177924A00C1BB31 /* CookieAndCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */; };
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* ViewController.swift */; };
 		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
@@ -45,7 +48,6 @@
 		AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE40B852152396400A7E747 /* MainNavigationSegue.swift */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
-		AFE49860213C28430066D36E /* ProfessorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
@@ -80,6 +82,9 @@
 		AF06542D215509D80085B830 /* OpenChatParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatParentViewController.swift; sourceTree = "<group>"; };
 		AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		AF1BBE052176FA110056FD2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSViewController.swift; sourceTree = "<group>"; };
+		AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailAlert.swift; sourceTree = "<group>"; };
+		AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieAndCache.swift; sourceTree = "<group>"; };
 		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2C411621383C0C000E4215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,7 +125,6 @@
 		AFE40B852152396400A7E747 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
-		AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorInfoViewController.swift; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -191,11 +195,27 @@
 				AFF0B84021384E5900D5F9DB /* DishViewController.swift */,
 				AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */,
 				AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */,
-				AFE4985F213C28430066D36E /* ProfessorInfoViewController.swift */,
 				AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */,
 				AF06542D215509D80085B830 /* OpenChatParentViewController.swift */,
+				AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */,
 			);
 			path = mainMenu;
+			sourceTree = "<group>";
+		};
+		AF1BBE0921774B770056FD2A /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */,
+			);
+			path = alert;
+			sourceTree = "<group>";
+		};
+		AF2C0B5F217791E500C1BB31 /* cookies&caches */ = {
+			isa = PBXGroup;
+			children = (
+				AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */,
+			);
+			path = "cookies&caches";
 			sourceTree = "<group>";
 		};
 		AF2C410821383C0C000E4215 = {
@@ -223,6 +243,8 @@
 		AF2C411321383C0C000E4215 /* Songol-E */ = {
 			isa = PBXGroup;
 			children = (
+				AF2C0B5F217791E500C1BB31 /* cookies&caches */,
+				AF1BBE0921774B770056FD2A /* alert */,
 				AFAB0FB92174A480005A9FFA /* openChat */,
 				AF06542C215509650085B830 /* mainMenu */,
 				AFE40B8721523DEC00A7E747 /* navMenu */,
@@ -598,6 +620,7 @@
 				AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */,
 				AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */,
 				AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */,
+				AF2C0B612177924A00C1BB31 /* CookieAndCache.swift in Sources */,
 				AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */,
 				AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */,
 				AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */,
@@ -605,10 +628,11 @@
 				AFF0B84321384E5A00D5F9DB /* CalendarViewController.swift in Sources */,
 				AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */,
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
+				AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */,
 				AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */,
+				AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */,
 				AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */,
 				AF3213AA2147FFE50079FF54 /* OpenChatViewController.swift in Sources */,
-				AFE49860213C28430066D36E /* ProfessorInfoViewController.swift in Sources */,
 				AFAA7FF7214636DC00160004 /* AESencrypt&decrypt.swift in Sources */,
 				AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */,
 				AF06542E215509D80085B830 /* OpenChatParentViewController.swift in Sources */,

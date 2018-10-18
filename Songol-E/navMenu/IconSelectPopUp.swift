@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    private var dbRef : DatabaseReference! // 인스턴스 변수
     private var willChangeIcon:UIImage?
     private var navVC : NavRealViewController?
     private var curSelectedIndex: IndexPath?
@@ -34,11 +37,17 @@ class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollection
             
             //have to firebase DB change
             
+            changeUserSnum(uid: userinfo.uid!, snum: snum)
+            
             userinfo = UserInfo(uid: userinfo.uid!, major: (userinfo.major)!, pw: userinfo.pw, snumber: snum, username: userinfo.username)
             accountInfo.storeUserInfo(userInfo: userinfo)
             
             dismiss(animated: false, completion: nil)
         }
+    }
+    
+    func changeUserSnum(uid:String, snum:String){
+        self.dbRef.child("Users/\(uid)/snumber").setValue(snum)
     }
     
     let icons = [#imageLiteral(resourceName: "chick0_"), #imageLiteral(resourceName: "chick1_"), #imageLiteral(resourceName: "chick2_"), #imageLiteral(resourceName: "chick3_"), #imageLiteral(resourceName: "chick4_"), #imageLiteral(resourceName: "chick5_"), #imageLiteral(resourceName: "chick6_")]
@@ -83,6 +92,8 @@ class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dbRef = Database.database().reference()
         
         self.mCollectionView.collectionViewLayout = CustomImageFlowLayout.init()
     }

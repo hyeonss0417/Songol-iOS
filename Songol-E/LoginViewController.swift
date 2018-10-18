@@ -15,6 +15,8 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     private var dbRef : DatabaseReference! // 인스턴스 변수
     
+    private var isLogin = 0
+    
     private let log:String = "LogTag"
     
     @IBOutlet weak var webView: UIWebView!
@@ -32,7 +34,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     var uid:String?
     
     @IBAction func LoginButtonOnClick(_ sender: Any) {
-        check = 0
+
         if labelID.text == nil || labelPW.text == nil{
             let alertController = UIAlertController(title: "로그인 실패",message: "ID/PW 를 모두 입력하십시오.", preferredStyle: UIAlertControllerStyle.alert)
             
@@ -51,28 +53,17 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             webView.loadRequest(URLRequest(url: url!))
         }
     }
-        
-    var check:Int = 0
     
 //    let stringURL :String = "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp&refer_page="
 
-    let stringURL : String = "https://www.kau.ac.kr/page/login.jsp?ppage=&target_page=act_Portal_Check.jsp@chk1-1"
+    let stringURL : String = "https://www.kau.ac.kr/page/login.jsp?target_page=act_Lms_Check.jsp@chk1-1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        removeCookies()
+       CookieAndCache().removeAll()
         
         initView()
-    }
-    
-    func removeCookies(){
-        let cookie = HTTPCookie.self
-        let cookieJar = HTTPCookieStorage.shared
-        
-        for cookie in cookieJar.cookies! {
-            cookieJar.deleteCookie(cookie)
-        }
     }
     
     func initView(){
@@ -81,16 +72,23 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         dbRef = Database.database().reference()
     }
     
-    
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        print(log, request.url)
-        
-        if check == 1 {
-            check = 2
-            if request.url?.absoluteString == "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp"{
-                webView.loadRequest(URLRequest(url: URL(string: stringURL)!))
-            }
+        if request.url?.absoluteString == "https://www.kau.ac.kr/page/login.jsp?target_page=act_Lms_Check.jsp@chk1-1&refer_page=" {
+            
+            isLogin = 2
+            
+            LoginFailAlert(vc:self).show()
+            
+            return false;
+            
+        }else if request.url?.absoluteString == "http://lms.kau.ac.kr/my/"{
+            
+            isLogin = 1
+            
+            firebaseLoginWithEmail()
+
+            return false;
         }
         
         return true
@@ -98,30 +96,7 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     public func webViewDidFinishLoad(_ webView: UIWebView){
         
-        if check == 2{
-            check = 3
-            
-            if webView.request?.url?.absoluteString == stringURL{
-                
-                let alertController = UIAlertController(title: "포털 사이트 로그인에 실패하였습니다.",message: "ID/PW 확인 후 재로그인 하십시오.", preferredStyle: UIAlertControllerStyle.alert)
-                
-                //UIAlertActionStye.destructive 지정 글꼴 색상 변경
-                let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-                }
-                
-                alertController.addAction(okAction)
-                
-                self.present(alertController,animated: true,completion: nil)
-                
-            }else{
-                print(log, "done!!")
-                firebaseLoginWithEmail()
-            }
-        }
-        
-        if  check==0{
-            
-            print(log, "in??")
+        if  webView.request?.url?.absoluteString == stringURL{
 
             let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(userID!)\';"
 
@@ -133,7 +108,6 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             self.webView.stringByEvaluatingJavaScript(from: loadPasswordJS)
             self.webView.stringByEvaluatingJavaScript(from: onClickEventJS)
 
-            check = 1
         }
     }
     
@@ -141,7 +115,6 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         
         Auth.auth().signIn(withEmail: labelID.text!+"@kau.ac.kr", password: labelPW.text!) { (user, error) in
             if user != nil{//login success
-                
                 self.readUserInfo(uid: (Auth.auth().currentUser?.uid)!)
              //   self.performSegue(withIdentifier: "selectMajor", sender: nil)
             }else{//login failed
