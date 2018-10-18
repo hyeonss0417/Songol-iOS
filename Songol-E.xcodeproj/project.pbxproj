@@ -16,6 +16,9 @@
 		AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */; };
 		AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */; };
 		AF2C0B612177924A00C1BB31 /* CookieAndCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */; };
+		AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B652178502400C1BB31 /* NavMenuController.swift */; };
+		AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */; };
+		AF2C0B6C2178757700C1BB31 /* RequestSnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */; };
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* ViewController.swift */; };
 		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
@@ -85,6 +88,9 @@
 		AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSViewController.swift; sourceTree = "<group>"; };
 		AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailAlert.swift; sourceTree = "<group>"; };
 		AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieAndCache.swift; sourceTree = "<group>"; };
+		AF2C0B652178502400C1BB31 /* NavMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuController.swift; sourceTree = "<group>"; };
+		AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingToLaunch.swift; sourceTree = "<group>"; };
+		AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSnum.swift; sourceTree = "<group>"; };
 		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2C411621383C0C000E4215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */,
+				AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */,
+				AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 				AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */,
 				AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */,
 				AF3E9A1B21762E1800C338F1 /* IconSelectPopUp.swift */,
+				AF2C0B652178502400C1BB31 /* NavMenuController.swift */,
 			);
 			path = navMenu;
 			sourceTree = "<group>";
@@ -603,8 +612,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */,
+				AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
+				AF2C0B6C2178757700C1BB31 /* RequestSnum.swift in Sources */,
 				AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */,
 				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,
 				AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */,

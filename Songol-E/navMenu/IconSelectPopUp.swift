@@ -21,7 +21,6 @@ class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollection
     func setNavVCInstance(navVC : NavRealViewController){
         self.navVC = navVC
     }
-
     
     @IBAction func IconChangeOnClicked(_ sender: Any) {
         
@@ -35,8 +34,7 @@ class IconSelectPopUp : UIViewController, UICollectionViewDelegate, UICollection
             
             navVC?.changeView(imgSource: (willChangeIcon)!, label: accountInfo.usernameSelection(snum: snum), snum: snum)
             
-            //have to firebase DB change
-            
+            //change FirebaseDB snumber
             changeUserSnum(uid: userinfo.uid!, snum: snum)
             
             userinfo = UserInfo(uid: userinfo.uid!, major: (userinfo.major)!, pw: userinfo.pw, snumber: snum, username: userinfo.username)

@@ -155,6 +155,7 @@
                         <segue destination="4IR-TE-gWX" kind="show" identifier="스터디룸 예약현황" id="IUh-iC-svV"/>
                         <segue destination="FOI-Cn-cph" kind="show" identifier="lms" id="vHt-aB-Nqy"/>
                         <segue destination="4IR-TE-gWX" kind="show" identifier="교직원 정보" id="oaw-Uf-LkQ"/>
+                        <segue destination="4IR-TE-gWX" kind="show" identifier="시간표" id="C8U-SY-HgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -1673,7 +1674,7 @@
         <image name="nav_menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oaw-Uf-LkQ"/>
+        <segue reference="C8U-SY-HgK"/>
         <segue reference="KBd-m6-OFC"/>
         <segue reference="vHj-55-8Dh"/>
     </inferredMetricsTieBreakers>

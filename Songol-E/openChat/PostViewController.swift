@@ -28,13 +28,12 @@ class PostViewController: UIViewController{
     
     }
     
-    
     func initView(){
-//
-//        labelUser.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
-//        imgUserIcon.image =
-//            AccountInfo().userIconSelection(snum: (userinfo?.snumber)!)
-//
+
+        labelUser.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
+        imgUserIcon.image =
+            AccountInfo().userIconSelection(snum: (userinfo?.snumber)!)
+
     }
     
     override func didReceiveMemoryWarning() {
