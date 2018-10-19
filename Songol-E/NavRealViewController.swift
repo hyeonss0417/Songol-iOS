@@ -43,7 +43,7 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         initView()
         
         tableView.rowHeight = 60
@@ -53,12 +53,8 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         userinfo = accountInfo.getUserInfo()
         
-        if userinfo?.snumber == "1111"{
-            labelUserName.text = "이미지를 클릭하여 아이콘을 설정하세요"
-        }else{
-            labelUserName.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
-        }
-        
+       
+        labelUserName.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
         
         imgUserIcon.image = AccountInfo().navUserIconSelection(snum: (userinfo?.snumber)!)
         imgUserIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NavRealViewController.imgTapped)))

@@ -13,8 +13,6 @@ struct AccountInfo{
             return "친절한 송골이"
         }else if Int(snum)! == 0000{
             return "항공대 처음이에유"
-        }else if Int(snum)! == 1111{
-            return "항공대 처음이에유"
         }else if Int(snum)! >= 2018 {
             return "신입생입니다!"
         }else if Int(snum)! == 2017{
@@ -37,8 +35,6 @@ struct AccountInfo{
         if  Int(snum)! == 7777 {
             return #imageLiteral(resourceName: "kindsongol")
         }else if Int(snum)! == 0000{
-            return #imageLiteral(resourceName: "chick0")
-        }else if Int(snum)! == 1111{
             return #imageLiteral(resourceName: "chick0")
         }
         else if Int(snum)! >= 2018 {
@@ -64,8 +60,6 @@ struct AccountInfo{
         if  Int(snum)! == 7777 {
             return #imageLiteral(resourceName: "kindsongol_")
         }else if Int(snum)! == 0000{
-            return #imageLiteral(resourceName: "chick0_")
-        }else if Int(snum)! == 1111{
             return #imageLiteral(resourceName: "chick0_")
         }
         else if Int(snum)! >= 2018 {

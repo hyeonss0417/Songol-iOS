@@ -111,7 +111,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             print("tagg userid : \(userinfo?.username) pw: \(userinfo?.pw)")
             
-            webView.loadRequest(URLRequest(url:URL(string: urlLMSLogin)!))
+            webView.loadRequest(URLRequest(url:URL(string: urlMyLMS)!))
             
         }
     }
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
    
         //set RevealView Event
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         bgrClickEvent()
     }
@@ -173,7 +173,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
-        //print("tagg",request.url)
+        print("tagg",request.url)
         
         if request.url?.absoluteString == "https://www.kau.ac.kr/page/login.jsp?target_page=act_Lms_Check.jsp@chk1-1&refer_page="  {
             
@@ -181,13 +181,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             return false
             
-        }else if request.url?.absoluteString == urlMyLMS{
-            
-            stateLogin = true
-            
-            return false
-            
         }
+//        else if request.url?.absoluteString == urlMyLMS{
+//
+//            stateLogin = true
+//
+//            return false
+//
+//        }
         
         return true
     }
@@ -200,7 +201,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             performSegue(withIdentifier: "시간표", sender: nil)
         }
         
-        if  (webView.request?.url?.absoluteString == urlLMSLogin && !isLogout) || webView.request?.url?.absoluteString == urlKAULogin {
+        else if  (webView.request?.url?.absoluteString == urlLMSLogin && !isLogout) || webView.request?.url?.absoluteString == urlKAULogin {
             
             print("tagg let put my account")
             
@@ -217,6 +218,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         else if (webView.request?.url?.absoluteString == "https://www.kau.ac.kr/page/act_Lms_Check.jsp@chk1-1 "){
             stateLogin = true
         }
+        
+        else if webView.request?.url?.absoluteString == urlMyLMS {
+            
+             stateLogin = true
+            
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

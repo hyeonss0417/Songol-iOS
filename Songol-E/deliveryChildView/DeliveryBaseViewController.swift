@@ -94,7 +94,7 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
     
     func readDeliveryList(category:String){
 
-        dbRef.child("Delivery").child(category).observe(.childAdded, with: { (snapshot) in
+        dbRef.child("Delivery").child(category).observeSingleEvent(of:.childAdded, with: { (snapshot) in
             
             let value = snapshot.value as? NSDictionary
             

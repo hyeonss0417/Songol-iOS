@@ -11,6 +11,9 @@
 		57F4324E7F757A1D4595701E /* Pods_Songol_ETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */; };
 		940D3DCA509EC7FD1C2FF00E /* Pods_Songol_E.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */; };
 		AF06542E215509D80085B830 /* OpenChatParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF06542D215509D80085B830 /* OpenChatParentViewController.swift */; };
+		AF193F302178DCA80073D7E8 /* FormNotFilledAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF193F2F2178DCA80073D7E8 /* FormNotFilledAlert.swift */; };
+		AF193F322178E1690073D7E8 /* YesOrNoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF193F312178E1690073D7E8 /* YesOrNoAlert.swift */; };
+		AF193F342178E43D0073D7E8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF193F332178E43D0073D7E8 /* BaseViewController.swift */; };
 		AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */; };
 		AF1BBE062176FA110056FD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE052176FA110056FD2A /* Constants.swift */; };
 		AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */; };
@@ -18,7 +21,6 @@
 		AF2C0B612177924A00C1BB31 /* CookieAndCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */; };
 		AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B652178502400C1BB31 /* NavMenuController.swift */; };
 		AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */; };
-		AF2C0B6C2178757700C1BB31 /* RequestSnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */; };
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* ViewController.swift */; };
 		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
@@ -83,6 +85,9 @@
 		5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_EUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E8C5B33A4F0DE8B58893D00 /* Pods-Songol-E.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-E.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E.debug.xcconfig"; sourceTree = "<group>"; };
 		AF06542D215509D80085B830 /* OpenChatParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatParentViewController.swift; sourceTree = "<group>"; };
+		AF193F2F2178DCA80073D7E8 /* FormNotFilledAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormNotFilledAlert.swift; sourceTree = "<group>"; };
+		AF193F312178E1690073D7E8 /* YesOrNoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesOrNoAlert.swift; sourceTree = "<group>"; };
+		AF193F332178E43D0073D7E8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		AF1BBE052176FA110056FD2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +95,6 @@
 		AF2C0B602177924A00C1BB31 /* CookieAndCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieAndCache.swift; sourceTree = "<group>"; };
 		AF2C0B652178502400C1BB31 /* NavMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuController.swift; sourceTree = "<group>"; };
 		AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingToLaunch.swift; sourceTree = "<group>"; };
-		AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSnum.swift; sourceTree = "<group>"; };
 		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2C411621383C0C000E4215 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +217,8 @@
 			children = (
 				AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */,
 				AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */,
-				AF2C0B6B2178757700C1BB31 /* RequestSnum.swift */,
+				AF193F2F2178DCA80073D7E8 /* FormNotFilledAlert.swift */,
+				AF193F312178E1690073D7E8 /* YesOrNoAlert.swift */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				AF800156213FBB1300EB1E41 /* LoginViewController.swift */,
 				AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */,
 				AFA2E6AE2154C5BB008F69CA /* SplashViewController.swift */,
+				AF193F332178E43D0073D7E8 /* BaseViewController.swift */,
 			);
 			path = "Songol-E";
 			sourceTree = "<group>";
@@ -616,16 +622,18 @@
 				AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
-				AF2C0B6C2178757700C1BB31 /* RequestSnum.swift in Sources */,
 				AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */,
 				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,
 				AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */,
+				AF193F302178DCA80073D7E8 /* FormNotFilledAlert.swift in Sources */,
 				AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */,
 				AFA2E6AF2154C5BB008F69CA /* SplashViewController.swift in Sources */,
 				AF2C411721383C0C000E4215 /* ViewController.swift in Sources */,
 				AF3E9A1A2175BCCB00C338F1 /* GetSNumber.swift in Sources */,
 				AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */,
 				AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */,
+				AF193F322178E1690073D7E8 /* YesOrNoAlert.swift in Sources */,
+				AF193F342178E43D0073D7E8 /* BaseViewController.swift in Sources */,
 				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
 				AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */,
 				AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */,

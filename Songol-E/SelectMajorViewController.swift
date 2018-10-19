@@ -8,28 +8,19 @@
 
 import UIKit
 import SwiftSoup
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 
-class SelectMajorViewController: UIViewController, UIWebViewDelegate {
+class SelectMajorViewController: UIViewController {
     
     var preSelectedBtn: UIButton?
     var username, password:String?
     var userInfo:UserInfo?
     var major : String?
     var uid:String?
-    
-    @IBOutlet weak var mWebView: UIWebView!
-    
-    func storeUserInfo(){
-        //store UserInfo
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: userInfo)
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(encodedData, forKey: "key1")
-    }
-    
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-         getJSessionIdCookie()
-    }
+    var snum:String?
+    private var dbRef : DatabaseReference! // 인스턴스 변수
     
     @IBAction func changeMajor(_ sender: Any) {
         guard let button = sender as? UIButton else {
@@ -45,22 +36,12 @@ class SelectMajorViewController: UIViewController, UIWebViewDelegate {
         }
         
         if  button.tag == 10 && major != nil {
-            //start main viewController with User Data
-            userInfo = UserInfo(uid:uid!, major: major!, pw: password!, snumber: "1111", username: username!)
             
-            //have to make firebase DB 
-            
-            performSegue(withIdentifier: "SWRevealWithSignin", sender: nil)
+            performSegue(withIdentifier: "iconselector", sender: self)
+
         }
         
        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "SWRevealWithSignin"{
-            storeUserInfo()
-        }
     }
     
     public func setUserData(uid:String, username: String, password:String){
@@ -69,79 +50,38 @@ class SelectMajorViewController: UIViewController, UIWebViewDelegate {
         self.password = password
     }
     
-    override func viewDidLoad() {
-//
-//        mWebView.loadRequest(URLRequest(url: URL(string: "https://portal.kau.ac.kr/sugang/SugangOrderList.jsp")!))
-      //  getJSessionIdCookie()
-        
-    }
-    
-    func getJSessionIdCookie(){
-
-        let cookieStorage = HTTPCookieStorage.shared
-        let cookies = cookieStorage.cookies as! [HTTPCookie]
-
-        var jsessionID: HTTPCookie?
-
-        print("tagg Cookies.count: \(cookies.count)")
-        for cookie in cookies {
-            print("tagg name: \(cookie.name) value: \(cookie.value) domain:\(cookie.domain)" )
-            if cookie.name == "JSESSIONID"{
-                jsessionID = cookie
-                break
-            }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "iconselector"{
+            let dest = segue.destination as! IconSelectPopUp
+            dest.setMajorVCInstance(majorVC: self)
         }
-        do{
-//            let snum = try GetSNumber("https://portal.kau.ac.kr/sugang/SugangOrderList.jsp")
-            //getSNumber()
-        }catch{}
-
     }
     
-    func euckrEncoding(_ query: String) -> String { //EUC-KR 인코딩
+    public func setSnumber(snum:String){
         
-        let rawEncoding = CFStringConvertEncodingToNSStringEncoding(CFStringEncoding(CFStringEncodings.EUC_KR.rawValue))
-        let encoding = String.Encoding(rawValue: rawEncoding)
+        self.snum = snum
         
-        let eucKRStringData = query.data(using: encoding) ?? Data()
-        let outputQuery = eucKRStringData.map {byte->String in
-            if byte >= UInt8(ascii: "A") && byte <= UInt8(ascii: "Z")
-                || byte >= UInt8(ascii: "a") && byte <= UInt8(ascii: "z")
-                || byte >= UInt8(ascii: "0") && byte <= UInt8(ascii: "9")
-                || byte == UInt8(ascii: "_") || byte == UInt8(ascii: ".") || byte == UInt8(ascii: "-")
-            {
-                return String(Character(UnicodeScalar(UInt32(byte))!))
-            } else if byte == UInt8(ascii: " ") {
-                return "+"
-            } else {
-                return String(format: "%%%02X", byte)
-            }
-            }.joined()
+        userInfo = UserInfo(uid:uid!, major: major!, pw: password!, snumber: snum , username: username!)
         
-        return outputQuery
+        AccountInfo().storeUserInfo(userInfo: userInfo!)
+        
+        uploadUserDataToDB()
+        
     }
     
-//    func getSNumber(){
-//        do{
-//            let htmlString = "https://portal.kau.ac.kr/sugang/SugangOrderList.jsp"
-//
-//            let html = try String(contentsOf: URL(string: htmlString)!)
-//            print("tagg dd")
-//            let doc = try SwiftSoup.parse(euckrEncoding(html))
-//            let id =  try doc.select("td")
-//            print("tagg", try id.size())
-//
-//            //var snumber:String = try id.get(0).text()
-//            //        let startIdx = snumber.index(of: ":")
-//            //        snumber[NSRange(location: startIdx, length: 12)]
-//
-//            //print("tagg", snumber)
-//        }catch{
-//            print("tagg",error)
-//        }
-//
-//    }
-
+    func uploadUserDataToDB(){
+        
+        self.dbRef.child("Users").child(uid!).setValue(["major":major!, "pw":password!, "snumber":snum, "username": username! ])
+        
+        performSegue(withIdentifier: "SWRevealWithSignin", sender: nil)
+        
+    }
+    
+    override func viewDidLoad() {
+        
+         dbRef = Database.database().reference()
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

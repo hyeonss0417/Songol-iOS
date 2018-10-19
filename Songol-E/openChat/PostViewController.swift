@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
-class PostViewController: UIViewController{
+class PostViewController: BaseUIViewController{
+    
+    private var dbRef : DatabaseReference! // 인스턴스 변수
+    
+    private var userinfo:UserInfo?
     
     @IBAction func PostButtonOnClick(_ sender: Any) {
+        
+        if textContent.text != "" {
+            YesOrNoAlert(vc: self, title: "게시 확인", msg: "작성한 글을 게시하시겠습니까?").show()
+        }
+        
+    }
+    
+    override func callback() {
+        
+        let currentTime = Int(round( NSDate().timeIntervalSince1970 * 1000))
+    dbRef.child("Questions").child(String(currentTime)).setValue(["date":currentTime, "numofcom":0, "snum":userinfo?.snumber, "text": textContent.text, "type":0])
+        
+        // dismiss alert & self
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @IBOutlet weak var textContent: UITextField!
     @IBOutlet weak var labelUser: UILabel!
     @IBOutlet weak var imgUserIcon: UIImageView!
-    
-    var userinfo:UserInfo?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +44,8 @@ class PostViewController: UIViewController{
         userinfo = AccountInfo().getUserInfo()
         
         initView()
+        
+        dbRef = Database.database().reference()
     
     }
     

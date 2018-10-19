@@ -17,6 +17,8 @@ class OpenChatParentViewController: UITableViewController{
     
     private var index = 0
     
+    private var isFirst = true
+    
     struct parentCellData{
         var iconImage = UIImage()
         var username = String()
@@ -65,7 +67,10 @@ class OpenChatParentViewController: UITableViewController{
         
         self.navigationItem.rightBarButtonItems = [write]
         
-        readChatList()
+        if isFirst{
+            isFirst = false
+            readChatList()
+        }
         
     }
 
@@ -75,7 +80,10 @@ class OpenChatParentViewController: UITableViewController{
     
     func readChatList(){
         
-        dbRef.child("Questions").observe(.value, with: {(snapshot) in
+        self.index = 0
+        self.chatTableViewData.removeAll()
+
+        dbRef.child("Questions").observeSingleEvent(of: .value, with: {(snapshot) in
             
             for child in snapshot.children{
                 let value = (child as! DataSnapshot).value as? NSDictionary
@@ -85,7 +93,7 @@ class OpenChatParentViewController: UITableViewController{
                 let username = AccountInfo().usernameSelection(snum: value?["snum"] as! String)
                 
                 let date = self.dateToStringFormat(date:
-                    Date(timeIntervalSince1970: value?["date"] as! TimeInterval))
+                    NSDate(timeIntervalSince1970: (value?["date"] as! TimeInterval)/1000))
                 
                 let childCount = value?["numofcom"] as! Int
                 
@@ -99,7 +107,6 @@ class OpenChatParentViewController: UITableViewController{
             self.chatTableViewData.reverse()
 
             for index in 0...self.chatTableViewData.count-1 {
-                print(self.log, "asdasd")
                 self.index = index+1
                 self.tableView.insertRows(at: [IndexPath(row: self.index-1, section: 0)],  with: UITableViewRowAnimation.automatic)
                 //print(self.log, self.tableView.numberOfRows(inSection: 0))
@@ -110,10 +117,10 @@ class OpenChatParentViewController: UITableViewController{
         }
     }
     
-    func dateToStringFormat(date: Date) -> String{
+    func dateToStringFormat(date: NSDate) -> String{
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return dateFormatterGet.string(from: date)
+        dateFormatterGet.dateFormat = "yyyy-MM-dd HH:mm"
+        return dateFormatterGet.string(from: date as Date)
     }
 
     override func didReceiveMemoryWarning() {

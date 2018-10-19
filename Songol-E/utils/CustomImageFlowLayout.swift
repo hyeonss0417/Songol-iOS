@@ -21,7 +21,7 @@ class CustomImageFlowLayout : UICollectionViewFlowLayout{
     }
     
     func setupLayout(){
-        minimumLineSpacing = 8
+        minimumLineSpacing = 10
         
         minimumInteritemSpacing = 1
         
@@ -32,7 +32,7 @@ class CustomImageFlowLayout : UICollectionViewFlowLayout{
         set{
             
         }get{
-            let numberOfColumns: CGFloat = 4.5
+            let numberOfColumns: CGFloat = 3.5
             
             let itemWidth = (self.collectionView!.frame.width - (numberOfColumns - 1)) / numberOfColumns - 1
             return CGSize(width: itemWidth, height: itemWidth)
