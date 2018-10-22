@@ -42,7 +42,6 @@
 		AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */; };
 		AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80015A2142582500EB1E41 /* RadioButton.swift */; };
 		AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */; };
-		AFA10101214BC0EE00E83336 /* IconSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA10100214BC0EE00E83336 /* IconSelection.swift */; };
 		AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA10102214BC5DB00E83336 /* AccountInfo.swift */; };
 		AFA2E6AF2154C5BB008F69CA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA2E6AE2154C5BB008F69CA /* SplashViewController.swift */; };
 		AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA62B632161EFAA00D18A83 /* TabLayout.swift */; };
@@ -125,7 +124,6 @@
 		AF8001582141BBFC00EB1E41 /* SelectMajorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMajorViewController.swift; sourceTree = "<group>"; };
 		AF80015A2142582500EB1E41 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInfoViewController.swift; sourceTree = "<group>"; };
-		AFA10100214BC0EE00E83336 /* IconSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelection.swift; sourceTree = "<group>"; };
 		AFA10102214BC5DB00E83336 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		AFA2E6AE2154C5BB008F69CA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AFA62B632161EFAA00D18A83 /* TabLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
@@ -319,7 +317,6 @@
 				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
 				AF80015A2142582500EB1E41 /* RadioButton.swift */,
 				AFAA7FF6214636DC00160004 /* AESencrypt&decrypt.swift */,
-				AFA10100214BC0EE00E83336 /* IconSelection.swift */,
 				AFA10102214BC5DB00E83336 /* AccountInfo.swift */,
 				AFE40B852152396400A7E747 /* MainNavigationSegue.swift */,
 				AFA62B632161EFAA00D18A83 /* TabLayout.swift */,
@@ -660,7 +657,6 @@
 				AFAA7FF7214636DC00160004 /* AESencrypt&decrypt.swift in Sources */,
 				AF8001592141BBFC00EB1E41 /* SelectMajorViewController.swift in Sources */,
 				AF06542E215509D80085B830 /* OpenChatParentViewController.swift in Sources */,
-				AFA10101214BC0EE00E83336 /* IconSelection.swift in Sources */,
 				AFAA7FF92146C3F500160004 /* UserInfo.swift in Sources */,
 				AF3E9A1C21762E1800C338F1 /* IconSelectPopUp.swift in Sources */,
 				AFF650F4213BC173006840C8 /* DeliveryFoodModel.swift in Sources */,

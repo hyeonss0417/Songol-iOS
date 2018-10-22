@@ -103,7 +103,7 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
             for child in snapshot.children{
                 let value = (child as! DataSnapshot).value as? NSDictionary
                 
-                let iconImage = IconSelection().iconSelection(snum: value?["snum"] as! String)
+                let iconImage = AccountInfo().userIconSelection(snum: value?["snum"] as! String)
                 
                 let username = AccountInfo().usernameSelection(snum: value?["snum"] as! String)
                 

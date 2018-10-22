@@ -1,10 +1,3 @@
-//
-//  DeliveryBaseViewController.swift
-//  Songol-E
-//
-//  Created by 최민섭 on 2018. 9. 2..
-//  Copyright © 2018년 최민섭. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -25,12 +18,14 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
     var deliveryFoodArrays:[DeliveryFoodModel] = []
     var dbRef : DatabaseReference! // 인스턴스 변수
     
+    var index = 0
+    
     func setCategory(category:String){
         self.category = category
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deliveryFoodArrays.count
+        return self.index
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -100,9 +95,16 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
                 let value = (child as! DataSnapshot).value as? NSDictionary
                 
                 let deliveryFoodModel = DeliveryFoodModel(foodName: value?["foodName"] as? String ?? "", avg_speedScore: value?["avg_speedScore"] as? String ?? "",avg_tasteScore: value?["avg_tasteScore"] as? String ?? "",imgLogo_url: value?["imgLogo_url"] as? String ?? "",imgMenu_url: value?["imgMenu_url"] as? String ?? "",number: value?["number"] as? String ?? "",s_time: value?["s_time"] as? String ?? "")
+                
                 self.deliveryFoodArrays.append(deliveryFoodModel)
                 
-                self._tableView?.insertRows(at: [IndexPath(row: self.deliveryFoodArrays.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+            }
+            
+            for index in 0...self.deliveryFoodArrays.count - 1{
+                
+                self.index = index+1
+                self._tableView?.insertRows(at: [IndexPath(row: self.index - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+                
             }
             
         }){ (error) in
