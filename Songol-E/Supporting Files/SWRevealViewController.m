@@ -1716,7 +1716,6 @@ const int FrontViewPositionNone = 0xff;
     }
 }
 
-
 #pragma mark state preservation / restoration
 
 + (UIViewController *)viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder*)coder

@@ -12,4 +12,6 @@ class BaseUIViewController: UIViewController {
     
     func callback(){}
     
+    func setNavData(){}
+    
 }

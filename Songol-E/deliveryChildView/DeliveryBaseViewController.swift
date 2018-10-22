@@ -94,14 +94,16 @@ class DeliveryBaseViewController: UIViewController, IndicatorInfoProvider, UITab
     
     func readDeliveryList(category:String){
 
-        dbRef.child("Delivery").child(category).observeSingleEvent(of:.childAdded, with: { (snapshot) in
+        dbRef.child("Delivery").child(category).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            let value = snapshot.value as? NSDictionary
-            
-            let deliveryFoodModel = DeliveryFoodModel(foodName: value?["foodName"] as? String ?? "", avg_speedScore: value?["avg_speedScore"] as? String ?? "",avg_tasteScore: value?["avg_tasteScore"] as? String ?? "",imgLogo_url: value?["imgLogo_url"] as? String ?? "",imgMenu_url: value?["imgMenu_url"] as? String ?? "",number: value?["number"] as? String ?? "",s_time: value?["s_time"] as? String ?? "")
-            self.deliveryFoodArrays.append(deliveryFoodModel)
-            
-            self._tableView?.insertRows(at: [IndexPath(row: self.deliveryFoodArrays.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+            for child in snapshot.children{
+                let value = (child as! DataSnapshot).value as? NSDictionary
+                
+                let deliveryFoodModel = DeliveryFoodModel(foodName: value?["foodName"] as? String ?? "", avg_speedScore: value?["avg_speedScore"] as? String ?? "",avg_tasteScore: value?["avg_tasteScore"] as? String ?? "",imgLogo_url: value?["imgLogo_url"] as? String ?? "",imgMenu_url: value?["imgMenu_url"] as? String ?? "",number: value?["number"] as? String ?? "",s_time: value?["s_time"] as? String ?? "")
+                self.deliveryFoodArrays.append(deliveryFoodModel)
+                
+                self._tableView?.insertRows(at: [IndexPath(row: self.deliveryFoodArrays.count - 1, section: 0)], with: UITableViewRowAnimation.automatic)
+            }
             
         }){ (error) in
             print(error.localizedDescription)

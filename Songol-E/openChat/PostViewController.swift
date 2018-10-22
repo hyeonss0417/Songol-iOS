@@ -15,6 +15,7 @@ class PostViewController: BaseUIViewController{
     private var dbRef : DatabaseReference! // 인스턴스 변수
     
     private var userinfo:UserInfo?
+    private var preVC: OpenChatParentViewController?
     
     @IBAction func PostButtonOnClick(_ sender: Any) {
         
@@ -24,10 +25,16 @@ class PostViewController: BaseUIViewController{
         
     }
     
+    public func setPreVC(preVC: OpenChatParentViewController){
+        self.preVC = preVC
+    }
+    
     override func callback() {
         
         let currentTime = Int(round( NSDate().timeIntervalSince1970 * 1000))
     dbRef.child("Questions").child(String(currentTime)).setValue(["date":currentTime, "numofcom":0, "snum":userinfo?.snumber, "text": textContent.text, "type":0])
+        
+        preVC?.readChatList()
         
         // dismiss alert & self
         self.navigationController?.popViewController(animated: true)

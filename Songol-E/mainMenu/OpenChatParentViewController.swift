@@ -16,8 +16,8 @@ class OpenChatParentViewController: UITableViewController{
     private let log:String = "LogTag"
     
     private var index = 0
-    
-    private var isFirst = true
+    private var parentCellIndex = 0
+    private var refControl: UIRefreshControl?
     
     struct parentCellData{
         var iconImage = UIImage()
@@ -25,6 +25,7 @@ class OpenChatParentViewController: UITableViewController{
         var date = String()
         var text = String()
         var numOfChild = Int()
+        var timeInterval = Int()
     }
     
     var chatTableViewData : [parentCellData] = []
@@ -36,8 +37,13 @@ class OpenChatParentViewController: UITableViewController{
         return self.index
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        parentCellIndex = indexPath.row
+        performSegue(withIdentifier: "comments", sender: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(self.log, "ind??????")
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTableViewParentCell", for: indexPath) as! ChatTableViewParentCell
         
         let chatData = chatTableViewData[indexPath.row]
@@ -62,16 +68,37 @@ class OpenChatParentViewController: UITableViewController{
         dbRef = Database.database().reference()
         
         self.tableView?.separatorColor = .clear
+    
+        readChatList()
+        
+        initwriteButton()
+        
+        initRefreshControl()
+        
+    }
+    
+    func initwriteButton(){
         
         let write = UIBarButtonItem(title: "글쓰기", style: .plain, target: self, action: Selector("wrtieButtonTapped"))
         
         self.navigationItem.rightBarButtonItems = [write]
         
-        if isFirst{
-            isFirst = false
-            readChatList()
-        }
+    }
+    
+    func initRefreshControl(){
+        refControl = UIRefreshControl()
+        refControl?.addTarget(self, action: Selector("refresh"), for: .valueChanged)
         
+        self.tableView?.insertSubview(refControl!, at: 0)
+        
+    }
+    
+    @objc func refresh() {
+        print("---", "hello?")
+        
+        readChatList()
+        
+        refControl?.endRefreshing()
     }
 
     @objc func wrtieButtonTapped() {
@@ -81,8 +108,11 @@ class OpenChatParentViewController: UITableViewController{
     func readChatList(){
         
         self.index = 0
-        self.chatTableViewData.removeAll()
-
+        
+        self.tableView?.reloadData()
+        
+        chatTableViewData.removeAll()
+    
         dbRef.child("Questions").observeSingleEvent(of: .value, with: {(snapshot) in
             
             for child in snapshot.children{
@@ -97,19 +127,19 @@ class OpenChatParentViewController: UITableViewController{
                 
                 let childCount = value?["numofcom"] as! Int
                 
-                let parentCellDataModel = parentCellData(iconImage: iconImage, username: username, date: date, text: value?["text"] as! String, numOfChild: childCount)
+                let parentCellDataModel = parentCellData(iconImage: iconImage, username: username, date: date, text: value?["text"] as! String, numOfChild: childCount, timeInterval : value?["date"] as! Int)
                 
                 self.chatTableViewData.append(parentCellDataModel)
-                
-//                self.tableView.insertRows(at: [IndexPath(row: self.chatTableViewData.count-1, section: 0)],  with: UITableViewRowAnimation.automatic)
             }
 
             self.chatTableViewData.reverse()
 
             for index in 0...self.chatTableViewData.count-1 {
+               
                 self.index = index+1
+                
                 self.tableView.insertRows(at: [IndexPath(row: self.index-1, section: 0)],  with: UITableViewRowAnimation.automatic)
-                //print(self.log, self.tableView.numberOfRows(inSection: 0))
+                
             }
             
         }){(error) in
@@ -127,6 +157,23 @@ class OpenChatParentViewController: UITableViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "comments" {
+            
+            if let destinationVC = segue.destination as? CommentsViewController {
+                destinationVC.setParentData(parentData: chatTableViewData[parentCellIndex], preVC: self)
+            }
+            
+        }else if segue.identifier == "post" {
+            
+            if let destinationVC = segue.destination as? PostViewController {
+                destinationVC.setPreVC(preVC: self)
+            }
+            
+        }
+    }
+    
 }
 
 class ChatTableViewParentCell: UITableViewCell{
