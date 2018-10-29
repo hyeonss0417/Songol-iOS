@@ -30,13 +30,28 @@ class LibrarySeatChildViewController: UIViewController, IndicatorInfoProvider, U
         
         self.webView.frame.size.width = 1 // height를 1로 설정하고 나서 다시 height를 바꿔줘야 제대로 동작한다.
         self.webView.frame.size.width = width
+    
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _url = URL(string: url!)
-        webView.loadRequest(URLRequest(url: _url!))
+        do{
+            
+        
+            var helpURL = URL(string: url!)
+            
+            var data = try Data(contentsOf: helpURL!)
+            webView?.load(data, mimeType: "text/html", textEncodingName: "euc-kr", baseURL: helpURL!)
+            // 인코딩만 넣어주면 됩니다.
+        
+        } catch {}
+        
+        
+
+        
+        //webView.loadRequest(URLRequest(url: URL(string: url!)!))
         
         webView.scalesPageToFit = true
 

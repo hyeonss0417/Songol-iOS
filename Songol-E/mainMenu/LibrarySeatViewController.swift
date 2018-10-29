@@ -24,8 +24,15 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         
         initTabBar()
         
-        let url = URL(string: "http://ebook.kau.ac.kr:81/domian5.asp")
-        webView.loadRequest(URLRequest(url: url!))
+        do{
+            
+            var helpURL = URL(string: "http://ebook.kau.ac.kr:81/domian5.asp")
+            
+            var data = try Data(contentsOf: helpURL!)
+            webView?.load(data, mimeType: "text/html", textEncodingName: "euc-kr", baseURL: helpURL!)
+            // 인코딩만 넣어주면 됩니다.
+            
+        } catch {}
         
         webView.scalesPageToFit = true
     
@@ -76,6 +83,7 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         
         self.webView.frame.size.height = 1 // height를 1로 설정하고 나서 다시 height를 바꿔줘야 제대로 동작한다.
         self.webView.frame.size.height = height
+        
     }
     
 

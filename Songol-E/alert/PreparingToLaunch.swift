@@ -26,6 +26,12 @@ class PreparingToLaunch{
         
         alertController.addAction(okAction)
         
+        if let popoverController = alertController.popoverPresentationController {
+            popoverController.sourceView = targetVC?.view
+            popoverController.sourceRect = CGRect(x: (targetVC?.view.bounds.midX)!, y: (targetVC?.view.bounds.midY)!, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
         targetVC?.present(alertController,animated: true){
             alertController.view.superview?.subviews.first?.isUserInteractionEnabled = true
             
