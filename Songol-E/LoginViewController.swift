@@ -11,7 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseDatabase
 
-class LoginViewController: UIViewController,UIWebViewDelegate {
+class LoginViewController: UIViewController,UIWebViewDelegate, UITextFieldDelegate {
     
     private var dbRef : DatabaseReference! // 인스턴스 변수
     
@@ -21,10 +21,15 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     @IBOutlet weak var labelPW: UITextField!
     
+    private var loadingDialog:AnyObject?
+    
     @IBAction func guestButtonOnClick(_ sender: Any) {
+                
         labelID.text = "guest"
         labelPW.text = "111111"
+        
         firebaseLoginWithEmail()
+        
     }
     
     var userID:String?
@@ -38,6 +43,9 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
             FormNotFilledAlert(vc:self).show()
             
         }else{
+            
+            loadingDialog = LoadingDialog().displaySpinner(onView: self.view)
+            
             userID = labelID.text
             userPW = labelPW.text
             
@@ -47,6 +55,9 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        labelID.delegate = self
+        labelPW.delegate = self
         
         CookieAndCache().removeAll()
         
@@ -64,6 +75,8 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         if request.url?.absoluteString == "https://www.kau.ac.kr/page/login.jsp?target_page=act_Lms_Check.jsp@chk1-1&refer_page=" {
             
             LoginFailAlert(vc:self).show()
+            
+            LoadingDialog().removeSpinner(spinner: self.loadingDialog as! UIView)
             
             return false;
             
@@ -133,8 +146,10 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
 
         AccountInfo().storeUserInfo(userInfo: userInfo)
         
-
+        
         self.performSegue(withIdentifier: "SWReveal", sender: nil)
+            
+        LoadingDialog().removeSpinner(spinner: self.loadingDialog as! UIView)
 
         }){(error) in
             print(error.localizedDescription)
@@ -163,9 +178,13 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         Auth.auth().createUser(withEmail: self.labelID.text!+temp+"@kau.ac.kr", password: self.labelPW.text!+temp) { (user, error) in
                 
             if user !=  nil{//register success
-                print("success!")
+                
                 self.uid = Auth.auth().currentUser?.uid
+                
                 self.performSegue(withIdentifier: "selectMajor", sender: nil)
+                
+                LoadingDialog().removeSpinner(spinner: self.loadingDialog as! UIView)
+                
             }else if count < 10 {// failed
                 print("create failed!")
                 self.firebaseCreateUserWithEmail(count: count+1)
@@ -189,7 +208,14 @@ class LoginViewController: UIViewController,UIWebViewDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

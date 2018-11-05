@@ -36,6 +36,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.menuImage.image = main_menu_imgs[indexPath.row]
         cell.iconImage.image = main_menu_icons[indexPath.row]
         cell.label.text = main_menu_strs[indexPath.row]
+        
+        if(UIDevice.current.userInterfaceIdiom == .pad){
+            cell.label.font = cell.label.font.withSize(25)
+        }
+        
         cell.label.textColor = UIColor.white
         return cell
     }
@@ -79,9 +84,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = collectionView.frame.width/3 - 1
+        if(UIDevice.current.userInterfaceIdiom == .phone){
+            
+            //iphone
+            
+            let width = collectionView.frame.width/3 - 1
+            
+            return CGSize(width: width, height: width)
+            
+        } else {
+            
+            //ipad
+            
+            let width = collectionView.frame.width/4 - 1
+            
+            return CGSize(width: width, height: width)
+            
+        }
         
-        return CGSize(width: width, height: width)
+        
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

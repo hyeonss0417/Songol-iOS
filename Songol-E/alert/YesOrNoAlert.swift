@@ -25,21 +25,25 @@ struct YesOrNoAlert{
     
     func show(){
         
-        let alertController = UIAlertController(title: title,message: msg , preferredStyle: UIAlertControllerStyle.alert)
         
-        //UIAlertActionStye.destructive 지정 글꼴 색상 변경
-        //let noAction =
-        
-        let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-            self.vc?.callback()
+        if(UIDevice.current.userInterfaceIdiom == .phone){
+            let alertController = UIAlertController(title: title,message: msg , preferredStyle: UIAlertControllerStyle.alert)
+            
+            //UIAlertActionStye.destructive 지정 글꼴 색상 변경
+            //let noAction =
+            
+            let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
+                self.vc?.callback()
+            }
+            let cancelActtion = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive)
+            
+            alertController.addAction(cancelActtion)
+            alertController.addAction(okAction)
+            
+            vc?.present(alertController,animated: true,completion: nil)
         }
-        let cancelActtion = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive)
-        
-        alertController.addAction(cancelActtion)
-        alertController.addAction(okAction)
-        
-        vc?.present(alertController,animated: true,completion: nil)
-        
     }
+    
+    
     
 }

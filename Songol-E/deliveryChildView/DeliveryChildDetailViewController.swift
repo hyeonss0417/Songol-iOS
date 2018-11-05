@@ -13,6 +13,7 @@ class DeliveryChildDetailViewController: UIViewController {
     
     @IBOutlet weak var labelAverage: UILabel!
 
+    
     private var avgTaste:Double?
     private var avgSpeed: Double?
     
@@ -20,7 +21,7 @@ class DeliveryChildDetailViewController: UIViewController {
     }
     
     @IBAction func CommentsBtnOnClicked(_ sender: Any) {
-        
+        PreparingToLaunch(vc: self).show()
     }
     
     func setDeliveryInfo(deliveryInfo : DeliveryFoodModel){

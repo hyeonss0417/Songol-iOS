@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITableViewDataSource{
+class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate{
         
     struct commentData{
         var iconImage = UIImage()
@@ -19,6 +19,9 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
         var text = String()
     }
     
+    @IBOutlet weak var bottomView: UIView!
+    
+    private var keyBoardState = 0
     
     private var parentData : OpenChatParentViewController.parentCellData?
     private var preVC: OpenChatParentViewController?
@@ -115,8 +118,6 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
                 self.chatTableViewData.append(childCellDataModel)
             }
             
-            self.chatTableViewData.reverse()
-            
             if self.chatTableViewData.count > 0{
                 for index in 0...self.chatTableViewData.count-1 {
                     self.index = index+1
@@ -153,6 +154,10 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
     
     func initView(){
         
+        textComments.delegate = self
+        
+        mTableView.allowsSelection = false
+        
         imgParenticon.image = parentData?.iconImage
         labelParentDate.text = parentData?.date
         labelParentContent.text = parentData?.text
@@ -162,8 +167,50 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
         
         imgMyIcon.image = AccountInfo().userIconSelection(snum: (userinfo?.snumber)!)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        mTableView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("TableTapped")))
         
+    }
+    
+    @objc func TableTapped(){
+          self.view.endEditing(true)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if keyBoardState == 0 {
+                keyBoardState = 1
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            if keyBoardState == 1 {
+                keyBoardState = 0
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+  
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: self.view.window)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: self.view.window)
     }
     
 }

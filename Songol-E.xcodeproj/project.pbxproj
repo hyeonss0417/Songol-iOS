@@ -30,6 +30,7 @@
 		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
 		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
 		AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2C414521383C6F000E4215 /* SWRevealViewController.m */; };
+		AF2D60EC218DC94C00206C54 /* LoadingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2D60EB218DC94C00206C54 /* LoadingDialog.swift */; };
 		AF3213AA2147FFE50079FF54 /* OpenChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */; };
 		AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */; };
 		AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */; };
@@ -112,6 +113,7 @@
 		AF2C414321383C6E000E4215 /* Songol-E-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Songol-E-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF2C414421383C6F000E4215 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		AF2C414521383C6F000E4215 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		AF2D60EB218DC94C00206C54 /* LoadingDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingDialog.swift; sourceTree = "<group>"; };
 		AF3213A92147FFE50079FF54 /* OpenChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatViewController.swift; sourceTree = "<group>"; };
 		AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryChildDetailViewController.swift; sourceTree = "<group>"; };
 		AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageDownloading.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */,
 				AF193F2F2178DCA80073D7E8 /* FormNotFilledAlert.swift */,
 				AF193F312178E1690073D7E8 /* YesOrNoAlert.swift */,
+				AF2D60EB218DC94C00206C54 /* LoadingDialog.swift */,
 			);
 			path = alert;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */,
 				AF2C0B612177924A00C1BB31 /* CookieAndCache.swift in Sources */,
 				AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */,
+				AF2D60EC218DC94C00206C54 /* LoadingDialog.swift in Sources */,
 				AF193F362179AFDF0073D7E8 /* CommentsViewController.swift in Sources */,
 				AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */,
 				AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */,
