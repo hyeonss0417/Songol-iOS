@@ -14,6 +14,8 @@ class LMSViewController: UIViewController, UIWebViewDelegate{
     
     let stringURL = "http://lms.kau.ac.kr/my/"
     
+    private var check = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

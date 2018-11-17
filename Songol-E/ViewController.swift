@@ -65,8 +65,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
         case 6:
-//            webView.loadRequest(URLRequest(url:URL(string: urlPortalLogin)!))
-            PreparingToLaunch(vc: self).show()
+            if stateLogin{
+                performSegue(withIdentifier: "portalCheck", sender: nil)
+            }
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
@@ -167,16 +168,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-       if segue.identifier == "로그아웃"{
+       if segue.identifier == "로그아웃" {
+        
             UserDefaults.standard.set(nil, forKey: "key1")
             
             CookieAndCache().removeAll()
         
             isLogout = true
+        
             webView.loadRequest(URLRequest(url: URL(string: urlLMSLogin)!))
+        
+       }else if segue.identifier == "portalCheck" {
+        
+            if let destinationVC = segue.destination as? PortalCheckViewController {
+                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp", stringTitle: "강의 시간표")
+            }
+        
        }else{
         
-            NavMenuController().webRedirect(segue: segue)
+        NavMenuController().webRedirect(segue: segue)
         
         }
     }
@@ -242,9 +252,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         else if webView.request?.url?.absoluteString == urlMyLMS {
-            
              stateLogin = true
-            
         }
         
     }

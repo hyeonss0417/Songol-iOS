@@ -153,6 +153,10 @@
                         <segue destination="FOI-Cn-cph" kind="show" identifier="lms" id="vHt-aB-Nqy"/>
                         <segue destination="4IR-TE-gWX" kind="show" identifier="교직원 정보" id="oaw-Uf-LkQ"/>
                         <segue destination="4IR-TE-gWX" kind="show" identifier="시간표" id="C8U-SY-HgK"/>
+                        <segue destination="EhR-pX-Yi9" kind="show" identifier="portalCheck" id="ke0-Y4-dM0"/>
+                        <segue destination="EhR-pX-Yi9" kind="show" identifier="시험 시간표" id="6AH-eb-9TN"/>
+                        <segue destination="EhR-pX-Yi9" kind="show" identifier="성적 확인" id="MOv-oM-d7E"/>
+                        <segue destination="EhR-pX-Yi9" kind="show" identifier="장학금 수혜내역" id="Vdb-iB-IiD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -584,7 +588,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="41Q-zg-pt0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f2o-Gp-bGv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1165,6 +1169,51 @@
             </objects>
             <point key="canvasLocation" x="3297" y="927"/>
         </scene>
+        <!--Portal Check View Controller-->
+        <scene sceneID="S9U-h2-NVf">
+            <objects>
+                <viewController id="EhR-pX-Yi9" customClass="PortalCheckViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8eh-EY-w2W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-cm-Qqg">
+                                <rect key="frame" x="0.0" y="480" width="320" height="0.0"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="IGC-Eh-EeW"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="EhR-pX-Yi9" id="gJe-Cw-WGY"/>
+                                </connections>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xo4-fP-PCL">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BlJ-vD-6RD" firstAttribute="trailing" secondItem="Xo4-fP-PCL" secondAttribute="trailing" id="96L-wY-COI"/>
+                            <constraint firstItem="BlJ-vD-6RD" firstAttribute="bottom" secondItem="ycH-cm-Qqg" secondAttribute="bottom" id="K47-aT-aRo"/>
+                            <constraint firstItem="Xo4-fP-PCL" firstAttribute="top" secondItem="BlJ-vD-6RD" secondAttribute="top" id="O3a-PH-xxA"/>
+                            <constraint firstItem="ycH-cm-Qqg" firstAttribute="leading" secondItem="BlJ-vD-6RD" secondAttribute="leading" id="XrD-yE-7Jf"/>
+                            <constraint firstItem="Xo4-fP-PCL" firstAttribute="leading" secondItem="BlJ-vD-6RD" secondAttribute="leading" id="cRf-10-Sbg"/>
+                            <constraint firstItem="ycH-cm-Qqg" firstAttribute="top" secondItem="Xo4-fP-PCL" secondAttribute="bottom" id="eCl-Er-ef6"/>
+                            <constraint firstItem="BlJ-vD-6RD" firstAttribute="trailing" secondItem="ycH-cm-Qqg" secondAttribute="trailing" id="kGC-DB-tXN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BlJ-vD-6RD"/>
+                    </view>
+                    <connections>
+                        <outlet property="mFrameView" destination="Xo4-fP-PCL" id="Adz-Ob-iel"/>
+                        <outlet property="mWebView" destination="ycH-cm-Qqg" id="sXx-dw-Vk5"/>
+                        <segue destination="92K-BJ-8Am" kind="custom" identifier="childWebView" customClass="ChildViewNav" customModule="Songol_E" customModuleProvider="target" id="2sd-OD-0y7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFe-fZ-wjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="992" y="1680"/>
+        </scene>
         <!--Open Chat Parent View Controller-->
         <scene sceneID="wmq-UP-9MP">
             <objects>
@@ -1260,6 +1309,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfD-Qv-nPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1952" y="1701"/>
+        </scene>
+        <!--Child Web View Controller-->
+        <scene sceneID="vUC-sJ-GiM">
+            <objects>
+                <viewController id="92K-BJ-8Am" customClass="ChildWebViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZDv-cO-jIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xt8-MK-k0H">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="92K-BJ-8Am" id="Yod-TU-Fg1"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FDW-W2-paf" firstAttribute="trailing" secondItem="Xt8-MK-k0H" secondAttribute="trailing" id="EhO-TZ-jiL"/>
+                            <constraint firstItem="Xt8-MK-k0H" firstAttribute="leading" secondItem="ZDv-cO-jIQ" secondAttribute="leading" id="IyW-ij-O7d"/>
+                            <constraint firstItem="FDW-W2-paf" firstAttribute="bottom" secondItem="Xt8-MK-k0H" secondAttribute="bottom" id="NL3-a8-BV5"/>
+                            <constraint firstItem="Xt8-MK-k0H" firstAttribute="top" secondItem="FDW-W2-paf" secondAttribute="top" id="odN-x2-s9s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FDW-W2-paf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DRs-BC-Uai"/>
+                    <connections>
+                        <outlet property="mWebView" destination="Xt8-MK-k0H" id="koG-hR-Ca5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zfk-is-Ud9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="2492"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="vb1-ZA-WOB">
@@ -1892,8 +1975,9 @@
         <image name="nav_menu" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bWP-iL-TbT"/>
-        <segue reference="d7C-7G-c3c"/>
+        <segue reference="6AH-eb-9TN"/>
+        <segue reference="NAp-3A-8mB"/>
+        <segue reference="xZh-le-WxO"/>
         <segue reference="17Q-j5-9Pm"/>
         <segue reference="VOw-jM-dte"/>
     </inferredMetricsTieBreakers>

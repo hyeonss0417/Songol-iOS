@@ -179,21 +179,40 @@ class CommentsViewController : BaseUIViewController, UITableViewDelegate, UITabl
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            
+        
+        var height: CGFloat?
+    
+        if var keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if #available(iOS 11.0, *) {
+                let bottomInset = view.safeAreaInsets.bottom
+                 height = keyboardSize.height - bottomInset
+            }else{
+                height =  keyboardSize.height
+            }
             if keyBoardState == 0 {
                 keyBoardState = 1
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= height!
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
+        
+        var height: CGFloat?
+        
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if #available(iOS 11.0, *) {
+                let bottomInset = view.safeAreaInsets.bottom
+                height = keyboardSize.height - bottomInset
+            }else{
+                
+                height = keyboardSize.height
+                
+            }
             
             if keyBoardState == 1 {
                 keyBoardState = 0
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y += height!
             }
         }
     }

@@ -34,10 +34,22 @@ struct NavMenuController{
                 destinationVC.setWebInfo(barTitle: "교직원 정보", url: "http://www.kau.ac.kr/page/faculty/staff.jsp")
             }
             
-        }else if segue.identifier == "시간표" {
-            if let destinationVC = segue.destination as? WebInfoViewController {
-                destinationVC.setWebInfo(barTitle: "시간표", url: urlTimeTable)
+        }else if segue.identifier == "시험 시간표"{
+            if let destinationVC = segue.destination as? PortalCheckViewController {
+                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/SugangExamList.jsp", stringTitle: "시험 시간표")
             }
+        }else if  segue.identifier == "성적 확인" {
+            
+            if let destinationVC = segue.destination as? PortalCheckViewController {
+                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/GradTermList.jsp", stringTitle: "성적 확인")
+            }
+            
+        }else if segue.identifier == "장학금 수혜내역" {
+            
+            if let destinationVC = segue.destination as? PortalCheckViewController {
+                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/PersScholarTakeList.jsp", stringTitle: "장학금 수혜내역")
+            }
+            
         }
         
     }
