@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIWebViewDelegate {
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIWebViewDelegate {
     
     private var isLogout = false
     private var stateLogin = false
@@ -18,11 +18,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet weak var navMenuButton: UIBarButtonItem!
     
     var positionValue : String?
-    var currentViewController : ViewController?
-    
+    var currentViewController : MainViewController?
    
     var userinfo:UserInfo?
-
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         //image counting
@@ -132,9 +130,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         if userinfo?.username != "guest" {
             
-            print("tagg userid : \(userinfo?.username) pw: \(userinfo?.pw)")
-            
-            webView.loadRequest(URLRequest(url:URL(string: urlMyLMS)!))
+            webView.loadRequest(URLRequest(url:URL(string: UrlLmsLoginSuccess)!))
             
         }
     }
@@ -176,7 +172,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
             isLogout = true
         
-            webView.loadRequest(URLRequest(url: URL(string: urlLMSLogin)!))
+            webView.loadRequest(URLRequest(url: URL(string: UrlLmsLogin)!))
         
        }else if segue.identifier == "portalCheck" {
         
@@ -186,7 +182,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
        }else{
         
-        NavMenuController().webRedirect(segue: segue)
+            NavMenuController().webRedirect(segue: segue)
         
         }
     }
@@ -229,11 +225,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         print("tagg didfinished", webView.request?.url?.absoluteString)
         
-        if webView.request?.url?.absoluteString == urlMyPortal{
+        if webView.request?.url?.absoluteString == UrlMyPortal{
             performSegue(withIdentifier: "시간표", sender: nil)
         }
         
-        else if  (webView.request?.url?.absoluteString == urlLMSLogin && !isLogout) || webView.request?.url?.absoluteString == urlKAULogin {
+        else if  (webView.request?.url?.absoluteString == UrlLmsLogin && !isLogout) || webView.request?.url?.absoluteString == UrlKAULogin {
             
             print("tagg let put my account")
             
@@ -251,7 +247,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             stateLogin = true
         }
         
-        else if webView.request?.url?.absoluteString == urlMyLMS {
+        else if webView.request?.url?.absoluteString == UrlLmsLoginSuccess {
              stateLogin = true
         }
         

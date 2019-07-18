@@ -53,7 +53,6 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         userinfo = accountInfo.getUserInfo()
         
-       
         labelUserName.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
         
         imgUserIcon.image = AccountInfo().navUserIconSelection(snum: (userinfo?.snumber)!)
@@ -63,39 +62,25 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @objc func imgTapped() {
-        if userinfo?.username != "guest"{
-            performSegue(withIdentifier: "iconselector", sender: self)
-        }
+//        if userinfo?.username != "guest"{
+//            performSegue(withIdentifier: "iconselector", sender: self)
+//        }
     }
     
     public func changeView(imgSource:UIImage, label:String, snum:String)
     {
         //firebase userinfo change
-        
         labelUserName.text = label
         imgUserIcon.image = imgSource
-        
-        
-        
     }
-    
-    func changeUserSnum(snum: String){
-        
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "iconselector"{
-             let dest = segue.destination as! IconSelectPopUp
-            dest.setNavVCInstance(navVC: self)
-            
-        }else{
-            let destinationNavigation = segue.destination as! UINavigationController
-            
-            let destinationViewController = destinationNavigation.topViewController as! ViewController
-            
-            destinationViewController.positionValue = arrayStr[self.tableView.indexPathForSelectedRow!.row]
-        }
+
+        let destinationNavigation = segue.destination as! UINavigationController
         
+        let destinationViewController = destinationNavigation.topViewController as! MainViewController
+        
+        destinationViewController.positionValue = arrayStr[self.tableView.indexPathForSelectedRow!.row]
     }
     
 }

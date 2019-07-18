@@ -16,11 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let log:String = "LogTag"
     
-   let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
+    let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
     
     var window: UIWindow?
-    
-    var storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     var userinfo: UserInfo?
 
@@ -33,21 +31,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : blueInspireColor]
         
-        getUserInfo()
+        self.window?.makeKey()
+        
+        initViewController()
         
         return true
     }
     
-    public func getUserInfo(){
-        
+    func initViewController(){
+
         let decoded  = UserDefaults.standard.object(forKey: "key1") as? Data
         if decoded == nil{
-            self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+            self.window?.rootViewController =
+                CommonUtils()
+                    .mainStoryboard
+                    .instantiateViewController(withIdentifier: "loginViewController")
+                        as! LoginViewController
         }else {
-              self.window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "navigationViewController") as! SWRevealViewController
+            
+            setUserInstance()
+            
+            self.window?.rootViewController =
+                CommonUtils()
+                    .mainStoryboard
+                    .instantiateViewController(withIdentifier: "CheckAuthViewController")
+                        as! CheckAuthViewController
         }
     }
     
+    func setUserInstance(){
+        let decoded  = UserDefaults.standard.object(forKey: "key1") as! Data
+        let userinfo = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UserInfo
+        CommonUtils.sharedInstance.setUser(user: userinfo)
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

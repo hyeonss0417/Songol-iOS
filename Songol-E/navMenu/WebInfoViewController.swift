@@ -39,10 +39,10 @@ class WebInfoViewController: UIViewController, UIWebViewDelegate {
         
         print("tagg url: ", request.url)
         
-        if request.url?.absoluteString == urlKAU{
-            self.webView.loadRequest(URLRequest(url: URL(string:urlMyPortal)!))
-        }else if request.url?.absoluteString == urlMyPortal{
-            self.webView.loadRequest(URLRequest(url: URL(string:urlExamTable)!))
+        if request.url?.absoluteString == UrlKAU{
+            self.webView.loadRequest(URLRequest(url: URL(string:UrlMyPortal)!))
+        }else if request.url?.absoluteString == UrlMyPortal{
+            self.webView.loadRequest(URLRequest(url: URL(string:UrlExamTable)!))
         }
         return true
         
@@ -56,9 +56,8 @@ class WebInfoViewController: UIViewController, UIWebViewDelegate {
         
         print("tagg url:::: ", webView.request?.url)
         
-        if webView.request?.url?.absoluteString == urlKAULogin
+        if webView.request?.url?.absoluteString == UrlKAULogin
         {
-            
             let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(userinfo?.username as! String)\';"
             
             let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(userinfo?.pw as! String)\';"

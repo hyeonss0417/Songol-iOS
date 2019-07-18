@@ -35,7 +35,6 @@ class UserInfo : NSObject, NSCoding{
         
     }
     
-  
     func encode(with aCoder: NSCoder) {
         
         aCoder.encode(uid, forKey: "uid")
