@@ -43,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let decoded  = UserDefaults.standard.object(forKey: "key1") as? Data
         if decoded == nil{
             self.window?.rootViewController =
-                CommonUtils()
+                CommonUtils
                     .mainStoryboard
                     .instantiateViewController(withIdentifier: "loginViewController")
                         as! LoginViewController
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setUserInstance()
             
             self.window?.rootViewController =
-                CommonUtils()
+                CommonUtils
                     .mainStoryboard
                     .instantiateViewController(withIdentifier: "CheckAuthViewController")
                         as! CheckAuthViewController

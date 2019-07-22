@@ -14,4 +14,6 @@ class BaseUIViewController: UIViewController {
     
     func setNavData(){}
     
+    let user = CommonUtils.sharedInstance.user
+    
 }

@@ -14,9 +14,7 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var imgUserIcon: UIImageView!
     @IBOutlet weak var labelUserName: UILabel!
     
-    private var accountInfo = AccountInfo()
-    
-    private var userinfo:UserInfo?
+    private var userinfo = CommonUtils.sharedInstance.user
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -43,21 +41,8 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        initView()
         
         tableView.rowHeight = 60
-    }
-    
-    func initView(){
-        
-        userinfo = accountInfo.getUserInfo()
-        
-        labelUserName.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
-        
-        imgUserIcon.image = AccountInfo().navUserIconSelection(snum: (userinfo?.snumber)!)
-        imgUserIcon.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(NavRealViewController.imgTapped)))
-        imgUserIcon.isUserInteractionEnabled = true
         
     }
     

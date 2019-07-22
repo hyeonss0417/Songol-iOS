@@ -11,7 +11,6 @@ import UIKit
 class PortalCheckViewController : UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var mWebView: UIWebView!
-    
     @IBOutlet weak var mFrameView: UIView!
     
     

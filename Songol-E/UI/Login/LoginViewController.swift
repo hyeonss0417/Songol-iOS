@@ -29,21 +29,15 @@ class LoginViewController: UIViewController {
         labelPW.delegate = self
         webKit.navigationDelegate = self
         
-        CookieAndCache().removeAll()
-        
-        initView()
-    }
-    
-    func initView(){
-        labelID.placeholder = "Portal ID"
-        labelPW.placeholder = "Portal PW"
+        //clear UserDefault DB
+        UserDefaults.standard.set(nil, forKey: "key1")
+
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
         
         labelID.text = "guest"
         labelPW.text = "111111"
-        
         firebaseLoginWithEmail()
         
     }
@@ -59,7 +53,7 @@ class LoginViewController: UIViewController {
             userID = labelID.text
             userPW = labelPW.text
             
-            webKit.loadWithStringUrl(url: UrlLmsLogin)
+            webKit.loadWithStringUrl(url: UrlLmsLogin1)
             loadingDialog = LoadingDialog().displaySpinner(onView: self.view)
         }
     }
@@ -130,7 +124,7 @@ extension LoginViewController: WKNavigationDelegate{
         
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
-        case UrlLmsLogin:
+        case UrlLmsLogin1, UrlLmsLogin2:
             CommonUtils().macroKauLogin(on: webKit, id: userID!, pw: userPW!)
             break
         case UrlLmsLoginSuccess:

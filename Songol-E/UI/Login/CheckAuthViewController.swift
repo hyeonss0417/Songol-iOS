@@ -26,13 +26,13 @@ class CheckAuthViewController: UIViewController {
     
     public func kauLoginOnSuccess(){
          UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils().mainStoryboard
+            CommonUtils.mainStoryboard
                 .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
     }
     public func kauLoginOnFail(){
         
         UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils().mainStoryboard
+            CommonUtils.mainStoryboard
                 .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
     }
 }
@@ -42,7 +42,7 @@ extension CheckAuthViewController: WKNavigationDelegate{
         
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
-            case UrlLmsLogin:
+            case UrlLmsLogin1, UrlLmsLogin2 :
                 CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
                 break
             case UrlLmsLoginSuccess:

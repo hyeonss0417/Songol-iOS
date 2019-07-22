@@ -8,11 +8,9 @@
 //
 
 import UIKit
-
+import WebKit
 class ChildWebViewController : UIViewController, UIWebViewDelegate {
-    
-    @IBOutlet weak var mWebView: UIWebView!
-    
+    @IBOutlet weak var wkWebView: WKWebView!
     private var stringURL: String?
     private var stringTitle : String?
     
@@ -25,15 +23,8 @@ class ChildWebViewController : UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initWebView()
-        
-    }
-    
-    func initWebView(){
-        print("=== hello")
-        mWebView.loadRequest(URLRequest(url: URL(string: stringURL!)!))
-        mWebView.scalesPageToFit = true
-    
+        wkWebView.loadWithStringUrl(url: stringURL!)
+        wkWebView.sizeToFit()
     }
     
 }
