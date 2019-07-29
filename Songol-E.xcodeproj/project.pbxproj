@@ -59,6 +59,8 @@
 		AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE40B852152396400A7E747 /* MainNavigationSegue.swift */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
+		AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953ED22EF2F9300646E4D /* Protocols.swift */; };
+		AFE953F122EF365800646E4D /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F022EF365800646E4D /* Timers.swift */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
@@ -147,6 +149,8 @@
 		AFE40B852152396400A7E747 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
+		AFE953ED22EF2F9300646E4D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AFE953F022EF365800646E4D /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
+				AFE953ED22EF2F9300646E4D /* Protocols.swift */,
+				AFE953F022EF365800646E4D /* Timers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -689,6 +695,7 @@
 				AF69247322E033DC00FA0CFA /* CheckAuthViewController.swift in Sources */,
 				AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */,
 				AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */,
+				AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
 				AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */,
@@ -699,6 +706,7 @@
 				AF2C411721383C0C000E4215 /* MainViewController.swift in Sources */,
 				AF0CABC722E05644008EA92D /* WKWebView+.swift in Sources */,
 				AF3E9A1A2175BCCB00C338F1 /* GetSNumber.swift in Sources */,
+				AFE953F122EF365800646E4D /* Timers.swift in Sources */,
 				AF3D5CF5213D452F0090F6A9 /* DeliveryChildDetailViewController.swift in Sources */,
 				AFF0B84421384E5A00D5F9DB /* DishViewController.swift in Sources */,
 				AF193F322178E1690073D7E8 /* YesOrNoAlert.swift in Sources */,

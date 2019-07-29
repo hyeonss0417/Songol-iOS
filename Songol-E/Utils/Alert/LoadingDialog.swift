@@ -6,26 +6,28 @@
 //  Copyright © 2018 최민섭. All rights reserved.
 //
 
-class LoadingDialog{
+class LoadingDialog: PageLoadingProtocol {
     
-    func displaySpinner(onView : UIView) -> UIView {
-        let spinnerView = UIView.init(frame: onView.bounds)
-        spinnerView.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+    var spinner: UIView?
+    
+    func displaySpinner(on onView : UIView) {
+        
+        let spinner = UIView.init(frame: onView.bounds)
+        spinner.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
         ai.startAnimating()
-        ai.center = spinnerView.center
+        ai.center = spinner.center
         
         DispatchQueue.main.async {
-            spinnerView.addSubview(ai)
-            onView.addSubview(spinnerView)
+            spinner.addSubview(ai)
+            onView.addSubview(spinner)
+            self.spinner = spinner
         }
-        
-        return spinnerView
     }
     
-    func removeSpinner(spinner :UIView) {
+     func removeSpinner() {
         DispatchQueue.main.async {
-            spinner.removeFromSuperview()
+            self.spinner?.removeFromSuperview()
         }
     }
     

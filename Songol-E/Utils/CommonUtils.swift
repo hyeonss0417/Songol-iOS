@@ -12,7 +12,7 @@ import WebKit
 final class CommonUtils: NSObject {
 
     static let sharedInstance = CommonUtils()
-    static let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
     var isGuest = false
     var user: UserInfo?
@@ -27,7 +27,7 @@ final class CommonUtils: NSObject {
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let yesAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
             UIApplication.shared.keyWindow?.rootViewController =
-                CommonUtils.mainStoryboard
+                CommonUtils().mainStoryboard
                     .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
         }
         let noAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in

@@ -9,14 +9,21 @@
 import UIKit
 import WebKit
 
-class CheckAuthViewController: UIViewController {
+class CheckAuthViewController: BaseUIViewController {
     
     @IBOutlet weak var wkWebView: WKWebView!
-    
-    let user = CommonUtils.sharedInstance.user
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if user?.username == "guest" {
+            
+            Timers().set(duration: 3){
+                UIApplication.shared.keyWindow?.rootViewController =
+                    CommonUtils().mainStoryboard
+                        .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+            }
+        }
         
         wkWebView.loadWithStringUrl(url: UrlMyLms)
         
@@ -25,14 +32,20 @@ class CheckAuthViewController: UIViewController {
     }
     
     public func kauLoginOnSuccess(){
-         UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils.mainStoryboard
+        
+        let cookieStore = wkWebView.configuration.websiteDataStore.httpCookieStore
+        cookieStore.getAllCookies { (cookies) in
+            print("cookies : \(cookies)")
+        }
+        
+        UIApplication.shared.keyWindow?.rootViewController =
+            CommonUtils().mainStoryboard
                 .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
     }
     public func kauLoginOnFail(){
         
         UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils.mainStoryboard
+            CommonUtils().mainStoryboard
                 .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
     }
 }
@@ -54,6 +67,7 @@ extension CheckAuthViewController: WKNavigationDelegate{
                 break
             case "https://www.kau.ac.kr/page/act_login.jsp":
                 //방화벽 차단 당했을때 처리??
+                print("blocked")
                 break
             default:
                 print("where..? : \(currentUrl)")

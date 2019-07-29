@@ -16,11 +16,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var webKit: WKWebView!
     @IBOutlet weak var labelID: UITextField!
     @IBOutlet weak var labelPW: UITextField!
-    
-    private var loadingDialog: AnyObject?
     private var userID:String?
     private var userPW:String?
     private var dbRef = Database.database().reference() // 인스턴스 변수
+    private let dialog = LoadingDialog()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +53,7 @@ class LoginViewController: UIViewController {
             userPW = labelPW.text
             
             webKit.loadWithStringUrl(url: UrlLmsLogin1)
-            loadingDialog = LoadingDialog().displaySpinner(onView: self.view)
+            dialog.displaySpinner(on: self.view)
         }
     }
     
@@ -101,7 +100,7 @@ class LoginViewController: UIViewController {
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
         self.performSegue(withIdentifier: "login", sender: nil)
-        LoadingDialog().removeSpinner(spinner: self.loadingDialog as! UIView)
+        dialog.removeSpinner()
     }
     
   
@@ -133,7 +132,7 @@ extension LoginViewController: WKNavigationDelegate{
             authOnSuccess(type: .normal)
             break
         case UrlLMSLoginFail:
-            LoadingDialog().removeSpinner(spinner: self.loadingDialog as! UIView)
+            dialog.removeSpinner()
             CommonUtils().alertLoginFail(on: self)
             break
         default:

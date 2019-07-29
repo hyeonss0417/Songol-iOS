@@ -23,11 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var userinfo: UserInfo?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         FirebaseApp.configure()
-        let authUI = FUIAuth.defaultAuthUI()
-        // You need to adopt a FUIAuthDelegate protocol to receive callback
-        authUI?.delegate = self as? FUIAuthDelegate
+        
+        FUIAuth.defaultAuthUI()?.delegate = self as? FUIAuthDelegate
         
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : blueInspireColor]
         
@@ -43,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let decoded  = UserDefaults.standard.object(forKey: "key1") as? Data
         if decoded == nil{
             self.window?.rootViewController =
-                CommonUtils
+                CommonUtils()
                     .mainStoryboard
                     .instantiateViewController(withIdentifier: "loginViewController")
                         as! LoginViewController
@@ -52,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setUserInstance()
             
             self.window?.rootViewController =
-                CommonUtils
+                CommonUtils()
                     .mainStoryboard
                     .instantiateViewController(withIdentifier: "CheckAuthViewController")
                         as! CheckAuthViewController

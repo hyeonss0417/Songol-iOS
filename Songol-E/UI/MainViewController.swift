@@ -33,7 +33,7 @@ class MainViewController: BaseUIViewController {
         self.navigationItem.leftBarButtonItem?.tintColor = blueInspireColor
         
         //remove border
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         
         //remove back button title
@@ -43,7 +43,7 @@ class MainViewController: BaseUIViewController {
         navMenuButton.action = #selector(SWRevealViewController.revealToggle(_:))
    
         //set RevealView Event
-    self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
     
