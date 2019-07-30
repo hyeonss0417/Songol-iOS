@@ -58,7 +58,12 @@ class MainViewController: BaseUIViewController {
             if let destinationVC = segue.destination as? PortalCheckViewController {
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp", stringTitle: "강의 시간표")
             }
-       }else{
+       }else if segue.identifier == "lms" {
+            if let destVC = segue.destination as? LMSViewController {
+                destVC.stringURL = sender as! String
+            }
+       }
+       else{
             NavMenuController().webRedirect(segue: segue)
         }
     }
@@ -107,13 +112,13 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
         case 6:
-            performSegue(withIdentifier: "portalCheck", sender: nil)
+            performSegue(withIdentifier: "lms", sender: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp")
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
             break;
         case 8:
-            performSegue(withIdentifier: "lms", sender: nil)
+            performSegue(withIdentifier: "lms", sender: UrlMyLms)
             break;
         default:
             break;

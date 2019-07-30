@@ -12,10 +12,13 @@ import WebKit
 extension WKWebView{
     
     
-    func loadWithStringUrl(url: String){
+    func loadWithStringUrl(url: String, cookie: Bool = true){
         var webrequest = URLRequest(url:URL(string: url)!)
         
-        if let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!) {
+        if let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!), cookie {
+            
+            print("storedCookies : \(storedCookies)")
+            
             var cookies = HTTPCookie.requestHeaderFields(with: storedCookies)
             if let value = cookies["Cookie"] {
                 webrequest.addValue(value, forHTTPHeaderField: "Cookie")

@@ -23,6 +23,12 @@ final class CommonUtils: NSObject {
         self.user = user
     }
     
+    func replaceRootViewController(identifier: String){
+        UIApplication.shared.keyWindow?.rootViewController =
+            UIStoryboard(name: "Main", bundle: nil)
+                .instantiateViewController(withIdentifier: identifier)
+    }
+    
     func alertLoginFail(on vc:UIViewController){
         let alertController = UIAlertController(title: "로그인에 실패하였습니다.",message: "ID/PW 확인 후 재로그인 하십시오.", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -46,5 +52,14 @@ final class CommonUtils: NSObject {
         let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('alt');if(status=='로그인버튼'){ cells[i].click(); break;} }"
         
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
+    }
+    
+    func storeCookiesFromWKWebview(){
+        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
+            for cookie in cookies{
+                HTTPCookieStorage.shared.setCookie(cookie)
+                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
+            }
+        }
     }
 }

@@ -19,59 +19,42 @@ class CheckAuthViewController: BaseUIViewController {
         if user?.username == "guest" {
             //게스트 계정 로그인 시 3초 대기
             Timers().set(duration: 3){
-                UIApplication.shared.keyWindow?.rootViewController =
-                    CommonUtils().mainStoryboard
-                        .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
+                CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
             }
         }
         
-        wkWebView.loadWithStringUrl(url: UrlMyLms)
+        wkWebView.loadWithStringUrl(url: UrlPortalLogin)
         wkWebView.navigationDelegate = self
-        
+    }
+
+    func kauLoginOnSuccess(){
+        //store cookies
+        CommonUtils().storeCookiesFromWKWebview()
+        CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
     }
     
-    public func kauLoginOnSuccess(){
-        //store cookies
-        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
-            for cookie in cookies{
-                HTTPCookieStorage.shared.setCookie(cookie)
-                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
-            }
-        }
-        
-        UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils().mainStoryboard
-                .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
-    }
-    public func kauLoginOnFail(){
-        UIApplication.shared.keyWindow?.rootViewController =
-            CommonUtils().mainStoryboard
-                .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+    func kauLoginOnFail(){
+        CommonUtils().replaceRootViewController(identifier: "loginViewController")
     }
 }
 
 extension CheckAuthViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
+        print("login proccess url : \(currentUrl)")
         switch currentUrl {
-            case UrlLmsLogin1, UrlLmsLogin2 :
+            case UrlPortalLoginProcess, UrlPortalLogin :
                 CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
-                break
-            case UrlLmsLoginSuccess:
+            case UrlLmsLoginSuccess, UrlMyPortal:
                 //LoginSuccess
                 kauLoginOnSuccess()
-                
-                break
             case UrlLMSLoginFail:
                 kauLoginOnFail()
-                break
             case "https://www.kau.ac.kr/page/act_login.jsp":
                 //방화벽 차단 당했을때 처리??
                 print("blocked")
-                break
             default:
                 print("where..? : \(currentUrl)")
-                break
         }
     }
 }
