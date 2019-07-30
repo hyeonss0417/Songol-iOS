@@ -17,6 +17,8 @@ final class CommonUtils: NSObject {
     var isGuest = false
     var user: UserInfo?
     
+    var cookieStore: WKHTTPCookieStore?
+    
     func setUser(user: UserInfo){
         self.user = user
     }
@@ -40,12 +42,9 @@ final class CommonUtils: NSObject {
     
     func macroKauLogin(on wk: WKWebView, id: String, pw: String){
         let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
-        
         let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
-        
         let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('alt');if(status=='로그인버튼'){ cells[i].click(); break;} }"
         
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
-        
     }
 }

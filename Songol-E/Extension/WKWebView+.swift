@@ -13,8 +13,15 @@ extension WKWebView{
     
     
     func loadWithStringUrl(url: String){
+        var webrequest = URLRequest(url:URL(string: url)!)
         
-        self.load(URLRequest(url:URL(string: UrlLmsLoginSuccess)!))
+        if let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!) {
+            var cookies = HTTPCookie.requestHeaderFields(with: storedCookies)
+            if let value = cookies["Cookie"] {
+                webrequest.addValue(value, forHTTPHeaderField: "Cookie")
+            }
+        }
+        
+        self.load(webrequest)
     }
-    
 }

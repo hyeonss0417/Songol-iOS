@@ -9,7 +9,7 @@
 
 import UIKit
 import WebKit
-class ChildWebViewController : UIViewController, UIWebViewDelegate {
+class ChildWebViewController : UIViewController {
     @IBOutlet weak var wkWebView: WKWebView!
     private var stringURL: String?
     private var stringTitle : String?

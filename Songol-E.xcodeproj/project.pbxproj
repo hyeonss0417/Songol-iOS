@@ -61,6 +61,7 @@
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
 		AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953ED22EF2F9300646E4D /* Protocols.swift */; };
 		AFE953F122EF365800646E4D /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F022EF365800646E4D /* Timers.swift */; };
+		AFE953F322EFDF1000646E4D /* UIAlertViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
@@ -151,6 +152,7 @@
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
 		AFE953ED22EF2F9300646E4D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		AFE953F022EF365800646E4D /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
+		AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+.swift"; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				AF0CABC622E05644008EA92D /* WKWebView+.swift */,
+				AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -365,9 +368,9 @@
 			isa = PBXGroup;
 			children = (
 				AF8D89B822E5E211009E0C66 /* Utils */,
-				AF2C411621383C0C000E4215 /* MainViewController.swift */,
 				AF43824B22E0BADB00E2F176 /* ChildWebViews */,
 				AF69247122E032DD00FA0CFA /* Login */,
+				AF2C411621383C0C000E4215 /* MainViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				AFAA7FF92146C3F500160004 /* UserInfo.swift in Sources */,
 				AF3E9A1C21762E1800C338F1 /* IconSelectPopUp.swift in Sources */,
 				AFF650F4213BC173006840C8 /* DeliveryFoodModel.swift in Sources */,
+				AFE953F322EFDF1000646E4D /* UIAlertViewController+.swift in Sources */,
 				AF69247822E036D200FA0CFA /* Enums.swift in Sources */,
 				AF1BBE062176FA110056FD2A /* Constants.swift in Sources */,
 			);

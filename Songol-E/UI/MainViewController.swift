@@ -23,12 +23,11 @@ class MainViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewInit()
-        
+        initView()
         initRevealView()
     }
     
-    func viewInit(){
+    func initView(){
                 
         self.navigationItem.leftBarButtonItem?.tintColor = blueInspireColor
         
@@ -48,7 +47,6 @@ class MainViewController: BaseUIViewController {
     }
     
     func initRevealView(){
-        
         if positionValue != nil{
             performSegue(withIdentifier: positionValue!, sender: nil)
         }
@@ -57,15 +55,11 @@ class MainViewController: BaseUIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
        if segue.identifier == "portalCheck" {
-        
             if let destinationVC = segue.destination as? PortalCheckViewController {
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp", stringTitle: "강의 시간표")
             }
-        
        }else{
-        
             NavMenuController().webRedirect(segue: segue)
-        
         }
     }
 }
@@ -86,7 +80,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         cell.label.text = main_menu_strs[indexPath.row]
         
         if(UIDevice.current.userInterfaceIdiom == .pad){
-            cell.label.font = cell.label.font.withSize(25)
+            cell.label.font = cell.label.font.withSize(30)
         }
         
         cell.label.textColor = UIColor.white
@@ -121,34 +115,16 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
         case 8:
             performSegue(withIdentifier: "lms", sender: nil)
             break;
-            
         default:
             break;
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if(UIDevice.current.userInterfaceIdiom == .phone){
-            
-            //iphone
-            
-            let width = collectionView.frame.width/3 - 1
-            
-            return CGSize(width: width, height: width)
-            
-        } else {
-            
-            //ipad
-            
-            let width = collectionView.frame.width/4 - 1
-            
-            return CGSize(width: width, height: width)
-            
-        }
-        
-        
-        
+        //device 별 colummn 갯수
+        let nColumns: CGFloat = (UIDevice.current.userInterfaceIdiom == .phone) ? 3 : 4
+        let width = collectionView.frame.width/nColumns - 1
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -167,7 +143,6 @@ class CustomCell:UICollectionViewCell{
     @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var menuImage: UIImageView!
     @IBOutlet weak var label: UILabel!
-    
 }
 
 

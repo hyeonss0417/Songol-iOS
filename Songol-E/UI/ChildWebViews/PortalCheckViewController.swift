@@ -53,18 +53,14 @@ class PortalCheckViewController : UIViewController, UIWebViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destinationVC = segue.destination as? ChildWebViewController {
             destinationVC.setURL(stringURL: stringURL2!)
         }
-        
     }
     
     private func initWebView(){
-        
         mWebView.loadRequest(URLRequest(url: URL(string: stringURL)!))
         mWebView.scalesPageToFit = true
-        
     }
     
 }

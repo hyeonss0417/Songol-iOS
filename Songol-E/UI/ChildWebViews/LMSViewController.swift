@@ -6,41 +6,19 @@
 //  Copyright © 2018년 최민섭. All rights reserved.
 //
 
+import WebKit
 import UIKit
 
-class LMSViewController: UIViewController, UIWebViewDelegate{
+class LMSViewController: UIViewController{
     
-    @IBOutlet weak var mWebView: UIWebView!
-    
-    let stringURL = "http://lms.kau.ac.kr/my/"
-    
-    private var check = 1
+    @IBOutlet weak var wkWebView: WKWebView!
+    var stringURL = "http://lms.kau.ac.kr/my/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "My LMS"
         
-        initWebView()
+        wkWebView.loadWithStringUrl(url: stringURL)
     }
-    
-    func initWebView(){
-        
-        let url = URL(string: stringURL)
-        mWebView.loadRequest(URLRequest(url: url!))
-        mWebView.scalesPageToFit = true
-        
-    }
-    
-    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        print("tagg: lms:  ", request.url?.absoluteString )
-        return true
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
 }

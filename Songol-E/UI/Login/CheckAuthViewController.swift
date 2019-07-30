@@ -17,7 +17,7 @@ class CheckAuthViewController: BaseUIViewController {
         super.viewDidLoad()
         
         if user?.username == "guest" {
-            
+            //게스트 계정 로그인 시 3초 대기
             Timers().set(duration: 3){
                 UIApplication.shared.keyWindow?.rootViewController =
                     CommonUtils().mainStoryboard
@@ -26,16 +26,17 @@ class CheckAuthViewController: BaseUIViewController {
         }
         
         wkWebView.loadWithStringUrl(url: UrlMyLms)
-        
         wkWebView.navigationDelegate = self
         
     }
     
     public func kauLoginOnSuccess(){
-        
-        let cookieStore = wkWebView.configuration.websiteDataStore.httpCookieStore
-        cookieStore.getAllCookies { (cookies) in
-            print("cookies : \(cookies)")
+        //store cookies
+        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
+            for cookie in cookies{
+                HTTPCookieStorage.shared.setCookie(cookie)
+                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
+            }
         }
         
         UIApplication.shared.keyWindow?.rootViewController =
@@ -43,7 +44,6 @@ class CheckAuthViewController: BaseUIViewController {
                 .instantiateViewController(withIdentifier: "SWRevealViewController") as! SWRevealViewController
     }
     public func kauLoginOnFail(){
-        
         UIApplication.shared.keyWindow?.rootViewController =
             CommonUtils().mainStoryboard
                 .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
@@ -52,7 +52,6 @@ class CheckAuthViewController: BaseUIViewController {
 
 extension CheckAuthViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
             case UrlLmsLogin1, UrlLmsLogin2 :
@@ -61,6 +60,7 @@ extension CheckAuthViewController: WKNavigationDelegate{
             case UrlLmsLoginSuccess:
                 //LoginSuccess
                 kauLoginOnSuccess()
+                
                 break
             case UrlLMSLoginFail:
                 kauLoginOnFail()

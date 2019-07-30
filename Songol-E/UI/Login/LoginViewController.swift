@@ -30,39 +30,29 @@ class LoginViewController: UIViewController {
         
         //clear UserDefault DB
         UserDefaults.standard.set(nil, forKey: "key1")
-
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
-        
         labelID.text = "guest"
         labelPW.text = "111111"
         firebaseLoginWithEmail()
-        
     }
     
     @IBAction func LoginButtonOnClick(_ sender: Any) {
-
         if labelID.text == nil || labelPW.text == nil{
-            
             FormNotFilledAlert(vc:self).show()
-            
         }else{
-            
             userID = labelID.text
             userPW = labelPW.text
-            
             webKit.loadWithStringUrl(url: UrlLmsLogin1)
             dialog.displaySpinner(on: self.view)
         }
     }
     
     func firebaseLoginWithEmail(){
-        
         Auth.auth().signIn(withEmail: labelID.text!+"@kau.ac.kr", password: labelPW.text!) { (user, error) in
             if user != nil{//login success
                 self.authOnSuccess(type: (self.labelID.text == "guest") ? UserType.guest : UserType.normal )
-                
             }else{//login failed
                 self.firebaseCreateUserWithEmail(count: 0)
             }
@@ -86,7 +76,6 @@ class LoginViewController: UIViewController {
     }
     
     func authOnSuccess(type: UserType){
-        
         var userInfo: UserInfo
         
         switch type {
@@ -99,6 +88,14 @@ class LoginViewController: UIViewController {
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
+        
+        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
+            for cookie in cookies{
+                HTTPCookieStorage.shared.setCookie(cookie)
+                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
+            }
+        }
+            
         self.performSegue(withIdentifier: "login", sender: nil)
         dialog.removeSpinner()
     }
@@ -107,7 +104,6 @@ class LoginViewController: UIViewController {
 }
 
 extension LoginViewController: UITextFieldDelegate{
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -120,7 +116,6 @@ extension LoginViewController: UITextFieldDelegate{
 
 extension LoginViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
         case UrlLmsLogin1, UrlLmsLogin2:
