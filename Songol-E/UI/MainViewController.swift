@@ -59,7 +59,7 @@ class MainViewController: BaseUIViewController {
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp", stringTitle: "강의 시간표")
             }
        }else if segue.identifier == "lms" {
-            if let destVC = segue.destination as? LMSViewController {
+            if let destVC = segue.destination as? AccessWebViewController {
                 destVC.stringURL = sender as! String
             }
        }
@@ -112,13 +112,13 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
         case 6:
-            performSegue(withIdentifier: "lms", sender: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp")
+            CommonUtils().pushViewControllerNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable)
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
             break;
         case 8:
-            performSegue(withIdentifier: "lms", sender: UrlMyLms)
+            CommonUtils().pushViewControllerNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms)
             break;
         default:
             break;

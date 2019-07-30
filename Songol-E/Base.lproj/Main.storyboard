@@ -983,17 +983,16 @@
             </objects>
             <point key="canvasLocation" x="2453.6231884057975" y="928.53260869565224"/>
         </scene>
-        <!--View Controller-->
+        <!--Access Web View Controller-->
         <scene sceneID="idH-sE-kLe">
             <objects>
-                <viewController id="FOI-Cn-cph" customClass="LMSViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccessWebViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FOI-Cn-cph" customClass="AccessWebViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uAE-fp-hWI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPf-ba-Jz7">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>

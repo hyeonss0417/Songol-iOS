@@ -29,6 +29,17 @@ final class CommonUtils: NSObject {
                 .instantiateViewController(withIdentifier: identifier)
     }
     
+    func pushViewControllerNav(navVC: UINavigationController?, identifier: ViewControllerNameType, url: String = ""){
+        let target = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: identifier.rawValue)
+        
+        if let vc = target as? AccessWebViewController {
+            vc.stringURL = url
+        }
+        
+        navVC?.pushViewController( target, animated: true)
+    }
+    
     func alertLoginFail(on vc:UIViewController){
         let alertController = UIAlertController(title: "로그인에 실패하였습니다.",message: "ID/PW 확인 후 재로그인 하십시오.", preferredStyle: UIAlertControllerStyle.alert)
         

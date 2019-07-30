@@ -16,4 +16,6 @@ class BaseUIViewController: UIViewController {
     
     let user = CommonUtils.sharedInstance.user
     
+    let loadingDialog = LoadingDialog()
+    
 }

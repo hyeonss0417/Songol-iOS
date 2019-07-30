@@ -14,3 +14,7 @@ enum UserType: String {
     case normal
     case songol
 }
+
+enum ViewControllerNameType: String{
+    case accessToWeb = "AccessWebViewController"
+}

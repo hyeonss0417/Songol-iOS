@@ -19,7 +19,7 @@
 		AF193F362179AFDF0073D7E8 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF193F352179AFDF0073D7E8 /* CommentsViewController.swift */; };
 		AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */; };
 		AF1BBE062176FA110056FD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE052176FA110056FD2A /* Constants.swift */; };
-		AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */; };
+		AF1BBE0821773A6F0056FD2A /* AccessWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */; };
 		AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */; };
 		AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B652178502400C1BB31 /* NavMenuController.swift */; };
 		AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */; };
@@ -103,7 +103,7 @@
 		AF193F352179AFDF0073D7E8 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageFlowLayout.swift; sourceTree = "<group>"; };
 		AF1BBE052176FA110056FD2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMSViewController.swift; sourceTree = "<group>"; };
+		AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessWebViewController.swift; sourceTree = "<group>"; };
 		AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailAlert.swift; sourceTree = "<group>"; };
 		AF2C0B652178502400C1BB31 /* NavMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuController.swift; sourceTree = "<group>"; };
 		AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingToLaunch.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 		AF43824B22E0BADB00E2F176 /* ChildWebViews */ = {
 			isa = PBXGroup;
 			children = (
-				AF1BBE0721773A6E0056FD2A /* LMSViewController.swift */,
+				AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */,
 				AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */,
 				AF61EED021A0132B003C842C /* ChildWebViewController.swift */,
 			);
@@ -737,7 +737,7 @@
 				AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */,
 				AF43824D22E0BC6700E2F176 /* Alerts.swift in Sources */,
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
-				AF1BBE0821773A6F0056FD2A /* LMSViewController.swift in Sources */,
+				AF1BBE0821773A6F0056FD2A /* AccessWebViewController.swift in Sources */,
 				AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */,
 				AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */,
 				AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */,

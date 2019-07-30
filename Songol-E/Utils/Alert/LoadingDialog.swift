@@ -13,8 +13,8 @@ class LoadingDialog: PageLoadingProtocol {
     func displaySpinner(on onView : UIView) {
         
         let spinner = UIView.init(frame: onView.bounds)
-        spinner.backgroundColor = UIColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
-        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .whiteLarge)
+        spinner.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)
+        let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
         ai.startAnimating()
         ai.center = spinner.center
         
