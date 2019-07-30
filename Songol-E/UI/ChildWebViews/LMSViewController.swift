@@ -25,6 +25,7 @@ class LMSViewController: BaseUIViewController{
 
 extension LMSViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
             
@@ -33,6 +34,7 @@ extension LMSViewController: WKNavigationDelegate{
             break
         case stringURL:
             wkWebView.isHidden = false
+            allowWebKitGesture(false)
             break
         case "https://www.kau.ac.kr/page/act_login.jsp":
             //방화벽 차단 당했을때 처리??
@@ -40,7 +42,12 @@ extension LMSViewController: WKNavigationDelegate{
             break
         default:
             print("where..? : \(currentUrl)")
+            allowWebKitGesture(true)
             break
         }
+    }
+    
+    func allowWebKitGesture(_ allow: Bool){
+         wkWebView.allowsBackForwardNavigationGestures = allow
     }
 }

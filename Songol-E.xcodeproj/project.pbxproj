@@ -26,7 +26,6 @@
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* MainViewController.swift */; };
 		AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411821383C0C000E4215 /* Main.storyboard */; };
-		AF2C411C21383C0D000E4215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411B21383C0D000E4215 /* Assets.xcassets */; };
 		AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */; };
 		AF2C412A21383C0D000E4215 /* Songol_ETests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C412921383C0D000E4215 /* Songol_ETests.swift */; };
 		AF2C413521383C0D000E4215 /* Songol_EUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C413421383C0D000E4215 /* Songol_EUITests.swift */; };
@@ -62,6 +61,8 @@
 		AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953ED22EF2F9300646E4D /* Protocols.swift */; };
 		AFE953F122EF365800646E4D /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F022EF365800646E4D /* Timers.swift */; };
 		AFE953F322EFDF1000646E4D /* UIAlertViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */; };
+		AFE953F522F02A7A00646E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE953F422F02A7A00646E4D /* Assets.xcassets */; };
+		AFE953F722F02C2F00646E4D /* CALayer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F622F02C2F00646E4D /* CALayer+.swift */; };
 		AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */; };
 		AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */; };
 		AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */; };
@@ -110,7 +111,6 @@
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF2C411621383C0C000E4215 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AF2C411921383C0C000E4215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AF2C411B21383C0D000E4215 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF2C411E21383C0D000E4215 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF2C412021383C0D000E4215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF2C412521383C0D000E4215 /* Songol-ETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Songol-ETests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +153,8 @@
 		AFE953ED22EF2F9300646E4D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		AFE953F022EF365800646E4D /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 		AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+.swift"; sourceTree = "<group>"; };
+		AFE953F422F02A7A00646E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFE953F622F02C2F00646E4D /* CALayer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+.swift"; sourceTree = "<group>"; };
 		AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavRealViewController.swift; sourceTree = "<group>"; };
 		AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySeatViewController.swift; sourceTree = "<group>"; };
 		AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeveloperViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				AF0CABC622E05644008EA92D /* WKWebView+.swift */,
 				AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */,
+				AFE953F622F02C2F00646E4D /* CALayer+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -287,7 +290,6 @@
 				AF2C414221383C5A000E4215 /* supporting files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
 				AF2C411821383C0C000E4215 /* Main.storyboard */,
-				AF2C411B21383C0D000E4215 /* Assets.xcassets */,
 				AF2C411D21383C0D000E4215 /* LaunchScreen.storyboard */,
 				AF2C412021383C0D000E4215 /* Info.plist */,
 				AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */,
@@ -337,6 +339,7 @@
 				AFA62B632161EFAA00D18A83 /* TabLayout.swift */,
 				AF3E9A192175BCCB00C338F1 /* GetSNumber.swift */,
 				AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */,
+				AFE953F422F02A7A00646E4D /* Assets.xcassets */,
 				AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */,
 				AF1BBE052176FA110056FD2A /* Constants.swift */,
 				AF69247422E035A600FA0CFA /* CommonUtils.swift */,
@@ -560,9 +563,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE953F522F02A7A00646E4D /* Assets.xcassets in Resources */,
 				AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */,
 				AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */,
-				AF2C411C21383C0D000E4215 /* Assets.xcassets in Resources */,
 				AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +706,7 @@
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
 				AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */,
 				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,
+				AFE953F722F02C2F00646E4D /* CALayer+.swift in Sources */,
 				AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */,
 				AF193F302178DCA80073D7E8 /* FormNotFilledAlert.swift in Sources */,
 				AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */,
