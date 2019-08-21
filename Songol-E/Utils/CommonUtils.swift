@@ -24,20 +24,32 @@ final class CommonUtils: NSObject {
     }
     
     //Replace Root ViewController ex) Login, Logout...
-    func replaceRootViewController(identifier: String){
+    func replaceRootViewController(identifier: ViewControllerNameType){
         UIApplication.shared.keyWindow?.rootViewController =
             UIStoryboard(name: "Main", bundle: nil)
-                .instantiateViewController(withIdentifier: identifier)
+                .instantiateViewController(withIdentifier: identifier.rawValue)
     }
     
     //Push ViewController on NavigationViewController
-    func pushNav(navVC: UINavigationController?, identifier: ViewControllerNameType, url: String = "", redirectUrl: String? = nil){
+    func pushOnNavigationController(navVC: UINavigationController?, identifier: ViewControllerNameType, url: String? = nil, title: String, redirectUrl: String? = nil){
         let target = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: identifier.rawValue)
         
-        if let vc = target as? AccessWebViewController {
-            vc.stringURL = url
-            vc.redirectUrl = redirectUrl
+        switch identifier {
+        case .accessToWeb:
+            if let vc = target as? AccessWebViewController {
+                vc.stringURL = url!
+                vc.title = title
+                vc.redirectUrl = redirectUrl
+            }
+        case .developerIntroducing:
+            if let vc = target as? DeveloperViewController {
+                
+            }
+        case .login:
+            break
+        default:
+            break
         }
         
         navVC?.pushViewController( target, animated: true)
@@ -50,7 +62,7 @@ final class CommonUtils: NSObject {
         let yesAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
             UIApplication.shared.keyWindow?.rootViewController =
                 CommonUtils().mainStoryboard
-                    .instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+                    .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         }
         let noAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
         }
@@ -70,13 +82,13 @@ final class CommonUtils: NSObject {
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
     }
     
-    func storeCookiesFromWKWebview(completion: @escaping () -> Void = {}) {
+    func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void = {res in }) {
         WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
             for cookie in cookies{
                 HTTPCookieStorage.shared.setCookie(cookie)
                 print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
             }
-            completion()
+            completion(cookies)
         }
     }
 
@@ -93,6 +105,18 @@ final class CommonUtils: NSObject {
         guard let cookies =  HTTPCookieStorage.shared.cookies else {return}
         for cookie in cookies {
             HTTPCookieStorage.shared.deleteCookie(cookie)
+        }
+    }
+    
+    func cleanCookies() {
+        HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        print("[WebCacheCleaner] All cookies deleted")
+        
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in
+            records.forEach { record in
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+                print("[WebCacheCleaner] Record \(record) deleted")
+            }
         }
     }
 }

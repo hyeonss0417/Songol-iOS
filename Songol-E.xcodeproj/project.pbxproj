@@ -38,6 +38,7 @@
 		AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */; };
 		AF43824D22E0BC6700E2F176 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43824C22E0BC6700E2F176 /* Alerts.swift */; };
 		AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */; };
+		AF5FCF91230D0ABC005E67D0 /* NavigationItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */; };
 		AF61EECE219C3FD8003C842C /* PortalCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */; };
 		AF61EED121A0132B003C842C /* ChildWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EED021A0132B003C842C /* ChildWebViewController.swift */; };
 		AF61EED421A01A6D003C842C /* ChildViewNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EED321A01A6D003C842C /* ChildViewNav.swift */; };
@@ -130,6 +131,7 @@
 		AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIView.swift; sourceTree = "<group>"; };
 		AF43824C22E0BC6700E2F176 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaseViewController.swift; sourceTree = "<group>"; };
+		AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemInfo.swift; sourceTree = "<group>"; };
 		AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalCheckViewController.swift; sourceTree = "<group>"; };
 		AF61EED021A0132B003C842C /* ChildWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildWebViewController.swift; sourceTree = "<group>"; };
 		AF61EED321A01A6D003C842C /* ChildViewNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewNav.swift; sourceTree = "<group>"; };
@@ -283,7 +285,7 @@
 				AF69247022E032D400FA0CFA /* UI */,
 				AF3D5CF6213D4B800090F6A9 /* Utils */,
 				AFE4985C213C17BA0066D36E /* librarySeatChildView */,
-				AF60E9F5213BC08200B6EF56 /* models */,
+				AF60E9F5213BC08200B6EF56 /* Model */,
 				AFDC156A213A69CB00DD18E9 /* deliveryChildView */,
 				AF2C414221383C5A000E4215 /* supporting files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
@@ -357,13 +359,14 @@
 			path = ChildWebViews;
 			sourceTree = "<group>";
 		};
-		AF60E9F5213BC08200B6EF56 /* models */ = {
+		AF60E9F5213BC08200B6EF56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				AFF650F3213BC173006840C8 /* DeliveryFoodModel.swift */,
 				AFAA7FF82146C3F500160004 /* UserInfo.swift */,
+				AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */,
 			);
-			path = models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AF69247022E032D400FA0CFA /* UI */ = {
@@ -740,6 +743,7 @@
 				AFF0B84221384E5A00D5F9DB /* DeveloperViewController.swift in Sources */,
 				AF1BBE0821773A6F0056FD2A /* AccessWebViewController.swift in Sources */,
 				AF1BBE042176F0AF0056FD2A /* CustomImageFlowLayout.swift in Sources */,
+				AF5FCF91230D0ABC005E67D0 /* NavigationItemInfo.swift in Sources */,
 				AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */,
 				AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */,
 				AFAA7FF7214636DC00160004 /* AESencrypt&decrypt.swift in Sources */,

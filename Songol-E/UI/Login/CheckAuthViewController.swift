@@ -17,18 +17,18 @@ class CheckAuthViewController: BaseUIViewController {
         if user?.username == "guest" {
             //게스트 계정 로그인 시 3초 대기
             Timers().set(duration: 3){
-                CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
+                CommonUtils().replaceRootViewController(identifier: .main)
             }
         }
+        
+        CommonUtils().cleanCookies()
         
         LoginHelper().tryLogin(id: user!.username!, pw: user!.pw!, parent: self, showDialog: false) { type, res in
             switch(res) {
             case .success:
-                CommonUtils().storeCookiesFromWKWebview() {
-                    CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
-                }
+                CommonUtils().replaceRootViewController(identifier: .main)
             case .failure:
-                CommonUtils().replaceRootViewController(identifier: "loginViewController")
+                CommonUtils().replaceRootViewController(identifier: .login)
             }
         }
     }

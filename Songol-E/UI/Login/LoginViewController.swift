@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UserDefaults.standard.set(nil, forKey: "user")
-        CommonUtils().removeAllCookiesFromWKWebview()
+        CommonUtils().cleanCookies()
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
@@ -95,7 +95,7 @@ class LoginViewController: UIViewController {
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
-        CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
+        CommonUtils().replaceRootViewController(identifier: .main)
     }
 }
 

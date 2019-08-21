@@ -9,7 +9,6 @@
 import UIKit
 
 class ChildViewNav: UIStoryboardSegue{
-
     override func perform() {
         let viewController:PortalCheckViewController = self.source as! PortalCheckViewController
         let destinationController : UIViewController = self.destination

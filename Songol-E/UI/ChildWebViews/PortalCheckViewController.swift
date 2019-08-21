@@ -14,10 +14,8 @@ class PortalCheckViewController : UIViewController, UIWebViewDelegate {
     @IBOutlet weak var mFrameView: UIView!
     
     
-    private let stringURL = "http://www.kau.ac.kr/page/act_Portal_Check.jsp"
-    
+    private let stringURL: String? = nil
     private var stringTitle: String?
-    
     private var stringURL2:String?
     
     private var check = true

@@ -17,4 +17,7 @@ enum UserType: String {
 
 enum ViewControllerNameType: String{
     case accessToWeb = "AccessWebViewController"
+    case developerIntroducing = "DeveloperViewController"
+    case login = "LoginViewController"
+    case main = "SWRevealViewController"
 }

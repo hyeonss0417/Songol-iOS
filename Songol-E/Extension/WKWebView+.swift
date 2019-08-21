@@ -13,22 +13,16 @@ extension WKWebView{
     func loadWithStringUrl(url: String, cookie: Bool = true, redirectUrl: String? = nil){
         var webrequest = URLRequest(url:URL(string: url)!)
         
-        guard let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!), cookie else {
-            return
+        if let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!) {
+            print("storedCookies : \(storedCookies)")
+            var cookies = HTTPCookie.requestHeaderFields(with: storedCookies)
+            
+            if let value = cookies["Cookie"] {
+                webrequest.addValue(value, forHTTPHeaderField: "Cookie")
+                
+            }
         }
-        
-        print("storedCookies : \(storedCookies)")
-        var cookies = HTTPCookie.requestHeaderFields(with: storedCookies)
-        
-        if let value = cookies["Cookie"] {
-            webrequest.addValue(value, forHTTPHeaderField: "Cookie")
-        }
-        
-        if let redirectUrl = redirectUrl, storedCookies.count == 0 {
-            self.load(URLRequest(url: URL(string: redirectUrl)!))
-        }
-        else {
-            self.load(URLRequest(url:URL(string: url)!))
-        }
+    
+        self.load(webrequest)
     }
 }

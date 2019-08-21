@@ -33,17 +33,22 @@ struct NavMenuController{
             }
             
         }else if segue.identifier == "시험 시간표"{
-            if let destinationVC = segue.destination as? PortalCheckViewController {
-                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/SugangExamList.jsp", stringTitle: "시험 시간표")
+            if let destinationVC = segue.destination as? AccessWebViewController {
+                //destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/SugangExamList.jsp", stringTitle: "시험 시간표")
+                destinationVC.stringURL = "https://portal.kau.ac.kr/sugang/SugangExamList.jsp"
+                destinationVC.title = "시험 시간표"
             }
         }else if  segue.identifier == "성적 확인" {
-            if let destinationVC = segue.destination as? PortalCheckViewController {
-                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/GradTermList.jsp", stringTitle: "성적 확인")
+            if let destinationVC = segue.destination as? AccessWebViewController {
+               //destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/GradTermList.jsp", stringTitle: "성적 확인")
+                destinationVC.stringURL = "https://portal.kau.ac.kr/sugang/GradTermList.jsp"
+                destinationVC.title = "성적 확인"
             }
-            
         }else if segue.identifier == "장학금 수혜내역" {
-            if let destinationVC = segue.destination as? PortalCheckViewController {
-                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/PersScholarTakeList.jsp", stringTitle: "장학금 수혜내역")
+            if let destinationVC = segue.destination as? AccessWebViewController {
+                //destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/PersScholarTakeList.jsp", stringTitle: "장학금 수혜내역")
+                destinationVC.stringURL = "https://portal.kau.ac.kr/sugang/PersScholarTakeList.jsp"
+                destinationVC.title = "장학금 수혜내역"
             }
             
         }

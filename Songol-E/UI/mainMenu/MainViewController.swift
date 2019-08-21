@@ -9,16 +9,11 @@
 import UIKit
 
 class MainViewController: BaseUIViewController {
-    
-    let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
-    
     @IBOutlet weak var navMenuButton: UIBarButtonItem!
-    
-    var positionValue : String?
+    let blueInspireColor = UIColor(red: 34/255.0, green: 45/255.0, blue: 103/255.0, alpha: 1.0)
+    var navigationIdentifier: NavigationItemInfo?
     var currentViewController : MainViewController?
-   
     lazy var userinfo:UserInfo = CommonUtils.sharedInstance.user!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +42,14 @@ class MainViewController: BaseUIViewController {
     }
     
     func initRevealView(){
-        if positionValue != nil{
-            performSegue(withIdentifier: positionValue!, sender: nil)
+        if let identifier = navigationIdentifier {
+            switch identifier.target {
+            case .login:
+                CommonUtils().replaceRootViewController(identifier: .login)
+                self.dismiss(animated: false, completion: nil)
+            default:
+                CommonUtils().pushOnNavigationController(navVC: self.navigationController, identifier: identifier.target, url: identifier.pageUrl, title: identifier.title)
+            }
         }
     }
     
@@ -113,14 +114,14 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             break;
         case 6:
             CommonUtils()
-                .pushNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlPortalLogin, redirectUrl:  UrlExamTable)
+                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable, title: "강의 시간표", redirectUrl: UrlPortalLogin)
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
             break;
         case 8:
             CommonUtils()
-                .pushNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms)
+                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms, title: "LMS")
             break;
         default:
             break;

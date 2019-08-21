@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController =
                 CommonUtils()
                     .mainStoryboard
-                    .instantiateViewController(withIdentifier: "loginViewController")
+                    .instantiateViewController(withIdentifier: "LoginViewController")
                 as! LoginViewController
         }
     }

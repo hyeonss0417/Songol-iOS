@@ -10,9 +10,8 @@ import WebKit
 import UIKit
 
 class AccessWebViewController: BaseUIViewController{
-    
     @IBOutlet weak var wkWebView: WKWebView!
-    var stringURL = "http://lms.kau.ac.kr/my/"
+    var stringURL: String!
     var redirectUrl: String? = nil
     
     override func viewDidLoad() {
@@ -21,7 +20,6 @@ class AccessWebViewController: BaseUIViewController{
         wkWebView.navigationDelegate = self
         wkWebView.isHidden = true
         wkWebView.loadWithStringUrl(url: stringURL, redirectUrl: redirectUrl)
-        
         loadingDialog.displaySpinner(on: self.view)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +37,7 @@ extension AccessWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
-            case UrlLmsLogin1, UrlLmsLogin2, UrlPortalLogin:
+            case UrlLmsLogin1, UrlLmsLogin2:
                 CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
                 break
             case stringURL:
@@ -47,15 +45,11 @@ extension AccessWebViewController: WKNavigationDelegate{
                 loadingDialog.removeSpinner()
                 allowWebKitGesture(false)
                 break
-            case UrlMyPortal:
-                CommonUtils().storeCookiesFromWKWebview()
-                wkWebView.loadWithStringUrl(url: stringURL)
             case "https://www.kau.ac.kr/page/act_login.jsp":
-                //방화벽 차단 당했을때 처리??
+                //방화벽 차단 당했을때 처리
                 print("blocked")
                 break
             default:
-                print("where..? : \(currentUrl)")
                 allowWebKitGesture(true)
                 break
             }
