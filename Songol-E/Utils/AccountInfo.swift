@@ -103,7 +103,7 @@ struct AccountInfo{
     }
     
     public func getUserInfo() -> UserInfo{
-        let decoded  = UserDefaults.standard.object(forKey: "key1") as! Data
+        let decoded  = UserDefaults.standard.object(forKey: "user") as! Data
         let userinfo = NSKeyedUnarchiver.unarchiveObject(with: decoded) as! UserInfo
             
         return userinfo
@@ -113,6 +113,7 @@ struct AccountInfo{
         //store UserInfo
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: userInfo)
         let userDefaults = UserDefaults.standard
-        userDefaults.set(encodedData, forKey: "key1")
+        userDefaults.set(encodedData, forKey: "user")
+        CommonUtils.sharedInstance.setUser(user: userInfo)
     }
 }

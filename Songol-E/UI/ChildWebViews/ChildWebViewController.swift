@@ -15,9 +15,7 @@ class ChildWebViewController : UIViewController {
     private var stringTitle : String?
     
     func setURL(stringURL: String){
-        
         self.stringURL = stringURL
-        
     }
     
     override func viewDidLoad() {

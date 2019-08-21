@@ -169,18 +169,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1q-fr-FMH">
-                                <rect key="frame" x="67.666666666666686" y="342" width="240" height="128"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Gv1-wy-AKw"/>
-                                    <constraint firstAttribute="width" constant="240" id="neN-hX-IMf"/>
-                                </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="labelSongol" translatesAutoresizingMaskIntoConstraints="NO" id="BBP-2k-tBB">
                                 <rect key="frame" x="84.333333333333329" y="248" width="206.33333333333337" height="316"/>
                             </imageView>
@@ -189,15 +177,10 @@
                         <constraints>
                             <constraint firstItem="BBP-2k-tBB" firstAttribute="width" secondItem="Rrv-Uv-Knb" secondAttribute="width" multiplier="0.55" id="0nk-O1-peh"/>
                             <constraint firstItem="BBP-2k-tBB" firstAttribute="centerX" secondItem="Rrv-Uv-Knb" secondAttribute="centerX" id="Kfz-zF-tO9"/>
-                            <constraint firstItem="s1q-fr-FMH" firstAttribute="centerX" secondItem="Rrv-Uv-Knb" secondAttribute="centerX" id="krQ-ik-DPz"/>
                             <constraint firstItem="BBP-2k-tBB" firstAttribute="centerY" secondItem="Rrv-Uv-Knb" secondAttribute="centerY" id="t2I-D6-zm3"/>
-                            <constraint firstItem="s1q-fr-FMH" firstAttribute="centerY" secondItem="Rrv-Uv-Knb" secondAttribute="centerY" id="tsw-Fu-dDO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZHS-eR-b4N"/>
                     </view>
-                    <connections>
-                        <outlet property="wkWebView" destination="s1q-fr-FMH" id="cif-xx-8jc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNV-m0-tSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -387,18 +370,6 @@
                                     <action selector="guestButtonOnClick:" destination="seG-k8-uve" eventType="touchUpInside" id="z19-U1-ZrI"/>
                                 </connections>
                             </button>
-                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYc-w2-tj4">
-                                <rect key="frame" x="182.66666666666666" y="401" width="10" height="10"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="neW-1P-OH4"/>
-                                    <constraint firstAttribute="width" constant="10" id="qtY-qX-hRS"/>
-                                </constraints>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.1764705882352941" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -406,11 +377,9 @@
                             <constraint firstItem="rFw-c2-OxG" firstAttribute="top" secondItem="nkG-TG-xPr" secondAttribute="top" constant="130" id="6Nh-YP-uDb"/>
                             <constraint firstItem="dZe-F5-2iE" firstAttribute="top" secondItem="rFw-c2-OxG" secondAttribute="bottom" constant="25" id="Dsc-C4-emL"/>
                             <constraint firstItem="rFw-c2-OxG" firstAttribute="centerX" secondItem="laz-0U-f3L" secondAttribute="centerX" id="I3g-IG-wH9"/>
-                            <constraint firstItem="eYc-w2-tj4" firstAttribute="centerX" secondItem="laz-0U-f3L" secondAttribute="centerX" id="JPQ-IQ-FKC"/>
                             <constraint firstItem="Scd-9h-4aS" firstAttribute="top" secondItem="Qs4-dm-uK8" secondAttribute="bottom" constant="24" id="UOU-Ex-nMk"/>
                             <constraint firstItem="dZe-F5-2iE" firstAttribute="centerX" secondItem="laz-0U-f3L" secondAttribute="centerX" id="ect-Go-gaS"/>
                             <constraint firstItem="Qs4-dm-uK8" firstAttribute="top" secondItem="dZe-F5-2iE" secondAttribute="bottom" constant="5" id="kLk-Rn-BjQ"/>
-                            <constraint firstItem="eYc-w2-tj4" firstAttribute="centerY" secondItem="laz-0U-f3L" secondAttribute="centerY" id="lpU-EG-jnU"/>
                             <constraint firstItem="Scd-9h-4aS" firstAttribute="centerX" secondItem="laz-0U-f3L" secondAttribute="centerX" id="sDH-FH-Ddz"/>
                             <constraint firstItem="nkG-TG-xPr" firstAttribute="trailing" secondItem="QrV-bo-l38" secondAttribute="trailing" constant="52" id="wST-3F-sxD"/>
                             <constraint firstItem="QrV-bo-l38" firstAttribute="top" secondItem="Scd-9h-4aS" secondAttribute="bottom" constant="28" id="wc1-Fg-2B9"/>
@@ -420,7 +389,6 @@
                     <connections>
                         <outlet property="labelID" destination="dZe-F5-2iE" id="tYo-04-RQa"/>
                         <outlet property="labelPW" destination="Qs4-dm-uK8" id="VKD-kk-Tu1"/>
-                        <outlet property="webKit" destination="eYc-w2-tj4" id="3NV-aV-sKT"/>
                         <segue destination="QZ9-fB-vO8" kind="show" identifier="login" id="z8p-xv-h7U"/>
                     </connections>
                 </viewController>

@@ -9,9 +9,7 @@
 import Foundation
 
 struct NavMenuController{
-    
     func webRedirect(segue : UIStoryboardSegue){
-        
         if segue.identifier == "동아리"{
             if let destinationVC = segue.destination as? WebInfoViewController {
                 destinationVC.setWebInfo(barTitle: "동아리 정보", url: "http://www.kau.ac.kr/onestopservice/soss_student_group_aero.html")
@@ -39,13 +37,11 @@ struct NavMenuController{
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/SugangExamList.jsp", stringTitle: "시험 시간표")
             }
         }else if  segue.identifier == "성적 확인" {
-            
             if let destinationVC = segue.destination as? PortalCheckViewController {
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/GradTermList.jsp", stringTitle: "성적 확인")
             }
             
         }else if segue.identifier == "장학금 수혜내역" {
-            
             if let destinationVC = segue.destination as? PortalCheckViewController {
                 destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/PersScholarTakeList.jsp", stringTitle: "장학금 수혜내역")
             }

@@ -13,23 +13,23 @@ import FirebaseDatabase
 import WebKit
 
 class LoginViewController: UIViewController {
-    @IBOutlet weak var webKit: WKWebView!
     @IBOutlet weak var labelID: UITextField!
     @IBOutlet weak var labelPW: UITextField!
     private var userID:String?
     private var userPW:String?
     private var dbRef = Database.database().reference() // 인스턴스 변수
-    private let dialog = LoadingDialog()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         labelID.delegate = self
         labelPW.delegate = self
-        webKit.navigationDelegate = self
-        
-        //clear UserDefault DB
-        UserDefaults.standard.set(nil, forKey: "key1")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UserDefaults.standard.set(nil, forKey: "user")
+        CommonUtils().removeAllCookiesFromWKWebview()
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
@@ -44,8 +44,17 @@ class LoginViewController: UIViewController {
         }else{
             userID = labelID.text
             userPW = labelPW.text
-            webKit.loadWithStringUrl(url: UrlLmsLogin1)
-            dialog.displaySpinner(on: self.view)
+            
+            LoginHelper().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in
+                print("ty[e \(type) resstate \(res)")
+                
+                switch res {
+                case .success:
+                    self.authOnSuccess(type: type)
+                case .failure:
+                    CommonUtils().alertLoginFail(on: self)
+                }
+            }
         }
     }
     
@@ -66,7 +75,6 @@ class LoginViewController: UIViewController {
         }
         
         Auth.auth().createUser(withEmail: "\(self.labelID.text!)\(temp)@kau.ac.kr", password: "\(self.labelPW.text!)\(temp)") { (user, error) in
-                
             if user !=  nil{//register success
                 self.authOnSuccess(type: UserType.normal)
             }else if count < 100 {// failed
@@ -77,7 +85,6 @@ class LoginViewController: UIViewController {
     
     func authOnSuccess(type: UserType){
         var userInfo: UserInfo
-        
         switch type {
         case .guest:
             userInfo = UserInfo(uid: "", major: "", pw: "", snumber:"0000", username:"guest")
@@ -88,19 +95,8 @@ class LoginViewController: UIViewController {
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
-        
-        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
-            for cookie in cookies{
-                HTTPCookieStorage.shared.setCookie(cookie)
-                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
-            }
-        }
-            
-        self.performSegue(withIdentifier: "login", sender: nil)
-        dialog.removeSpinner()
+        CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
     }
-    
-  
 }
 
 extension LoginViewController: UITextFieldDelegate{
@@ -111,27 +107,5 @@ extension LoginViewController: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
-    }
-}
-
-extension LoginViewController: WKNavigationDelegate{
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let currentUrl = webView.url!.absoluteString
-        switch currentUrl {
-        case UrlLmsLogin1, UrlLmsLogin2:
-            CommonUtils().macroKauLogin(on: webKit, id: userID!, pw: userPW!)
-            break
-        case UrlLmsLoginSuccess:
-            //LoginSuccess
-            firebaseLoginWithEmail()
-            authOnSuccess(type: .normal)
-            break
-        case UrlLMSLoginFail:
-            dialog.removeSpinner()
-            CommonUtils().alertLoginFail(on: self)
-            break
-        default:
-            break
-        }
     }
 }

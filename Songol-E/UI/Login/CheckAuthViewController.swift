@@ -10,8 +10,6 @@ import UIKit
 import WebKit
 
 class CheckAuthViewController: BaseUIViewController {
-    
-    @IBOutlet weak var wkWebView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,38 +21,15 @@ class CheckAuthViewController: BaseUIViewController {
             }
         }
         
-        wkWebView.loadWithStringUrl(url: UrlPortalLogin)
-        wkWebView.navigationDelegate = self
-    }
-
-    func kauLoginOnSuccess(){
-        //store cookies
-        CommonUtils().storeCookiesFromWKWebview()
-        CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
-    }
-    
-    func kauLoginOnFail(){
-        CommonUtils().replaceRootViewController(identifier: "loginViewController")
-    }
-}
-
-extension CheckAuthViewController: WKNavigationDelegate{
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let currentUrl = webView.url!.absoluteString
-        print("login proccess url : \(currentUrl)")
-        switch currentUrl {
-            case UrlPortalLoginProcess, UrlPortalLogin :
-                CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
-            case UrlLmsLoginSuccess, UrlMyPortal:
-                //LoginSuccess
-                kauLoginOnSuccess()
-            case UrlLMSLoginFail:
-                kauLoginOnFail()
-            case "https://www.kau.ac.kr/page/act_login.jsp":
-                //방화벽 차단 당했을때 처리??
-                print("blocked")
-            default:
-                print("where..? : \(currentUrl)")
+        LoginHelper().tryLogin(id: user!.username!, pw: user!.pw!, parent: self, showDialog: false) { type, res in
+            switch(res) {
+            case .success:
+                CommonUtils().storeCookiesFromWKWebview() {
+                    CommonUtils().replaceRootViewController(identifier: "SWRevealViewController")
+                }
+            case .failure:
+                CommonUtils().replaceRootViewController(identifier: "loginViewController")
+            }
         }
     }
 }

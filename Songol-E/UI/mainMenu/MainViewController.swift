@@ -112,13 +112,15 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
         case 6:
-            CommonUtils().pushViewControllerNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable)
+            CommonUtils()
+                .pushNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlPortalLogin, redirectUrl:  UrlExamTable)
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
             break;
         case 8:
-            CommonUtils().pushViewControllerNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms)
+            CommonUtils()
+                .pushNav(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms)
             break;
         default:
             break;

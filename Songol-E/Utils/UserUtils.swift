@@ -8,10 +8,14 @@
 
 import Foundation
 
-class UserUtils{
+struct UserUtil{
+    static let shared = UserUtil()
     
-    static let sharedInstance = UserUtils()
-    init() {
-        
+    static func getType(id: String, completion: (UserType) -> Void) {
+        if id == "guest" {
+            completion(.guest)
+        } else {
+            completion(.normal)
+        }
     }
 }

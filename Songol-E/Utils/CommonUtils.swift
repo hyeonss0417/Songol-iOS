@@ -23,18 +23,21 @@ final class CommonUtils: NSObject {
         self.user = user
     }
     
+    //Replace Root ViewController ex) Login, Logout...
     func replaceRootViewController(identifier: String){
         UIApplication.shared.keyWindow?.rootViewController =
             UIStoryboard(name: "Main", bundle: nil)
                 .instantiateViewController(withIdentifier: identifier)
     }
     
-    func pushViewControllerNav(navVC: UINavigationController?, identifier: ViewControllerNameType, url: String = ""){
+    //Push ViewController on NavigationViewController
+    func pushNav(navVC: UINavigationController?, identifier: ViewControllerNameType, url: String = "", redirectUrl: String? = nil){
         let target = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: identifier.rawValue)
         
         if let vc = target as? AccessWebViewController {
             vc.stringURL = url
+            vc.redirectUrl = redirectUrl
         }
         
         navVC?.pushViewController( target, animated: true)
@@ -57,7 +60,9 @@ final class CommonUtils: NSObject {
         vc.present(alertController,animated: true,completion: nil)
     }
     
+    //Kau Website Login with js
     func macroKauLogin(on wk: WKWebView, id: String, pw: String){
+        print("start macro")
         let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
         let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('alt');if(status=='로그인버튼'){ cells[i].click(); break;} }"
@@ -65,12 +70,29 @@ final class CommonUtils: NSObject {
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
     }
     
-    func storeCookiesFromWKWebview(){
+    func storeCookiesFromWKWebview(completion: @escaping () -> Void = {}) {
         WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
             for cookie in cookies{
                 HTTPCookieStorage.shared.setCookie(cookie)
                 print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
             }
+            completion()
+        }
+    }
+
+    func removeAllCookiesFromWKWebview() {
+        WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) {
+            (records) -> Void in
+            for record in records {
+                WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
+                print("cookie removedall")
+            }
+        }
+        
+        //HTTPCookieStorage.shared.cookies?.removeAll()
+        guard let cookies =  HTTPCookieStorage.shared.cookies else {return}
+        for cookie in cookies {
+            HTTPCookieStorage.shared.deleteCookie(cookie)
         }
     }
 }

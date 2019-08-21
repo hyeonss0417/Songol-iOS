@@ -42,14 +42,12 @@ class PortalCheckViewController : UIViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         //print("===", mWebView.request?.url?.absoluteString)
-        if  mWebView.request?.url?.absoluteString == "https://portal.kau.ac.kr/portal/MyPortal_No.jsp" && check {
+        if  mWebView.request?.url?.absoluteString == UrlMyPortal && check {
             
             check = false
             // frame 만들어서 그 안에 WebView를 가진 ViewController를 부르면 된다 !!
-            performSegue(withIdentifier: "childWebView", sender: nil)
-            
+            //performSegue(withIdentifier: "childWebView", sender: nil)
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,7 +57,7 @@ class PortalCheckViewController : UIViewController, UIWebViewDelegate {
     }
     
     private func initWebView(){
-        mWebView.loadRequest(URLRequest(url: URL(string: stringURL)!))
+        mWebView.loadRequest(URLRequest(url: URL(string: UrlMyPortal)!))
         mWebView.scalesPageToFit = true
     }
     
