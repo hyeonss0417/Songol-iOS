@@ -143,13 +143,7 @@
                         <segue destination="Igb-Tf-61T" kind="show" identifier="delivery" id="ZAL-or-saC"/>
                         <segue destination="SNx-mp-YWr" kind="show" identifier="만든이" id="UDV-dn-8XZ"/>
                         <segue destination="IZY-OG-YR2" kind="show" identifier="chat" id="MIJ-K8-S5k"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="동아리" id="d7C-7G-c3c"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="화전역 열차 시간표" id="xZh-le-WxO"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="도서관 도서 검색" id="kkA-Wj-IFg"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="스터디룸 예약현황" id="IUh-iC-svV"/>
                         <segue destination="FOI-Cn-cph" kind="show" identifier="lms" id="vHt-aB-Nqy"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="교직원 정보" id="oaw-Uf-LkQ"/>
-                        <segue destination="4IR-TE-gWX" kind="show" identifier="시간표" id="C8U-SY-HgK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -407,40 +401,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uEf-Y7-Ww3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-177" y="-564"/>
-        </scene>
-        <!--Web Info View Controller-->
-        <scene sceneID="kWJ-vp-jiq">
-            <objects>
-                <viewController id="4IR-TE-gWX" customClass="WebInfoViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RHj-4V-o5w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nao-J4-VZq">
-                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="OA2-Js-XKo" firstAttribute="trailing" secondItem="Nao-J4-VZq" secondAttribute="trailing" id="Jm5-F7-cEN"/>
-                            <constraint firstItem="OA2-Js-XKo" firstAttribute="bottom" secondItem="Nao-J4-VZq" secondAttribute="bottom" id="Tv9-sa-ZOQ"/>
-                            <constraint firstItem="Nao-J4-VZq" firstAttribute="leading" secondItem="OA2-Js-XKo" secondAttribute="leading" id="rHj-tT-p7J"/>
-                            <constraint firstItem="Nao-J4-VZq" firstAttribute="top" secondItem="OA2-Js-XKo" secondAttribute="top" id="sAc-NX-yFc"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="OA2-Js-XKo"/>
-                    </view>
-                    <connections>
-                        <outlet property="wkWebView" destination="Nao-J4-VZq" id="GLM-ko-VDZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bn5-hX-mhz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2026" y="1211"/>
         </scene>
         <!--Developer View Controller-->
         <scene sceneID="nQV-1m-HBm">
@@ -1541,7 +1501,6 @@
         <image name="profile-default-white" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IUh-iC-svV"/>
         <segue reference="KBd-m6-OFC"/>
     </inferredMetricsTieBreakers>
 </document>

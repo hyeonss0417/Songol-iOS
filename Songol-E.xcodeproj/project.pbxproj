@@ -45,7 +45,6 @@
 		AF6EF5CB230BCEB000758D7B /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */; };
 		AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF800156213FBB1300EB1E41 /* LoginViewController.swift */; };
 		AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80015A2142582500EB1E41 /* RadioButton.swift */; };
-		AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */; };
 		AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA10102214BC5DB00E83336 /* AccountInfo.swift */; };
 		AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA62B632161EFAA00D18A83 /* TabLayout.swift */; };
 		AFAA7FF7214636DC00160004 /* AESencrypt&decrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA7FF6214636DC00160004 /* AESencrypt&decrypt.swift */; };
@@ -135,7 +134,6 @@
 		AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
 		AF800156213FBB1300EB1E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF80015A2142582500EB1E41 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
-		AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInfoViewController.swift; sourceTree = "<group>"; };
 		AFA10102214BC5DB00E83336 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
 		AFA62B632161EFAA00D18A83 /* TabLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabLayout.swift; sourceTree = "<group>"; };
 		AFAA7FF6214636DC00160004 /* AESencrypt&decrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AESencrypt&decrypt.swift"; sourceTree = "<group>"; };
@@ -433,7 +431,6 @@
 			isa = PBXGroup;
 			children = (
 				AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */,
-				AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */,
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
 			);
 			path = navMenu;
@@ -697,7 +694,6 @@
 				AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
-				AF85C82D215AA7EE003F0978 /* WebInfoViewController.swift in Sources */,
 				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,
 				AFE953F722F02C2F00646E4D /* CALayer+.swift in Sources */,
 				AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */,
