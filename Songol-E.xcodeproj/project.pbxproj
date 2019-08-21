@@ -21,7 +21,6 @@
 		AF1BBE062176FA110056FD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE052176FA110056FD2A /* Constants.swift */; };
 		AF1BBE0821773A6F0056FD2A /* AccessWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */; };
 		AF1BBE0B21774B9E0056FD2A /* LoginFailAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */; };
-		AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B652178502400C1BB31 /* NavMenuController.swift */; };
 		AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */; };
 		AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411421383C0C000E4215 /* AppDelegate.swift */; };
 		AF2C411721383C0C000E4215 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2C411621383C0C000E4215 /* MainViewController.swift */; };
@@ -39,8 +38,6 @@
 		AF43824D22E0BC6700E2F176 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43824C22E0BC6700E2F176 /* Alerts.swift */; };
 		AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */; };
 		AF5FCF91230D0ABC005E67D0 /* NavigationItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */; };
-		AF61EECE219C3FD8003C842C /* PortalCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */; };
-		AF61EED121A0132B003C842C /* ChildWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EED021A0132B003C842C /* ChildWebViewController.swift */; };
 		AF61EED421A01A6D003C842C /* ChildViewNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EED321A01A6D003C842C /* ChildViewNav.swift */; };
 		AF69247322E033DC00FA0CFA /* CheckAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69247222E033DC00FA0CFA /* CheckAuthViewController.swift */; };
 		AF69247522E035A600FA0CFA /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69247422E035A600FA0CFA /* CommonUtils.swift */; };
@@ -106,7 +103,6 @@
 		AF1BBE052176FA110056FD2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessWebViewController.swift; sourceTree = "<group>"; };
 		AF1BBE0A21774B9E0056FD2A /* LoginFailAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFailAlert.swift; sourceTree = "<group>"; };
-		AF2C0B652178502400C1BB31 /* NavMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavMenuController.swift; sourceTree = "<group>"; };
 		AF2C0B6921786EA700C1BB31 /* PreparingToLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparingToLaunch.swift; sourceTree = "<group>"; };
 		AF2C411121383C0C000E4215 /* Songol-E.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Songol-E.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2C411421383C0C000E4215 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -132,8 +128,6 @@
 		AF43824C22E0BC6700E2F176 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaseViewController.swift; sourceTree = "<group>"; };
 		AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemInfo.swift; sourceTree = "<group>"; };
-		AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalCheckViewController.swift; sourceTree = "<group>"; };
-		AF61EED021A0132B003C842C /* ChildWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildWebViewController.swift; sourceTree = "<group>"; };
 		AF61EED321A01A6D003C842C /* ChildViewNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewNav.swift; sourceTree = "<group>"; };
 		AF69247222E033DC00FA0CFA /* CheckAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAuthViewController.swift; sourceTree = "<group>"; };
 		AF69247422E035A600FA0CFA /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
@@ -353,8 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */,
-				AF61EECD219C3FD8003C842C /* PortalCheckViewController.swift */,
-				AF61EED021A0132B003C842C /* ChildWebViewController.swift */,
 			);
 			path = ChildWebViews;
 			sourceTree = "<group>";
@@ -442,7 +434,6 @@
 			children = (
 				AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */,
 				AF85C82C215AA7EE003F0978 /* WebInfoViewController.swift */,
-				AF2C0B652178502400C1BB31 /* NavMenuController.swift */,
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
 			);
 			path = navMenu;
@@ -703,7 +694,6 @@
 				AF61EED421A01A6D003C842C /* ChildViewNav.swift in Sources */,
 				AF69247322E033DC00FA0CFA /* CheckAuthViewController.swift in Sources */,
 				AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */,
-				AF2C0B662178502400C1BB31 /* NavMenuController.swift in Sources */,
 				AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
@@ -730,11 +720,9 @@
 				AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */,
 				AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */,
 				AF2D60EC218DC94C00206C54 /* LoadingDialog.swift in Sources */,
-				AF61EECE219C3FD8003C842C /* PortalCheckViewController.swift in Sources */,
 				AF193F362179AFDF0073D7E8 /* CommentsViewController.swift in Sources */,
 				AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */,
 				AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */,
-				AF61EED121A0132B003C842C /* ChildWebViewController.swift in Sources */,
 				AF0CABC422E045D2008EA92D /* UserUtils.swift in Sources */,
 				AF3D5CFA213D4F2F0090F6A9 /* ImageZoomViewController.swift in Sources */,
 				AFF0B84321384E5A00D5F9DB /* CalendarViewController.swift in Sources */,

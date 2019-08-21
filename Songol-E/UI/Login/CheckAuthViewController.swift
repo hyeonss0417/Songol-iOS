@@ -28,7 +28,7 @@ class CheckAuthViewController: BaseUIViewController {
             case .success:
                 CommonUtils().replaceRootViewController(identifier: .main)
             case .failure:
-                CommonUtils().replaceRootViewController(identifier: .login)
+                LoginFailAlert.shared.show(on: self)
             }
         }
     }

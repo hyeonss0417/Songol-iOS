@@ -57,7 +57,7 @@ class LoginHelper: UIView, WKNavigationDelegate {
                     self.loginSuccess()
                 }
             }
-        case UrlLMSLoginFail:
+        case UrlLMSLoginFail, UrlPortalLoginFail:
             self.completion(.normal, .failure)
         default:
             break

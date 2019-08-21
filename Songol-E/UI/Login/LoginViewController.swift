@@ -45,14 +45,12 @@ class LoginViewController: UIViewController {
             userID = labelID.text
             userPW = labelPW.text
             
-            LoginHelper().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in
-                print("ty[e \(type) resstate \(res)")
-                
+            LoginHelper().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in                
                 switch res {
                 case .success:
                     self.authOnSuccess(type: type)
                 case .failure:
-                    CommonUtils().alertLoginFail(on: self)
+                    LoginFailAlert.shared.show(on: self)
                 }
             }
         }

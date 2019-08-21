@@ -54,24 +54,7 @@ final class CommonUtils: NSObject {
         
         navVC?.pushViewController( target, animated: true)
     }
-    
-    func alertLoginFail(on vc:UIViewController){
-        let alertController = UIAlertController(title: "로그인에 실패하였습니다.",message: "ID/PW 확인 후 재로그인 하십시오.", preferredStyle: UIAlertControllerStyle.alert)
-        
-        //UIAlertActionStye.destructive 지정 글꼴 색상 변경
-        let yesAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-            UIApplication.shared.keyWindow?.rootViewController =
-                CommonUtils().mainStoryboard
-                    .instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        }
-        let noAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-        }
-        alertController.addAction(noAction)
-        alertController.addAction(yesAction)
-        
-        vc.present(alertController,animated: true,completion: nil)
-    }
-    
+
     //Kau Website Login with js
     func macroKauLogin(on wk: WKWebView, id: String, pw: String){
         print("start macro")

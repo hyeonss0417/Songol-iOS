@@ -52,22 +52,6 @@ class MainViewController: BaseUIViewController {
             }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-       if segue.identifier == "portalCheck" {
-            if let destinationVC = segue.destination as? PortalCheckViewController {
-                destinationVC.setChildInfo(stringURL2: "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp", stringTitle: "강의 시간표")
-            }
-       }else if segue.identifier == "lms" {
-            if let destVC = segue.destination as? AccessWebViewController {
-                destVC.stringURL = sender as! String
-            }
-       }
-       else{
-            NavMenuController().webRedirect(segue: segue)
-        }
-    }
 }
 
 extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
