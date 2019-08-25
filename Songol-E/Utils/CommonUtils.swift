@@ -69,9 +69,10 @@ final class CommonUtils: NSObject {
         print("start macro lms")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
-        let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('name');if(status=='loginbutton'){ cells[i].click(); break;} }"
-        
-        wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
+        let submitFormJS = "document.getElementsByTagName('form')[0].submit();"
+        wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + submitFormJS) { a,b in
+            print("done???")
+        }
     }
     
     func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void = {res in }) {
