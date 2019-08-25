@@ -37,7 +37,7 @@ extension AccessWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
         switch currentUrl {
-            case UrlLmsLogin1, UrlLmsLogin2:
+            case UrlLmsLogin1:
                 CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
                 break
             case stringURL:

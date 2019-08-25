@@ -56,11 +56,20 @@ final class CommonUtils: NSObject {
     }
 
     //Kau Website Login with js
-    func macroKauLogin(on wk: WKWebView, id: String, pw: String){
+    func macroKauLogin(on wk: WKWebView, id: String, pw: String) {
         print("start macro")
         let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
         let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('alt');if(status=='로그인버튼'){ cells[i].click(); break;} }"
+        
+        wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
+    }
+    
+    func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
+        print("start macro lms")
+        let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
+        let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
+        let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('name');if(status=='loginbutton'){ cells[i].click(); break;} }"
         
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
     }

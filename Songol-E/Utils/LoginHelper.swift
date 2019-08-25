@@ -17,7 +17,6 @@ class LoginHelper: UIView, WKNavigationDelegate {
     private var portalLoginState = false
     private var id: String!
     private var pw: String!
-    private let lmsWebview = WKWebView()
     private let portalWebview = WKWebView()
     private var portalCookies: [HTTPCookie] = []
     private var lmsCookies: [HTTPCookie] = []
@@ -30,18 +29,19 @@ class LoginHelper: UIView, WKNavigationDelegate {
         self.completion = completion
         
         parent.view.addSubview(self)
-        self.addSubview(lmsWebview)
         
-        lmsWebview.navigationDelegate = self
         showDialog ? dialog.displaySpinner(on: parent.view) : nil
-        lmsWebview.loadWithStringUrl(url: UrlLmsLogin1)
+        
+        setupPortalWebkit()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
         print(currentUrl)
         switch currentUrl {
-        case UrlLmsLogin1, UrlPortalLogin:
+        case UrlLmsLogin1:
+            CommonUtils().macroLMSLogin(on: webView, id: id!, pw: pw!)
+        case UrlPortalLogin:
             CommonUtils().macroKauLogin(on: webView, id: id!, pw: pw!)
         case UrlMyLms:
             lmsLoginState = true

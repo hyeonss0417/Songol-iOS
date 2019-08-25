@@ -5,20 +5,11 @@
 //  Created by 최민섭 on 2018. 9. 21..
 //  Copyright © 2018년 최민섭. All rights reserved.
 //
-
 import UIKit
 import Firebase
 import FirebaseDatabase
 
-
 class OpenChatParentViewController: UITableViewController{
-    
-    private let log:String = "LogTag"
-    
-    private var index = 0
-    private var parentCellIndex = 0
-    private var refControl: UIRefreshControl?
-    
     struct parentCellData{
         var iconImage = UIImage()
         var username = String()
@@ -28,8 +19,11 @@ class OpenChatParentViewController: UITableViewController{
         var timeInterval = Int()
     }
     
+    private let log:String = "LogTag"
+    private var index = 0
+    private var parentCellIndex = 0
+    private var refControl: UIRefreshControl?
     var chatTableViewData : [parentCellData] = []
-    
     var dbRef : DatabaseReference! // 인스턴스 변수
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -141,7 +135,6 @@ class OpenChatParentViewController: UITableViewController{
                 self.index = index+1
                 
                 self.tableView.insertRows(at: [IndexPath(row: self.index-1, section: 0)],  with: UITableViewRowAnimation.automatic)
-                
             }
             
         }){(error) in

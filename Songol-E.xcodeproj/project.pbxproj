@@ -52,7 +52,6 @@
 		AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB0FBC2174A4F4005A9FFA /* PostViewController.swift */; };
 		AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */; };
 		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
-		AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE40B852152396400A7E747 /* MainNavigationSegue.swift */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
 		AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953ED22EF2F9300646E4D /* Protocols.swift */; };
@@ -141,7 +140,6 @@
 		AFAB0FBC2174A4F4005A9FFA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
 		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		AFE40B852152396400A7E747 /* MainNavigationSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationSegue.swift; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
 		AFE953ED22EF2F9300646E4D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -327,7 +325,6 @@
 				AF80015A2142582500EB1E41 /* RadioButton.swift */,
 				AFAA7FF6214636DC00160004 /* AESencrypt&decrypt.swift */,
 				AFA10102214BC5DB00E83336 /* AccountInfo.swift */,
-				AFE40B852152396400A7E747 /* MainNavigationSegue.swift */,
 				AFA62B632161EFAA00D18A83 /* TabLayout.swift */,
 				AF3E9A192175BCCB00C338F1 /* GetSNumber.swift */,
 				AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */,
@@ -341,12 +338,12 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		AF43824B22E0BADB00E2F176 /* ChildWebViews */ = {
+		AF43824B22E0BADB00E2F176 /* Webpage */ = {
 			isa = PBXGroup;
 			children = (
 				AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */,
 			);
-			path = ChildWebViews;
+			path = Webpage;
 			sourceTree = "<group>";
 		};
 		AF60E9F5213BC08200B6EF56 /* Model */ = {
@@ -363,7 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				AF8D89B822E5E211009E0C66 /* Utils */,
-				AF43824B22E0BADB00E2F176 /* ChildWebViews */,
+				AF43824B22E0BADB00E2F176 /* Webpage */,
 				AF69247122E032DD00FA0CFA /* Login */,
 				AF06542C215509650085B830 /* mainMenu */,
 				AFE40B8721523DEC00A7E747 /* navMenu */,
@@ -717,7 +714,6 @@
 				AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */,
 				AF2D60EC218DC94C00206C54 /* LoadingDialog.swift in Sources */,
 				AF193F362179AFDF0073D7E8 /* CommentsViewController.swift in Sources */,
-				AFE40B862152396400A7E747 /* MainNavigationSegue.swift in Sources */,
 				AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */,
 				AF0CABC422E045D2008EA92D /* UserUtils.swift in Sources */,
 				AF3D5CFA213D4F2F0090F6A9 /* ImageZoomViewController.swift in Sources */,
