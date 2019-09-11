@@ -6,11 +6,12 @@
 //  Copyright © 2018 최민섭. All rights reserved.
 //
 
-class LoadingDialog: PageLoadingProtocol {
+class LoadingDialog {
     
     var spinner: UIView?
     
-    func displaySpinner(on onView : UIView) {
+    func displaySpinner(on onView : UIView,
+                        backgroundColor: UIColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)) {
         
         let spinner = UIView.init(frame: onView.bounds)
         spinner.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)

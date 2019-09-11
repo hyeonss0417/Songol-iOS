@@ -13,14 +13,9 @@ enum ResultState {
 }
 
 class LoginHelper: UIView, WKNavigationDelegate {
-    private var lmsLoginState = false
-    private var portalLoginState = false
     private var id: String!
     private var pw: String!
-    private var lmsWebview = WKWebView()
     private let portalWebview = WKWebView()
-    private var portalCookies: [HTTPCookie] = []
-    private var lmsCookies: [HTTPCookie] = []
     private let dialog = LoadingDialog()
     private var completion: (UserType, ResultState) -> Void = {_,_ in }
     
@@ -32,28 +27,15 @@ class LoginHelper: UIView, WKNavigationDelegate {
         parent.view.addSubview(self)
         
         showDialog ? dialog.displaySpinner(on: parent.view) : nil
-//         self.addSubview(lmsWebview)
-//        lmsWebview.navigationDelegate = self
-//        lmsWebview.loadWithStringUrl(url: UrlLmsLogin1)
         setupPortalWebkit()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
-        print(currentUrl)
         switch currentUrl {
-//        case UrlLmsLogin1:
-//            CommonUtils().macroLMSLogin(on: webView, id: id!, pw: pw!)
         case UrlPortalLogin:
             CommonUtils().macroKauLogin(on: webView, id: id!, pw: pw!)
-//        case UrlMyLms:
-//            lmsLoginState = true
-//            CommonUtils().storeCookiesFromWKWebview() { res in
-//                self.setupPortalWebkit()
-//            }
         case UrlMyPortal:
-            portalLoginState = true
-            lmsLoginState = true // lms 로그인 테스팅 과정 중이라 생략
             CommonUtils().storeCookiesFromWKWebview() { res in
                 if res.count == 0 {
                     self.completion(.normal, .failure)
@@ -81,10 +63,6 @@ class LoginHelper: UIView, WKNavigationDelegate {
     }
     
     private func loginSuccess() {
-        if !lmsLoginState, !portalLoginState {
-            return
-        }
-        
         UserUtil.getType(id: id) { type in
             for subview in self.subviews {
                 subview.removeFromSuperview()

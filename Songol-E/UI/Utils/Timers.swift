@@ -6,9 +6,9 @@
 //  Copyright © 2019 최민섭. All rights reserved.
 //
 
-struct Timers{
+struct Timers {
     
-    func set(duration: Int, completion: @escaping () -> Void){
+    static func set(duration: Int, completion: @escaping () -> Void) {
         let time = DispatchTime.now() + .seconds(duration)
         DispatchQueue.main.asyncAfter(deadline: time) {
             completion()

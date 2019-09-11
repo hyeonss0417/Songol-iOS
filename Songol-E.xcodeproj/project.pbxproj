@@ -54,7 +54,6 @@
 		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
-		AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953ED22EF2F9300646E4D /* Protocols.swift */; };
 		AFE953F122EF365800646E4D /* Timers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F022EF365800646E4D /* Timers.swift */; };
 		AFE953F322EFDF1000646E4D /* UIAlertViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */; };
 		AFE953F522F02A7A00646E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE953F422F02A7A00646E4D /* Assets.xcassets */; };
@@ -142,7 +141,6 @@
 		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
-		AFE953ED22EF2F9300646E4D /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		AFE953F022EF365800646E4D /* Timers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timers.swift; sourceTree = "<group>"; };
 		AFE953F222EFDF1000646E4D /* UIAlertViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertViewController+.swift"; sourceTree = "<group>"; };
 		AFE953F422F02A7A00646E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -390,7 +388,6 @@
 			isa = PBXGroup;
 			children = (
 				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
-				AFE953ED22EF2F9300646E4D /* Protocols.swift */,
 				AFE953F022EF365800646E4D /* Timers.swift */,
 			);
 			path = Utils;
@@ -688,7 +685,6 @@
 				AF61EED421A01A6D003C842C /* ChildViewNav.swift in Sources */,
 				AF69247322E033DC00FA0CFA /* CheckAuthViewController.swift in Sources */,
 				AF2C0B6A21786EA700C1BB31 /* PreparingToLaunch.swift in Sources */,
-				AFE953EE22EF2F9300646E4D /* Protocols.swift in Sources */,
 				AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */,
 				AFA62B642161EFAA00D18A83 /* TabLayout.swift in Sources */,
 				AF3D5CF8213D4BAC0090F6A9 /* URLImageDownloading.swift in Sources */,

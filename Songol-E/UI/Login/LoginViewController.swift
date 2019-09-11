@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UserDefaults.standard.set(nil, forKey: "user")
-        CommonUtils().cleanCookies()
+        CommonUtils().clearCookies()
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
