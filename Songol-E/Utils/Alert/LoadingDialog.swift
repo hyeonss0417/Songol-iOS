@@ -10,15 +10,13 @@ class LoadingDialog {
     
     var spinner: UIView?
     
-    func displaySpinner(on onView : UIView,
-                        backgroundColor: UIColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)) {
-        
+    func displaySpinner(on onView : UIView) {
         let spinner = UIView.init(frame: onView.bounds)
         spinner.backgroundColor = UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.5)
         let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        ai.transform = CGAffineTransform(scaleX: 2, y: 2)
         ai.startAnimating()
-        ai.center = spinner.center
-        
+        ai.center = CGPoint(x: spinner.bounds.width/2, y: spinner.bounds.height * 0.4)
         DispatchQueue.main.async {
             spinner.addSubview(ai)
             onView.addSubview(spinner)

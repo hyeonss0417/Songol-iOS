@@ -66,7 +66,7 @@ final class CommonUtils: NSObject {
     }
     
     func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
-        print("start macro lms \(id), \(pw)")
+        print("start macro lms")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
         let submitFormJS = "document.getElementsByTagName('form')[0].submit();"
@@ -101,7 +101,6 @@ final class CommonUtils: NSObject {
             (records) -> Void in
             for record in records {
                 WKWebsiteDataStore.default().removeData(ofTypes: record.dataTypes, for: [record], completionHandler: {})
-                print("cookie removedall")
             }
         }
         

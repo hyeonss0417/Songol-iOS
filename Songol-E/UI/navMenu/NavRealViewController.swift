@@ -52,11 +52,12 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.rowHeight = 60
     }
     
-    public func changeView(imgSource:UIImage, label:String, snum:String)
-    {
-        //firebase userinfo change
-        labelUserName.text = label
-        imgUserIcon.image = imgSource
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let index = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: index, animated: true)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

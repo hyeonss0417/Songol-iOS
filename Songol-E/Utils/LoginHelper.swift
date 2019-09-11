@@ -32,6 +32,7 @@ class LoginHelper: UIView, WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
+        print(currentUrl)
         switch currentUrl {
         case UrlPortalLogin:
             CommonUtils().macroKauLogin(on: webView, id: id!, pw: pw!)

@@ -33,7 +33,7 @@ class AccessWebViewController: BaseUIViewController{
     }
 }
 
-extension AccessWebViewController: WKNavigationDelegate{
+extension AccessWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
         print(currentUrl)
@@ -56,6 +56,23 @@ extension AccessWebViewController: WKNavigationDelegate{
             }
     }
     
+    
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void)
+    {
+        if navigationAction.navigationType == .formSubmitted && (stringURL == UrlScore || stringURL == UrlProfessors)
+        {
+            if let url = navigationAction.request.url
+            {
+                decisionHandler(.cancel)
+                webView.loadWithStringUrl(url: url.absoluteString)
+            }
+            return
+        }
+        
+        decisionHandler(.allow)
+    }
+
     func allowWebKitGesture(_ allow: Bool){
          wkWebView.allowsBackForwardNavigationGestures = allow
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = !allow
