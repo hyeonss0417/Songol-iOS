@@ -10,8 +10,13 @@ import Foundation
 import WebKit
 
 extension WKWebView{    
-    func loadWithStringUrl(url: String, cookie: Bool = true, redirectUrl: String? = nil){
+    func loadWithStringUrl(url: String, cookie: Bool = true){
         var webrequest = URLRequest(url:URL(string: url)!)
+        
+        if url == UrlMyLms {
+            self.load(webrequest)
+            return
+        }
         
         if let storedCookies = HTTPCookieStorage.shared.cookies(for: URL(string: url)!) {
             print("storedCookies : \(storedCookies)")

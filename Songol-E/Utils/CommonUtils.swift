@@ -66,13 +66,12 @@ final class CommonUtils: NSObject {
     }
     
     func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
-        print("start macro lms")
+        print("start macro lms \(id), \(pw)")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
         let submitFormJS = "document.getElementsByTagName('form')[0].submit();"
-        wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + submitFormJS) { a,b in
-            print("done???")
-        }
+        
+        wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + submitFormJS) { a,b in}
     }
     
     func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void = {res in }) {

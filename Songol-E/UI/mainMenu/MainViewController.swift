@@ -98,7 +98,7 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             break;
         case 6:
             CommonUtils()
-                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable, title: "강의 시간표", redirectUrl: UrlPortalLogin)
+                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable, title: "강의 시간표")
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)

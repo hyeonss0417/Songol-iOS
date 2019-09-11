@@ -19,7 +19,7 @@ class AccessWebViewController: BaseUIViewController{
         
         wkWebView.navigationDelegate = self
         wkWebView.isHidden = true
-        wkWebView.loadWithStringUrl(url: stringURL, redirectUrl: redirectUrl)
+        wkWebView.loadWithStringUrl(url: stringURL)
         loadingDialog.displaySpinner(on: self.view)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -36,9 +36,10 @@ class AccessWebViewController: BaseUIViewController{
 extension AccessWebViewController: WKNavigationDelegate{
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let currentUrl = webView.url!.absoluteString
+        print(currentUrl)
         switch currentUrl {
             case UrlLmsLogin1:
-                CommonUtils().macroKauLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
+                CommonUtils().macroLMSLogin(on: wkWebView, id: user!.username!, pw: user!.pw!)
                 break
             case stringURL:
                 wkWebView.isHidden = false
