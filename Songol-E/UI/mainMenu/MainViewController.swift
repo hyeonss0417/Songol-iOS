@@ -45,10 +45,10 @@ class MainViewController: BaseUIViewController {
         if let identifier = navigationIdentifier {
             switch identifier.target {
             case .login:
-                CommonUtils().replaceRootViewController(identifier: .login)
+                CommonUtils.sharedInstance.replaceRootViewController(identifier: .login)
                 self.dismiss(animated: false, completion: nil)
             default:
-                CommonUtils().pushOnNavigationController(navVC: self.navigationController, identifier: identifier.target, url: identifier.pageUrl, title: identifier.title)
+                CommonUtils.sharedInstance.pushOnNavigationController(navVC: self.navigationController, identifier: identifier.target, url: identifier.pageUrl, title: identifier.title)
             }
         }
     }
@@ -97,14 +97,14 @@ extension MainViewController : UICollectionViewDelegate, UICollectionViewDataSou
             performSegue(withIdentifier: "delivery", sender: nil)
             break;
         case 6:
-            CommonUtils()
-                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlExamTable, title: "강의 시간표")
+            CommonUtils.sharedInstance
+                .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlTimeTable, title: "강의 시간표")
             break;
         case 7:
             performSegue(withIdentifier: "chat", sender: nil)
             break;
         case 8:
-            CommonUtils()
+            CommonUtils.sharedInstance
                 .pushOnNavigationController(navVC: self.navigationController, identifier: .accessToWeb, url: UrlMyLms, title: "LMS")
             break;
         default:

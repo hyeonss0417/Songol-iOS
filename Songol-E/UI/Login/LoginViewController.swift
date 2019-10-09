@@ -28,8 +28,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         UserDefaults.standard.set(nil, forKey: "user")
-        CommonUtils().clearCookies()
+        CommonUtils.sharedInstance.clearCookies()
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
@@ -39,16 +40,16 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginButtonOnClick(_ sender: Any) {
-        if labelID.text == nil || labelPW.text == nil{
+        if labelID.text?.isEmpty ?? true || labelPW.text?.isEmpty ?? true {
             FormNotFilledAlert(vc:self).show()
-        }else{
+        } else {
             userID = labelID.text
             userPW = labelPW.text
             
             LoginHelper().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in                
                 switch res {
                 case .success:
-                    self.authOnSuccess(type: type)
+                    self.firebaseLoginWithEmail()
                 case .failure:
                     LoginFailAlert.shared.show(on: self)
                 }
@@ -88,12 +89,12 @@ class LoginViewController: UIViewController {
             userInfo = UserInfo(uid: "", major: "", pw: "", snumber:"0000", username:"guest")
             break
         case .normal, .songol:
-            userInfo = UserInfo(uid: "", major: "", pw: self.userPW, snumber: "", username: self.userID)
+            userInfo = UserInfo(uid: "", major: "", pw: self.userPW!, snumber: "", username: self.userID!)
             break
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
-        CommonUtils().replaceRootViewController(identifier: .main)
+        CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
     }
 }
 

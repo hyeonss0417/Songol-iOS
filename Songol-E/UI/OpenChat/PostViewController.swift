@@ -32,13 +32,12 @@ class PostViewController: BaseUIViewController, UITextFieldDelegate{
     override func callback() {
         
         let currentTime = Int(round( NSDate().timeIntervalSince1970 * 1000))
-    dbRef.child("Questions").child(String(currentTime)).setValue(["date":currentTime, "numofcom":0, "snum":userinfo?.snumber, "text": textContent.text, "type":0])
+        dbRef.child("Chat").child(String(currentTime)).setValue(["date":currentTime,"like":false, "numOfCom":0, "numOfLikes":0, "snum":userinfo?.username, "text": textContent.text, "type":0])
         
         preVC?.readChatList()
         
         // dismiss alert & self
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     @IBOutlet weak var textContent: UITextField!
@@ -52,18 +51,7 @@ class PostViewController: BaseUIViewController, UITextFieldDelegate{
     
         userinfo = AccountInfo().getUserInfo()
         
-        initView()
-        
-        dbRef = Database.database().reference()
-    
-    }
-    
-    func initView(){
-
-        labelUser.text = AccountInfo().usernameSelection(snum: (userinfo?.snumber)!)
-        imgUserIcon.image =
-            AccountInfo().userIconSelection(snum: (userinfo?.snumber)!)
-
+        dbRef = Database.database().reference()  
     }
     
     override func didReceiveMemoryWarning() {

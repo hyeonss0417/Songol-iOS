@@ -14,19 +14,19 @@ class CheckAuthViewController: BaseUIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if user?.username == "guest" {
+        if user.username == "guest" {
             //게스트 계정 로그인 시 3초 대기
             Timers.set(duration: 3){
-                CommonUtils().replaceRootViewController(identifier: .main)
+                CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
             }
         }
         
-        CommonUtils().clearCookies()
+        CommonUtils.sharedInstance.clearCookies()
         
-        LoginHelper().tryLogin(id: user!.username!, pw: user!.pw!, parent: self, showDialog: false) { type, res in            
+        LoginHelper().tryLogin(id: user.username, pw: user.pw, parent: self, showDialog: false) { type, res in
             switch(res) {
             case .success:
-                CommonUtils().replaceRootViewController(identifier: .main)
+                CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
             case .failure:
                 LoginFailAlert.shared.show(on: self)
             }

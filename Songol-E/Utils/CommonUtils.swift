@@ -14,11 +14,11 @@ final class CommonUtils: NSObject {
     static let sharedInstance = CommonUtils()
     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
+    private override init() {}
+    
     var isGuest = false
-    var user: UserInfo?
-    
-    var cookieStore: WKHTTPCookieStore?
-    
+    var user: UserInfo? = nil
+        
     func setUser(user: UserInfo){
         self.user = user
     }
@@ -85,15 +85,17 @@ final class CommonUtils: NSObject {
             }
         })
         
-        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
-            for cookie in cookies{
-                HTTPCookieStorage.shared.setCookie(cookie)
-                print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
+        if #available(iOS 11.0, *) {
+            WKWebsiteDataStore.default().httpCookieStore.getAllCookies { (cookies) in
+                for cookie in cookies{
+                    HTTPCookieStorage.shared.setCookie(cookie)
+                    print("@@@ cookie ==> \(cookie.name) : \(cookie.value) :\(cookie.domain)")
+                }
+                
+                taskSuccess = true
+                completion(cookies)
             }
-            
-            taskSuccess = true
-            completion(cookies)
-        }
+        } 
     }
 
     func removeAllCookiesFromWKWebview() {
@@ -113,6 +115,7 @@ final class CommonUtils: NSObject {
     
     func clearCookies() {
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
+        WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0), completionHandler: {})
         print("[WebCacheCleaner] All cookies deleted")
         
         WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) { records in

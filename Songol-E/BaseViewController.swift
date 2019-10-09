@@ -8,13 +8,27 @@
 
 import UIKit
 
+enum UserError: Error {
+    case nilUserError
+}
+
 class BaseUIViewController: UIViewController {
     
     func callback(){}
-    
     func setNavData(){}
-    
-    let user = CommonUtils.sharedInstance.user
+
+    var user: UserInfo = {
+        guard let user = CommonUtils.sharedInstance.user else {
+            CommonUtils.sharedInstance.replaceRootViewController(identifier: .login)
+            return UserInfo(uid: String(),
+                            major: String(),
+                            pw: String(),
+                            snumber: String(),
+                            username: String())
+        }
+        
+        return user
+    }()
     
     let loadingDialog = LoadingDialog()
     

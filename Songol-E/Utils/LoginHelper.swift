@@ -31,21 +31,20 @@ class LoginHelper: UIView, WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        let currentUrl = webView.url!.absoluteString
+        guard let currentUrl = webView.url?.absoluteString else {return}
         print(currentUrl)
         switch currentUrl {
         case UrlPortalLogin:
-            CommonUtils().macroKauLogin(on: webView, id: id!, pw: pw!)
+            CommonUtils.sharedInstance.macroKauLogin(on: webView, id: id!, pw: pw!)
+            break
         case UrlMyPortal:
-            CommonUtils().storeCookiesFromWKWebview() { res in
-                if res.count == 0 {
-                    self.completion(.normal, .failure)
-                } else {
-                    self.loginSuccess()
-                }
+            CommonUtils.sharedInstance.storeCookiesFromWKWebview() { res in
+                self.loginSuccess()
             }
+            break
         case UrlLMSLoginFail, UrlPortalLoginFail:
-            self.completion(.normal, .failure)
+            loginFail()
+            break
         default:
             break
         }
@@ -61,6 +60,11 @@ class LoginHelper: UIView, WKNavigationDelegate {
         self.addSubview(portalWebview)
         portalWebview.navigationDelegate = self
         portalWebview.loadWithStringUrl(url: UrlPortalLogin, cookie: false)
+    }
+    
+    private func loginFail() {
+        self.completion(.normal, .failure)
+        self.dialog.removeSpinner()
     }
     
     private func loginSuccess() {
