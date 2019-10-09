@@ -61,28 +61,31 @@ class AccessWebViewController: BaseUIViewController{
         wkWebView.navigationDelegate = self
         self.view.addSubview(wkWebView)
         wkWebView.addAutoLayout(parent: self.view)
-        wkWebView.backgroundColor = .blue
-        wkWebView.loadWithStringUrl(url: stringURL)
+        wkWebView.loadWithStringURL(url: stringURL)
     }
     
     private func setupWebView() {
         webView.delegate = self
+        self.view.addSubview(webView)
+        webView.addAutoLayout(parent: self.view)
+        webView.scalesPageToFit = true
+        webView.loadWithStringURL(url: stringURL)
     }
 }
 
 extension AccessWebViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         guard let currentUrl = webView.request?.url?.absoluteString else { return }
+        print(currentUrl)
         switch currentUrl {
         case UrlLmsLogin1:
-            CommonUtils.sharedInstance.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)
+            CommonUtils.sharedInstance.macroLMSLogin(on: webView, id: user.username, pw: user.pw)
             break
         case stringURL:
-            wkWebView.isHidden = false
-            print(wkWebView.bounds.size)
+            webView.isHidden = false
             loadingDialog.removeSpinner()
             allowWebKitGesture(false)
-            break
+            break 
         case "https://www.kau.ac.kr/page/act_login.jsp":
             //방화벽 차단 당했을때 처리
             print("blocked")
@@ -103,7 +106,6 @@ extension AccessWebViewController: WKNavigationDelegate {
                 break
             case stringURL:
                 wkWebView.isHidden = false
-                print(wkWebView.bounds.size)
                 loadingDialog.removeSpinner()
                 allowWebKitGesture(false)
                 break
@@ -124,7 +126,7 @@ extension AccessWebViewController: WKNavigationDelegate {
             if let url = navigationAction.request.url
             {
                 decisionHandler(.cancel)
-                webView.loadWithStringUrl(url: url.absoluteString)
+                webView.loadWithStringURL(url: url.absoluteString)
             }
             return
         }

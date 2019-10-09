@@ -335,7 +335,6 @@
 				AFE953F422F02A7A00646E4D /* Assets.xcassets */,
 				AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */,
 				AF1BBE052176FA110056FD2A /* Constants.swift */,
-				AF69247422E035A600FA0CFA /* CommonUtils.swift */,
 				AF0CABC322E045D2008EA92D /* UserUtils.swift */,
 				AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */,
 			);
@@ -420,6 +419,7 @@
 		AFCCC27E2328C63300150438 /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				AF69247422E035A600FA0CFA /* CommonUtils.swift */,
 				AFCCC27F2328C64F00150438 /* FBReference.swift */,
 			);
 			path = Singleton;

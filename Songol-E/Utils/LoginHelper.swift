@@ -12,10 +12,12 @@ enum ResultState {
     case failure
 }
 
-class LoginHelper: UIView, WKNavigationDelegate {
+class LoginHelper: UIView {
     private var id: String!
     private var pw: String!
-    private let portalWebview = WKWebView()
+    private let portalWKWebview = WKWebView()
+    private let portalWebview = UIWebView()
+    
     private let dialog = LoadingDialog()
     private var completion: (UserType, ResultState) -> Void = {_,_ in }
     
@@ -27,9 +29,63 @@ class LoginHelper: UIView, WKNavigationDelegate {
         parent.view.addSubview(self)
         
         showDialog ? dialog.displaySpinner(on: parent.view) : nil
-        setupPortalWebkit()
+        
+        if #available(iOS 11, *) {
+            setupPortalWkWebview()
+        } else {
+            setupPortalWebview()
+        }
     }
     
+    private func setupPortalWkWebview() {
+        self.addSubview(portalWKWebview)
+        portalWKWebview.navigationDelegate = self
+        portalWKWebview.loadWithStringURL(url: UrlPortalLogin, cookie: false)
+    }
+    
+    private func setupPortalWebview() {
+        self.addSubview(portalWebview)
+        portalWebview.delegate = self
+        portalWebview.loadWithStringURL(url: UrlPortalLogin)
+    }
+    
+    private func loginFail() {
+        self.completion(.normal, .failure)
+        self.dialog.removeSpinner()
+    }
+    
+    private func loginSuccess() {
+        UserUtil.getType(id: id) { type in
+            for subview in self.subviews {
+                subview.removeFromSuperview()
+            }
+            self.completion(type, .success)
+            self.dialog.removeSpinner()
+        }
+    }
+}
+
+extension LoginHelper: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        guard let currentUrl = webView.request?.url?.absoluteString else {return}
+        
+        switch currentUrl {
+        case UrlPortalLogin:
+            CommonUtils.sharedInstance.macroKauLogin(on: webView, id: id!, pw: pw!)
+            break
+        case UrlMyPortal:
+            self.loginSuccess()
+            break
+        case UrlLMSLoginFail, UrlPortalLoginFail:
+            loginFail()
+            break
+        default:
+            break
+        }
+    }
+}
+
+extension LoginHelper: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let currentUrl = webView.url?.absoluteString else {return}
         print(currentUrl)
@@ -47,33 +103,6 @@ class LoginHelper: UIView, WKNavigationDelegate {
             break
         default:
             break
-        }
-    }
-    
-    private func setupPortalWebkit() {
-        for view in self.subviews {
-            if view is WKWebView {
-                view.removeFromSuperview()
-            }
-        }
-        
-        self.addSubview(portalWebview)
-        portalWebview.navigationDelegate = self
-        portalWebview.loadWithStringUrl(url: UrlPortalLogin, cookie: false)
-    }
-    
-    private func loginFail() {
-        self.completion(.normal, .failure)
-        self.dialog.removeSpinner()
-    }
-    
-    private func loginSuccess() {
-        UserUtil.getType(id: id) { type in
-            for subview in self.subviews {
-                subview.removeFromSuperview()
-            }
-            self.completion(type, .success)
-            self.dialog.removeSpinner()
         }
     }
 }

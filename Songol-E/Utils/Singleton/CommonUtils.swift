@@ -65,6 +65,14 @@ final class CommonUtils: NSObject {
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
     }
     
+    func macroKauLogin(on wb: UIWebView, id: String, pw: String) {
+        print("start macro")
+        let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
+        let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
+        let onClickEventJS =  "var cells = document.getElementsByTagName('img');" + "for(var i=0; i < cells.length; i++){ var status = cells[i].getAttribute('alt');if(status=='로그인버튼'){ cells[i].click(); break;} }"
+        wb.stringByEvaluatingJavaScript(from: loadUsernameJS + loadPasswordJS + onClickEventJS)
+    }
+    
     func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
         print("start macro lms")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
@@ -72,6 +80,15 @@ final class CommonUtils: NSObject {
         let submitFormJS = "document.getElementsByTagName('form')[0].submit();"
         
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + submitFormJS) { a,b in}
+    }
+    
+    func macroLMSLogin(on wb: UIWebView, id: String, pw: String) {
+        print("start macro lms")
+        let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
+        let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
+        let submitFormJS = "document.getElementsByTagName('form')[0].submit();"
+        
+        wb.stringByEvaluatingJavaScript(from: loadUsernameJS + loadPasswordJS + submitFormJS)
     }
     
     func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void) {
@@ -95,7 +112,7 @@ final class CommonUtils: NSObject {
                 taskSuccess = true
                 completion(cookies)
             }
-        } 
+        }
     }
 
     func removeAllCookiesFromWKWebview() {

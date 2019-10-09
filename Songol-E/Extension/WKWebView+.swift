@@ -10,7 +10,7 @@ import Foundation
 import WebKit
 
 extension WKWebView{    
-    func loadWithStringUrl(url: String, cookie: Bool = true){
+    func loadWithStringURL(url: String, cookie: Bool = true){
         var webrequest = URLRequest(url:URL(string: url)!)
         
         if url == UrlMyLms {
@@ -29,5 +29,12 @@ extension WKWebView{
         }
     
         self.load(webrequest)
+    }
+}
+
+extension UIWebView {
+    func loadWithStringURL(url: String) {
+        guard let url = URL(string: url) else {return}
+        self.loadRequest(URLRequest(url: url))
     }
 }
