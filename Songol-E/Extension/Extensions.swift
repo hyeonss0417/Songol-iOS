@@ -104,12 +104,25 @@ extension UIImageView {
                 
                 if self.url == stringUrl {
                     DispatchQueue.main.async {
-                        self.image = imageToCache
+                        UIView.transition(with: self,
+                                          duration:0.5,
+                                          options: .transitionCrossDissolve,
+                                          animations: { self.image = imageToCache },
+                                          completion: nil)
                         imageCache.setObject(imageToCache, forKey: stringUrl as AnyObject)
                     }
                 }
             }
-            }.resume()
+        }.resume()
     }
 }
 
+extension NSObject {
+    var className: String {
+        return String(describing: type(of: self))
+    }
+    
+    class var className: String {
+        return String(describing: self)
+    }
+}

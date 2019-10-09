@@ -12,10 +12,10 @@ class DeliveryMenuListViewController: UIViewController, IndicatorInfoProvider {
             tableView.isHidden = true
         }
     }
-    var category: String?
-    var deliveryInfoToSend: DeliveryFoodModel?
-    var deliveryFoodArrays:[DeliveryFoodModel] = []
-    var dbRef = FBReference.shared.db
+    private let dialog = LoadingDialog()
+    private var category: String?
+    private var deliveryInfoToSend: DeliveryFoodModel?
+    private var deliveryFoodArrays:[DeliveryFoodModel] = []
     
     func setCategory(category:String){
         self.category = category
@@ -24,7 +24,7 @@ class DeliveryMenuListViewController: UIViewController, IndicatorInfoProvider {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        dialog.displaySpinner(on: self.view)
         readDeliveryList(category: category!)
     }
     
@@ -51,8 +51,7 @@ class DeliveryMenuListViewController: UIViewController, IndicatorInfoProvider {
     }
     
     func readDeliveryList(category:String){
-
-        dbRef.child("Delivery").child(category).observeSingleEvent(of: .value, with: { (snapshot) in
+        FBReference.shared.db.child("Delivery").child(category).observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children{
                 let value = (child as! DataSnapshot).value as? NSDictionary
                 
@@ -62,8 +61,11 @@ class DeliveryMenuListViewController: UIViewController, IndicatorInfoProvider {
             }
             
             DispatchQueue.main.async {
+                self.dialog.removeSpinner()
                 self.tableView.isHidden = false
-                self.tableView.reloadSections(IndexSet(0...0), with: .fade)
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
+                })
             }
             
         }){ (error) in
@@ -94,7 +96,13 @@ extension DeliveryMenuListViewController: UITableViewDataSource, UITableViewDele
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        deliveryInfoToSend = deliveryFoodArrays[indexPath.row]
-        performSegue(withIdentifier: "deliveryDetail", sender: nil)
+//        deliveryInfoToSend = deliveryFoodArrays[indexPath.row]
+//        performSegue(withIdentifier: "deliveryDetail", sender: nil)
+        guard let target = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ImageZoomViewController.className) as? ImageZoomViewController else {
+            return
+        }
+        
+        target.setImageUrl(url: deliveryFoodArrays[indexPath.row].imgMenu_url)
+        self.present(target, animated: true, completion: nil)
     }
 }

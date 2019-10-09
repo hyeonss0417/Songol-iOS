@@ -9,48 +9,39 @@
 import UIKit
 import ImageScrollView
 
-class ImageZoomViewController: UIViewController, UIScrollViewDelegate {
+class ImageZoomViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    var imageUrl:URL?
-
+    var imageUrl:String?
     var image:UIImage?
+    
 
     public func setImageUrl(url:String){
-        imageUrl = URL(string: url)
+        imageUrl = url
     }
 
     override func viewDidLoad() {
-
-        scrollView.alwaysBounceVertical = false
-        scrollView.alwaysBounceHorizontal = false
+        super.viewDidLoad()
         
-        scrollView.minimumZoomScale = 1.0
-        scrollView.maximumZoomScale = 2.0
+        imageView.loadImageAsyc(fromURL: imageUrl!)
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTappedAction(_:))))
+        
+        scrollView.maximumZoomScale = 4.0
         scrollView.delegate = self
-        
-        downloadImage(from: imageUrl!)
-        
     }
+}
 
-    func downloadImage(from url: URL) {
-        print("Download Started")
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Download Finished")
-            DispatchQueue.main.async() {
-                self.image = UIImage(data: data)
-                self.imageView.image = self.image!
-            }
-        }
+extension ImageZoomViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
     }
-
-
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        imageView.backgroundColor = .black
+    }
+    
+    @objc func imageTappedAction(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
