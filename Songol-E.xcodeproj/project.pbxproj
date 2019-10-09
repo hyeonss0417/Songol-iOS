@@ -36,13 +36,13 @@
 		AF3E9A1A2175BCCB00C338F1 /* GetSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E9A192175BCCB00C338F1 /* GetSNumber.swift */; };
 		AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */; };
 		AF43824D22E0BC6700E2F176 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF43824C22E0BC6700E2F176 /* Alerts.swift */; };
-		AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */; };
+		AF52734E213BE9A000F06735 /* DeliveryMenuListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF52734D213BE9A000F06735 /* DeliveryMenuListViewController.swift */; };
 		AF5FCF91230D0ABC005E67D0 /* NavigationItemInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */; };
 		AF61EED421A01A6D003C842C /* ChildViewNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF61EED321A01A6D003C842C /* ChildViewNav.swift */; };
 		AF69247322E033DC00FA0CFA /* CheckAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69247222E033DC00FA0CFA /* CheckAuthViewController.swift */; };
 		AF69247522E035A600FA0CFA /* CommonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69247422E035A600FA0CFA /* CommonUtils.swift */; };
 		AF69247822E036D200FA0CFA /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69247722E036D200FA0CFA /* Enums.swift */; };
-		AF6EF5CB230BCEB000758D7B /* LoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */; };
+		AF6EF5CB230BCEB000758D7B /* KauLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6EF5CA230BCEB000758D7B /* KauLoginView.swift */; };
 		AF800157213FBB1300EB1E41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF800156213FBB1300EB1E41 /* LoginViewController.swift */; };
 		AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF80015A2142582500EB1E41 /* RadioButton.swift */; };
 		AFA10103214BC5DB00E83336 /* AccountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA10102214BC5DB00E83336 /* AccountInfo.swift */; };
@@ -52,7 +52,7 @@
 		AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAB0FBC2174A4F4005A9FFA /* PostViewController.swift */; };
 		AFCCC2802328C64F00150438 /* FBReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCC27F2328C64F00150438 /* FBReference.swift */; };
 		AFCCC2822328CAEA00150438 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCCC2812328CAEA00150438 /* Extensions.swift */; };
-		AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */; };
+		AFDC1569213A67DA00DD18E9 /* DeliveryPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC1568213A67DA00DD18E9 /* DeliveryPagerViewController.swift */; };
 		AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */; };
 		AFE4985B213BED550066D36E /* DeliveryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */; };
 		AFE4985E213C17E00066D36E /* LibrarySeatChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */; };
@@ -125,13 +125,13 @@
 		AF3E9A192175BCCB00C338F1 /* GetSNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSNumber.swift; sourceTree = "<group>"; };
 		AF3E9A1D2176393400C338F1 /* DesignableUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUIView.swift; sourceTree = "<group>"; };
 		AF43824C22E0BC6700E2F176 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryBaseViewController.swift; sourceTree = "<group>"; };
+		AF52734D213BE9A000F06735 /* DeliveryMenuListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryMenuListViewController.swift; sourceTree = "<group>"; };
 		AF5FCF90230D0ABC005E67D0 /* NavigationItemInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItemInfo.swift; sourceTree = "<group>"; };
 		AF61EED321A01A6D003C842C /* ChildViewNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewNav.swift; sourceTree = "<group>"; };
 		AF69247222E033DC00FA0CFA /* CheckAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckAuthViewController.swift; sourceTree = "<group>"; };
 		AF69247422E035A600FA0CFA /* CommonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUtils.swift; sourceTree = "<group>"; };
 		AF69247722E036D200FA0CFA /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHelper.swift; sourceTree = "<group>"; };
+		AF6EF5CA230BCEB000758D7B /* KauLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KauLoginView.swift; sourceTree = "<group>"; };
 		AF800156213FBB1300EB1E41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF80015A2142582500EB1E41 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		AFA10102214BC5DB00E83336 /* AccountInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfo.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		AFAB0FBC2174A4F4005A9FFA /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		AFCCC27F2328C64F00150438 /* FBReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBReference.swift; sourceTree = "<group>"; };
 		AFCCC2812328CAEA00150438 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryViewController.swift; sourceTree = "<group>"; };
+		AFDC1568213A67DA00DD18E9 /* DeliveryPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryPagerViewController.swift; sourceTree = "<group>"; };
 		AFDC1573213A7DDB00DD18E9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryTableViewCell.swift; sourceTree = "<group>"; };
 		AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySeatChildViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +202,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1AF83A3F234DD81F0004EFEB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AFCCC27E2328C63300150438 /* Singleton */,
+				AFE40B8721523DEC00A7E747 /* NavigationMenu */,
+				AFAB0FB92174A480005A9FFA /* OpenChat */,
+				AF69247122E032DD00FA0CFA /* Login */,
+				1AF83A40234DD8520004EFEB /* Delivery */,
+				AF06542C215509650085B830 /* Webpage */,
+				AF2C411621383C0C000E4215 /* MainViewController.swift */,
+				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1AF83A40234DD8520004EFEB /* Delivery */ = {
+			isa = PBXGroup;
+			children = (
+				AF52734D213BE9A000F06735 /* DeliveryMenuListViewController.swift */,
+				AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */,
+				AFDC1568213A67DA00DD18E9 /* DeliveryPagerViewController.swift */,
+			);
+			path = Delivery;
+			sourceTree = "<group>";
+		};
+		1AF83A41234DDA210004EFEB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		672E569D96520BDD41673FD2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,16 +245,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		AF06542C215509650085B830 /* mainMenu */ = {
+		AF06542C215509650085B830 /* Webpage */ = {
 			isa = PBXGroup;
 			children = (
-				AF2C411621383C0C000E4215 /* MainViewController.swift */,
+				AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */,
 				AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */,
 				AFF0B84021384E5900D5F9DB /* DishViewController.swift */,
 				AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */,
-				AFDC1568213A67DA00DD18E9 /* DeliveryViewController.swift */,
 			);
-			path = mainMenu;
+			path = Webpage;
 			sourceTree = "<group>";
 		};
 		AF0CABC522E05633008EA92D /* Extension */ = {
@@ -273,13 +305,13 @@
 		AF2C411321383C0C000E4215 /* Songol-E */ = {
 			isa = PBXGroup;
 			children = (
+				1AF83A3F234DD81F0004EFEB /* ViewController */,
 				AF0CABC522E05633008EA92D /* Extension */,
 				AF69247622E036B600FA0CFA /* Enums */,
-				AF69247022E032D400FA0CFA /* UI */,
+				AF69247022E032D400FA0CFA /* View */,
 				AF3D5CF6213D4B800090F6A9 /* Utils */,
 				AFE4985C213C17BA0066D36E /* librarySeatChildView */,
 				AF60E9F5213BC08200B6EF56 /* Model */,
-				AFDC156A213A69CB00DD18E9 /* deliveryChildView */,
 				AF2C414221383C5A000E4215 /* supporting files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
 				AF2C411821383C0C000E4215 /* Main.storyboard */,
@@ -322,11 +354,9 @@
 		AF3D5CF6213D4B800090F6A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AFCCC27E2328C63300150438 /* Singleton */,
 				AF8D89B922E5E286009E0C66 /* NavigationHelper */,
 				AF1BBE0921774B770056FD2A /* Alert */,
 				AF3D5CF7213D4BAC0090F6A9 /* URLImageDownloading.swift */,
-				AF80015A2142582500EB1E41 /* RadioButton.swift */,
 				AFAA7FF6214636DC00160004 /* AESencrypt&decrypt.swift */,
 				AFA10102214BC5DB00E83336 /* AccountInfo.swift */,
 				AFA62B632161EFAA00D18A83 /* TabLayout.swift */,
@@ -335,18 +365,8 @@
 				AFE953F422F02A7A00646E4D /* Assets.xcassets */,
 				AF1BBE032176F0AF0056FD2A /* CustomImageFlowLayout.swift */,
 				AF1BBE052176FA110056FD2A /* Constants.swift */,
-				AF0CABC322E045D2008EA92D /* UserUtils.swift */,
-				AF6EF5CA230BCEB000758D7B /* LoginHelper.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		AF43824B22E0BADB00E2F176 /* Webpage */ = {
-			isa = PBXGroup;
-			children = (
-				AF1BBE0721773A6E0056FD2A /* AccessWebViewController.swift */,
-			);
-			path = Webpage;
 			sourceTree = "<group>";
 		};
 		AF60E9F5213BC08200B6EF56 /* Model */ = {
@@ -359,17 +379,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		AF69247022E032D400FA0CFA /* UI */ = {
+		AF69247022E032D400FA0CFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1AF83A41234DDA210004EFEB /* Cell */,
+				AF80015A2142582500EB1E41 /* RadioButton.swift */,
+				AF6EF5CA230BCEB000758D7B /* KauLoginView.swift */,
 				AF8D89B822E5E211009E0C66 /* Utils */,
-				AF43824B22E0BADB00E2F176 /* Webpage */,
-				AF69247122E032DD00FA0CFA /* Login */,
-				AF06542C215509650085B830 /* mainMenu */,
-				AFE40B8721523DEC00A7E747 /* navMenu */,
-				AFAB0FB92174A480005A9FFA /* OpenChat */,
 			);
-			path = UI;
+			path = View;
 			sourceTree = "<group>";
 		};
 		AF69247122E032DD00FA0CFA /* Login */ = {
@@ -392,7 +410,6 @@
 		AF8D89B822E5E211009E0C66 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AF3D5CF9213D4F2F0090F6A9 /* ImageZoomViewController.swift */,
 				AFE953F022EF365800646E4D /* Timers.swift */,
 			);
 			path = Utils;
@@ -420,28 +437,19 @@
 			isa = PBXGroup;
 			children = (
 				AF69247422E035A600FA0CFA /* CommonUtils.swift */,
+				AF0CABC322E045D2008EA92D /* UserUtils.swift */,
 				AFCCC27F2328C64F00150438 /* FBReference.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
 		};
-		AFDC156A213A69CB00DD18E9 /* deliveryChildView */ = {
-			isa = PBXGroup;
-			children = (
-				AF52734D213BE9A000F06735 /* DeliveryBaseViewController.swift */,
-				AFE4985A213BED550066D36E /* DeliveryTableViewCell.swift */,
-				AF3D5CF4213D452F0090F6A9 /* DeliveryChildDetailViewController.swift */,
-			);
-			path = deliveryChildView;
-			sourceTree = "<group>";
-		};
-		AFE40B8721523DEC00A7E747 /* navMenu */ = {
+		AFE40B8721523DEC00A7E747 /* NavigationMenu */ = {
 			isa = PBXGroup;
 			children = (
 				AFF0B83E21384E5900D5F9DB /* DeveloperViewController.swift */,
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
 			);
-			path = navMenu;
+			path = NavigationMenu;
 			sourceTree = "<group>";
 		};
 		AFE4985C213C17BA0066D36E /* librarySeatChildView */ = {
@@ -705,7 +713,7 @@
 				AFE953F722F02C2F00646E4D /* CALayer+.swift in Sources */,
 				AF3E9A1E2176393400C338F1 /* DesignableUIView.swift in Sources */,
 				AF193F302178DCA80073D7E8 /* FormNotFilledAlert.swift in Sources */,
-				AF6EF5CB230BCEB000758D7B /* LoginHelper.swift in Sources */,
+				AF6EF5CB230BCEB000758D7B /* KauLoginView.swift in Sources */,
 				AFF0B84121384E5A00D5F9DB /* LibrarySeatViewController.swift in Sources */,
 				AF2C411721383C0C000E4215 /* MainViewController.swift in Sources */,
 				AF0CABC722E05644008EA92D /* WKWebView+.swift in Sources */,
@@ -719,9 +727,9 @@
 				AF2C411521383C0C000E4215 /* AppDelegate.swift in Sources */,
 				AF80015B2142582500EB1E41 /* RadioButton.swift in Sources */,
 				AFF0B83C21384CCA00D5F9DB /* NavRealViewController.swift in Sources */,
-				AFDC1569213A67DA00DD18E9 /* DeliveryViewController.swift in Sources */,
+				AFDC1569213A67DA00DD18E9 /* DeliveryPagerViewController.swift in Sources */,
 				AF2C414621383C6F000E4215 /* SWRevealViewController.m in Sources */,
-				AF52734E213BE9A000F06735 /* DeliveryBaseViewController.swift in Sources */,
+				AF52734E213BE9A000F06735 /* DeliveryMenuListViewController.swift in Sources */,
 				AFAB0FBD2174A4F4005A9FFA /* PostViewController.swift in Sources */,
 				AF2D60EC218DC94C00206C54 /* LoadingDialog.swift in Sources */,
 				AF193F362179AFDF0073D7E8 /* CommentsViewController.swift in Sources */,

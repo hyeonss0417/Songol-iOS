@@ -23,7 +23,7 @@ class CheckAuthViewController: BaseUIViewController {
         
         CommonUtils.sharedInstance.clearCookies()
         
-        LoginHelper().tryLogin(id: user.username, pw: user.pw, parent: self, showDialog: false) { type, res in
+        KauLoginView().tryLogin(id: user.username, pw: user.pw, parent: self, showDialog: false) { type, res in
             switch(res) {
             case .success:
                 CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)

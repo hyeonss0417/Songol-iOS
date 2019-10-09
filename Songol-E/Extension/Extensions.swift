@@ -64,3 +64,52 @@ extension UIView {
     }
 }
 
+let imageCache = NSCache<AnyObject, AnyObject>()
+
+extension UIImageView {
+    private static var _url = [String:String]()
+    
+    var url: String {
+        get {
+            let tmpAddress = String(format: "%p", unsafeBitCast(self, to: Int.self))
+            return UIImageView._url[tmpAddress] ?? ""
+        }
+        set(newValue) {
+            let tmpAddress = String(format: "%p", unsafeBitCast(self, to: Int.self))
+            UIImageView._url[tmpAddress] = newValue
+        }
+    }
+    
+    func loadImageAsyc(fromURL stringUrl : String, fromPomangamAPI: Bool = true) {
+        guard let url = URL(string: stringUrl) else { return }
+        
+        self.url = stringUrl
+        
+        if let imageFromCache = imageCache.object(forKey: stringUrl as AnyObject) as? UIImage {
+            self.image = imageFromCache
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data:Data?, res:URLResponse?, error:Error?) in
+            if error != nil {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            DispatchQueue.global().async {
+                guard let data = data, let imageToCache = UIImage(data: data) else {
+                    print("Image Data Error")
+                    return
+                }
+                
+                if self.url == stringUrl {
+                    DispatchQueue.main.async {
+                        self.image = imageToCache
+                        imageCache.setObject(imageToCache, forKey: stringUrl as AnyObject)
+                    }
+                }
+            }
+            }.resume()
+    }
+}
+

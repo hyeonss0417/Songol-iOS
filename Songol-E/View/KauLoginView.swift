@@ -12,7 +12,7 @@ enum ResultState {
     case failure
 }
 
-class LoginHelper: UIView {
+class KauLoginView: UIView {
     private var id: String!
     private var pw: String!
     private let portalWKWebview = WKWebView()
@@ -65,7 +65,7 @@ class LoginHelper: UIView {
     }
 }
 
-extension LoginHelper: UIWebViewDelegate {
+extension KauLoginView: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         guard let currentUrl = webView.request?.url?.absoluteString else {return}
         
@@ -85,7 +85,7 @@ extension LoginHelper: UIWebViewDelegate {
     }
 }
 
-extension LoginHelper: WKNavigationDelegate {
+extension KauLoginView: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let currentUrl = webView.url?.absoluteString else {return}
         print(currentUrl)

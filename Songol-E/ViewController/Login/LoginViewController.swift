@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
             userID = labelID.text
             userPW = labelPW.text
             
-            LoginHelper().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in                
+            KauLoginView().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in                
                 switch res {
                 case .success:
                     self.firebaseLoginWithEmail()
