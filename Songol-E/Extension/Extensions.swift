@@ -126,3 +126,26 @@ extension NSObject {
         return String(describing: self)
     }
 }
+
+enum StoryBoards: String {
+    case main = "Main"
+    case delivery = "Delivery"
+}
+
+protocol Initializable {
+    static func initalize(storyboard: StoryBoards) -> Self?
+}
+
+extension UIViewController: Initializable {
+    static func initalize(storyboard: StoryBoards) -> Self? {
+        let storyboard = UIStoryboard(name: storyboard.rawValue, bundle: nil)
+        
+        return storyboard.getInitialVC(type: self)
+    }
+}
+
+extension UIStoryboard {
+    func getInitialVC<T: UIViewController>(type: T.Type) -> T? {
+        return instantiateInitialViewController() as? T
+    }
+}

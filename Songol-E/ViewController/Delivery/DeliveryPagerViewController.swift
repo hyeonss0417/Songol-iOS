@@ -40,27 +40,18 @@ class DeliveryPagerViewController: ButtonBarPagerTabStripViewController {
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-    
-        let child_1 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryMenuListViewController
-        child_1.setCategory(category: "치킨")
         
-        let child_2 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryMenuListViewController
-        child_2.setCategory(category: "피자")
+        let categories = ["치킨", "피자", "중식", "떡볶이", "기타"]
+        var pages: [DeliveryMenuListViewController] = []
         
-        let child_3 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryMenuListViewController
-        child_3.setCategory(category: "중식")
+        for category in categories {
+            guard let page = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as? DeliveryMenuListViewController else {
+                break
+            }
+            page.setCategory(category: category)
+            pages.append(page)
+        }
         
-        let child_4 = UIStoryboard(name:"Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryMenuListViewController
-        child_4.setCategory(category: "떡볶이")
-        
-        let child_5 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "deliveryChild") as! DeliveryMenuListViewController
-        child_5.setCategory(category: "기타")
-        
-        return [child_1, child_2, child_3, child_4, child_5]
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        return pages
     }
 }
