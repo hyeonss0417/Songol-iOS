@@ -39,21 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func initViewController(){
         guard let decoded = UserDefaults.standard.object(forKey: "user") as? Data, let userinfo = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? UserInfo else {
-            self.window?.rootViewController =
-                CommonUtils.sharedInstance
-                    .mainStoryboard
-                    .instantiateViewController(withIdentifier: "LoginViewController")
-                as! LoginViewController
+            LoginCoordinator(window: self.window).activate()
             return
         }
         
         CommonUtils.sharedInstance.setUser(user: userinfo)
         
-        self.window?.rootViewController =
-            CommonUtils.sharedInstance
-                .mainStoryboard
-                .instantiateViewController(withIdentifier: "CheckAuthViewController")
-            as! CheckAuthViewController
+        CheckAuthCoordinator(window: self.window).activate()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

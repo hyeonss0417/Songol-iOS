@@ -90,8 +90,10 @@ final class CommonUtils: NSObject {
         
         wb.stringByEvaluatingJavaScript(from: loadUsernameJS + loadPasswordJS + submitFormJS)
     }
-    
-    func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void) {
+}
+
+struct CookieManager {
+    static func storeCookiesFromWKWebview(completion: @escaping ([HTTPCookie]) -> Void) {
         var taskSuccess = false
         
         Timers.set(duration: 4, completion: {
@@ -114,8 +116,8 @@ final class CommonUtils: NSObject {
             }
         }
     }
-
-    func removeAllCookiesFromWKWebview() {
+    
+    static func removeAllCookiesFromWKWebview() {
         WKWebsiteDataStore.default().fetchDataRecords(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes()) {
             (records) -> Void in
             for record in records {
@@ -130,7 +132,7 @@ final class CommonUtils: NSObject {
         }
     }
     
-    func clearCookies() {
+    static func clearCookies() {
         HTTPCookieStorage.shared.removeCookies(since: Date.distantPast)
         WKWebsiteDataStore.default().removeData(ofTypes: WKWebsiteDataStore.allWebsiteDataTypes(), modifiedSince: Date(timeIntervalSince1970: 0), completionHandler: {})
         print("[WebCacheCleaner] All cookies deleted")

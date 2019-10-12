@@ -45,7 +45,7 @@ class MainViewController: BaseUIViewController {
         if let identifier = navigationIdentifier {
             switch identifier.target {
             case .login:
-                CommonUtils.sharedInstance.replaceRootViewController(identifier: .login)
+                LoginCoordinator(window: UIApplication.shared.keyWindow).activate()
                 self.dismiss(animated: false, completion: nil)
             default:
                 CommonUtils.sharedInstance.pushOnNavigationController(navVC: self.navigationController, identifier: identifier.target, url: identifier.pageUrl, title: identifier.title)

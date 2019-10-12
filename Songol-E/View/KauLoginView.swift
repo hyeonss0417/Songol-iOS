@@ -94,7 +94,7 @@ extension KauLoginView: WKNavigationDelegate {
             CommonUtils.sharedInstance.macroKauLogin(on: webView, id: id!, pw: pw!)
             break
         case UrlMyPortal:
-            CommonUtils.sharedInstance.storeCookiesFromWKWebview() { res in
+            CookieManager.storeCookiesFromWKWebview() { res in
                 self.loginSuccess()
             }
             break

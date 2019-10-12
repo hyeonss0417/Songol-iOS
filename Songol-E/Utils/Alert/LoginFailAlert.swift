@@ -11,6 +11,8 @@ import Foundation
 class LoginFailAlert {
     
     static let shared: LoginFailAlert = LoginFailAlert()
+    private init() {}
+    
     private var failureCount = 0
     
     func show(on target: UIViewController){
@@ -22,7 +24,7 @@ class LoginFailAlert {
         
         //UIAlertActionStye.destructive 지정 글꼴 색상 변경
         let okAction = UIAlertAction(title: "확인", style: UIAlertActionStyle.destructive){ (action: UIAlertAction) in
-           CommonUtils.sharedInstance.replaceRootViewController(identifier: .login)
+            LoginCoordinator(window: UIApplication.shared.keyWindow).activate()
         }
     
         alertController.addAction(okAction)

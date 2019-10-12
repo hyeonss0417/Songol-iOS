@@ -12,6 +12,10 @@ import Firebase
 import FirebaseDatabase
 import WebKit
 
+protocol LoginCoordinatorDelegate {
+    func main()
+}
+
 class LoginViewController: UIViewController {
     @IBOutlet weak var labelID: UITextField!
     @IBOutlet weak var labelPW: UITextField!
@@ -30,7 +34,7 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         
         UserDefaults.standard.set(nil, forKey: "user")
-        CommonUtils.sharedInstance.clearCookies()
+        CookieManager.clearCookies()
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {

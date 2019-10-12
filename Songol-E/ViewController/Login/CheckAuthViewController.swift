@@ -9,24 +9,29 @@
 import UIKit
 import WebKit
 
-class CheckAuthViewController: BaseUIViewController {
+protocol CheckAuthCoordinatorDelegate {
+    func coordinateMain()
+    func coordinateLogin()
+}
 
+class CheckAuthViewController: BaseUIViewController {
+    var coordinator: CheckAuthCoordinatorDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if user.username == "guest" {
             //게스트 계정 로그인 시 3초 대기
             Timers.set(duration: 3){
-                CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
+                    self.coordinator?.coordinateMain()
             }
         }
         
-        CommonUtils.sharedInstance.clearCookies()
-        
+        CookieManager.clearCookies()
         KauLoginView().tryLogin(id: user.username, pw: user.pw, parent: self, showDialog: false) { type, res in
             switch(res) {
             case .success:
-                CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
+                self.coordinator?.coordinateMain()
             case .failure:
                 LoginFailAlert.shared.show(on: self)
             }

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7uM-hB-Z0J">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Check Auth View Controller-->
+        <scene sceneID="V5i-Hl-zu2">
+            <objects>
+                <viewController storyboardIdentifier="CheckAuthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7uM-hB-Z0J" customClass="CheckAuthViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="fcA-eU-GQJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="labelSongol" translatesAutoresizingMaskIntoConstraints="NO" id="iyZ-ys-84j">
+                                <rect key="frame" x="84.5" y="282" width="206" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iyZ-ys-84j" secondAttribute="height" multiplier="2:1" id="o1u-5f-hsA"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gX0-Na-hNb">
+                                <rect key="frame" x="169" y="395" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KOREA AEROSPACE UNIVERSITY." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jcB-iy-Geh">
+                                <rect key="frame" x="95" y="623.5" width="185" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1333333333" green="0.1764705882" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gX0-Na-hNb" firstAttribute="centerX" secondItem="fcA-eU-GQJ" secondAttribute="centerX" id="41M-Mo-IDV"/>
+                            <constraint firstItem="QKe-1v-iJE" firstAttribute="bottom" secondItem="jcB-iy-Geh" secondAttribute="bottom" constant="30" id="NDy-DZ-Sbz"/>
+                            <constraint firstItem="iyZ-ys-84j" firstAttribute="centerY" secondItem="fcA-eU-GQJ" secondAttribute="centerY" id="Xra-nZ-rIR"/>
+                            <constraint firstItem="iyZ-ys-84j" firstAttribute="width" secondItem="fcA-eU-GQJ" secondAttribute="width" multiplier="0.55" id="bs0-F3-A8W"/>
+                            <constraint firstItem="gX0-Na-hNb" firstAttribute="top" secondItem="iyZ-ys-84j" secondAttribute="bottom" constant="10" id="gMY-Dc-dNs"/>
+                            <constraint firstItem="jcB-iy-Geh" firstAttribute="centerX" secondItem="fcA-eU-GQJ" secondAttribute="centerX" id="kzR-8m-ohe"/>
+                            <constraint firstItem="iyZ-ys-84j" firstAttribute="centerX" secondItem="fcA-eU-GQJ" secondAttribute="centerX" id="vVZ-cN-MmE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QKe-1v-iJE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyz-BL-JS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1350" y="-1397"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="LzN-ni-9ek">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BVo-SN-Cau" customClass="LoginViewController" customModule="Songol_E" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i4A-77-0V6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_kau_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-bQ-yf1">
+                                <rect key="frame" x="67.5" y="150" width="240" height="95"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="BZk-0M-nGw"/>
+                                    <constraint firstAttribute="width" secondItem="YNL-bQ-yf1" secondAttribute="height" multiplier="48:19" id="Dei-UC-B3n"/>
+                                    <constraint firstAttribute="width" constant="240" id="zWe-XI-GNs"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Portal ID를 입력하세요" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-JK-JyQ">
+                                <rect key="frame" x="60.5" y="270" width="254" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="Dfx-nf-usU"/>
+                                    <constraint firstAttribute="height" constant="50" id="a81-ia-eUM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BVo-SN-Cau" id="iIa-lm-kLL"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Portal PW를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-qI-PqS">
+                                <rect key="frame" x="60.5" y="325" width="254" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="254" id="UFL-jc-lHG"/>
+                                    <constraint firstAttribute="height" constant="50" id="iw8-Sw-28K"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BVo-SN-Cau" id="tkj-eS-lRM"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9H-3s-zt6">
+                                <rect key="frame" x="149" y="399" width="77" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="SIGN IN">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginButtonOnClick:" destination="BVo-SN-Cau" eventType="touchUpInside" id="Eki-no-3t0"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMc-eF-tMJ">
+                                <rect key="frame" x="213" y="466" width="110" height="30"/>
+                                <state key="normal" title="Guest로 입장하기">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="guestButtonOnClick:" destination="BVo-SN-Cau" eventType="touchUpInside" id="IcU-Ez-l14"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1333333333" green="0.1764705882" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gFa-Gj-taE" firstAttribute="trailing" secondItem="LMc-eF-tMJ" secondAttribute="trailing" constant="52" id="8lM-mo-5xT"/>
+                            <constraint firstItem="gQT-JK-JyQ" firstAttribute="top" secondItem="YNL-bQ-yf1" secondAttribute="bottom" constant="25" id="9eX-3z-YfZ"/>
+                            <constraint firstItem="E9H-3s-zt6" firstAttribute="top" secondItem="cHg-qI-PqS" secondAttribute="bottom" constant="24" id="GKx-uY-thv"/>
+                            <constraint firstItem="YNL-bQ-yf1" firstAttribute="centerX" secondItem="i4A-77-0V6" secondAttribute="centerX" id="JF9-SD-q19"/>
+                            <constraint firstItem="cHg-qI-PqS" firstAttribute="top" secondItem="gQT-JK-JyQ" secondAttribute="bottom" constant="5" id="PiG-TD-l8D"/>
+                            <constraint firstItem="gQT-JK-JyQ" firstAttribute="centerX" secondItem="i4A-77-0V6" secondAttribute="centerX" id="eCp-2C-1Gi"/>
+                            <constraint firstItem="LMc-eF-tMJ" firstAttribute="top" secondItem="E9H-3s-zt6" secondAttribute="bottom" constant="28" id="idT-aO-USe"/>
+                            <constraint firstItem="YNL-bQ-yf1" firstAttribute="top" secondItem="gFa-Gj-taE" secondAttribute="top" constant="130" id="oJv-bp-h98"/>
+                            <constraint firstItem="cHg-qI-PqS" firstAttribute="centerX" secondItem="i4A-77-0V6" secondAttribute="centerX" id="vzZ-ct-bRI"/>
+                            <constraint firstItem="E9H-3s-zt6" firstAttribute="centerX" secondItem="i4A-77-0V6" secondAttribute="centerX" id="yHU-NC-xBD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gFa-Gj-taE"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelID" destination="gQT-JK-JyQ" id="kxX-0m-heg"/>
+                        <outlet property="labelPW" destination="cHg-qI-PqS" id="yxf-g3-xcV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHt-eI-lRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-438" y="-1396"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="labelSongol" width="404.6400146484375" height="151.67999267578125"/>
+        <image name="login_kau_logo" width="569.760009765625" height="218.8800048828125"/>
+    </resources>
+</document>

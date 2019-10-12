@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1AC3C6042351783E003EC74E /* Coordinatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC3C6032351783E003EC74E /* Coordinatable.swift */; };
+		1AC3C60623518A19003EC74E /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC3C60523518A19003EC74E /* Login.storyboard */; };
 		28FF90C21A9C9C9D5895E63B /* Pods_Songol_EUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */; };
 		57F4324E7F757A1D4595701E /* Pods_Songol_ETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */; };
 		940D3DCA509EC7FD1C2FF00E /* Pods_Songol_E.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E43B12A3465A9B61F36C197A /* Pods_Songol_E.framework */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		035E91CEB4FF71351F0C45BF /* Pods-Songol-EUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-EUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-EUITests/Pods-Songol-EUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		1AC3C6032351783E003EC74E /* Coordinatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinatable.swift; sourceTree = "<group>"; };
+		1AC3C60523518A19003EC74E /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		2C364B433C30B59F642F0C66 /* Pods_Songol_ETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_ETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B9E657D8FFEC3A5EAF1CFB0 /* Pods-Songol-E.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Songol-E.release.xcconfig"; path = "Pods/Target Support Files/Pods-Songol-E/Pods-Songol-E.release.xcconfig"; sourceTree = "<group>"; };
 		5C5EEB323951FA3B22B62A84 /* Pods_Songol_EUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Songol_EUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,6 +408,7 @@
 			children = (
 				AF800156213FBB1300EB1E41 /* LoginViewController.swift */,
 				AF69247222E033DC00FA0CFA /* CheckAuthViewController.swift */,
+				1AC3C60523518A19003EC74E /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				AFE953F522F02A7A00646E4D /* Assets.xcassets in Resources */,
 				AF2C411F21383C0D000E4215 /* LaunchScreen.storyboard in Resources */,
 				AFDC1574213A7DDB00DD18E9 /* GoogleService-Info.plist in Resources */,
+				1AC3C60623518A19003EC74E /* Login.storyboard in Resources */,
 				AF2C411A21383C0C000E4215 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
