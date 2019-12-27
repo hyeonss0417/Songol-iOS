@@ -27,8 +27,13 @@ class AccessWebViewController: BaseUIViewController{
         return webView
     }()
     
-    var stringURL: String = String()
-    var redirectUrl: String? = nil
+    var stringURL: String = String() {
+        didSet {
+            if stringURL.elementsEqual(URLCurrentScore) {
+                wkWebView.configuration.preferences.javaScriptEnabled = false
+            }
+        }
+    }
     
     //MARK:- LifeCycles
     override func viewDidLoad() {
@@ -79,7 +84,7 @@ extension AccessWebViewController: UIWebViewDelegate {
         print(currentUrl)
         switch currentUrl {
         case UrlLmsLogin1:
-            CommonUtils.sharedInstance.macroLMSLogin(on: webView, id: user.username, pw: user.pw)
+            JSRequest.macroLMSLogin(on: webView, id: user.username, pw: user.pw)
             break
         case stringURL:
             webView.isHidden = false
@@ -102,7 +107,7 @@ extension AccessWebViewController: WKNavigationDelegate {
         guard let currentUrl = webView.url?.absoluteString else { return }
         switch currentUrl {
             case UrlLmsLogin1:
-                CommonUtils.sharedInstance.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)
+                JSRequest.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)
                 break
             case stringURL:
                 wkWebView.isHidden = false

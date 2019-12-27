@@ -10,11 +10,10 @@ import UIKit
 import WebKit
 
 final class CommonUtils: NSObject {
-
     static let sharedInstance = CommonUtils()
     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     
-    private override init() {}
+    private override init() {} 
     
     var isGuest = false
     var user: UserInfo? = nil
@@ -40,7 +39,7 @@ final class CommonUtils: NSObject {
             if let vc = target as? AccessWebViewController {
                 vc.stringURL = url!
                 vc.title = title
-                vc.redirectUrl = redirectUrl
+                //vc.redirectUrl = redirectUrl
             }
         case .developerIntroducing:
             if let vc = target as? DeveloperViewController {
@@ -54,9 +53,11 @@ final class CommonUtils: NSObject {
         
         navVC?.pushViewController( target, animated: true)
     }
+}
 
+struct JSRequest {
     //Kau Website Login with js
-    func macroKauLogin(on wk: WKWebView, id: String, pw: String) {
+    static func macroKauLogin(on wk: WKWebView, id: String, pw: String) {
         print("start macro")
         let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
@@ -65,7 +66,7 @@ final class CommonUtils: NSObject {
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + onClickEventJS, completionHandler: nil)
     }
     
-    func macroKauLogin(on wb: UIWebView, id: String, pw: String) {
+    static func macroKauLogin(on wb: UIWebView, id: String, pw: String) {
         print("start macro")
         let loadUsernameJS = "document.getElementsByName('p_id')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('p_pwd')[0].value = \'\(pw)\';"
@@ -73,7 +74,7 @@ final class CommonUtils: NSObject {
         wb.stringByEvaluatingJavaScript(from: loadUsernameJS + loadPasswordJS + onClickEventJS)
     }
     
-    func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
+    static func macroLMSLogin(on wk: WKWebView, id: String, pw: String) {
         print("start macro lms")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"
@@ -82,7 +83,7 @@ final class CommonUtils: NSObject {
         wk.evaluateJavaScript(loadUsernameJS + loadPasswordJS + submitFormJS) { a,b in}
     }
     
-    func macroLMSLogin(on wb: UIWebView, id: String, pw: String) {
+    static func macroLMSLogin(on wb: UIWebView, id: String, pw: String) {
         print("start macro lms")
         let loadUsernameJS = "document.getElementsByName('username')[0].value = \'\(id)\';"
         let loadPasswordJS = "document.getElementsByName('password')[0].value = \'\(pw)\';"

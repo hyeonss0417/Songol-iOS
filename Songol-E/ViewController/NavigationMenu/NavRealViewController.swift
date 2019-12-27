@@ -20,7 +20,7 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    let arrayImage = [#imageLiteral(resourceName: "nav_developer"),/*#imageLiteral(resourceName: "nav_fb"),#imageLiteral(resourceName: "nav_haru"),*/ #imageLiteral(resourceName: "nav_club"),/*#imageLiteral(resourceName: "nav_train"),*/ #imageLiteral(resourceName: "nav_book"), #imageLiteral(resourceName: "nav_book"),#imageLiteral(resourceName: "nav_timetable"),#imageLiteral(resourceName: "nav_score"),#imageLiteral(resourceName: "nav_scholarship"),#imageLiteral(resourceName: "nav_professor"),#imageLiteral(resourceName: "nav_logout")]
+    let arrayImage = [#imageLiteral(resourceName: "nav_developer"), #imageLiteral(resourceName: "nav_club"), #imageLiteral(resourceName: "nav_book"), #imageLiteral(resourceName: "nav_book"),#imageLiteral(resourceName: "nav_timetable"),#imageLiteral(resourceName: "nav_score"), #imageLiteral(resourceName: "nav_score"), #imageLiteral(resourceName: "nav_scholarship"),#imageLiteral(resourceName: "nav_professor"),#imageLiteral(resourceName: "nav_logout")]
     
     let navigationItems = [
         NavigationItemInfo(title: "만든이", target: .developerIntroducing, pageUrl: nil),
@@ -28,6 +28,7 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         NavigationItemInfo(title: "도서관 도서 검색", target: .accessToWeb, pageUrl: UrlSearchBooks),
         NavigationItemInfo(title: "스터디룸 예약현황", target: .accessToWeb, pageUrl: UrlStudyRooms),
         NavigationItemInfo(title: "시험 시간표", target: .accessToWeb, pageUrl: UrlExamTable),
+        NavigationItemInfo(title: "학기성적(석차) 조회", target: .accessToWeb, pageUrl: URLCurrentScore),
         NavigationItemInfo(title: "성적 확인", target: .accessToWeb, pageUrl: UrlScore),
         NavigationItemInfo(title: "장학금 수혜내역", target: .accessToWeb, pageUrl: UrlScholarship),
         NavigationItemInfo(title: "교직원 정보", target: .accessToWeb, pageUrl: UrlProfessors),

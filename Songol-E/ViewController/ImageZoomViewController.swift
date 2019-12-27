@@ -16,7 +16,10 @@ class ImageZoomViewController: UIViewController {
     var imageUrl:String?
     var image:UIImage?
     
-
+    @IBAction func touchupCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     public func setImageUrl(url:String){
         imageUrl = url
     }

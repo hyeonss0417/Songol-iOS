@@ -71,7 +71,7 @@ extension KauLoginView: UIWebViewDelegate {
         
         switch currentUrl {
         case UrlPortalLogin:
-            CommonUtils.sharedInstance.macroKauLogin(on: webView, id: id!, pw: pw!)
+            JSRequest.macroKauLogin(on: webView, id: id!, pw: pw!)
             break
         case UrlMyPortal:
             self.loginSuccess()
@@ -91,7 +91,7 @@ extension KauLoginView: WKNavigationDelegate {
         print(currentUrl)
         switch currentUrl {
         case UrlPortalLogin:
-            CommonUtils.sharedInstance.macroKauLogin(on: webView, id: id!, pw: pw!)
+           JSRequest.macroKauLogin(on: webView, id: id!, pw: pw!)
             break
         case UrlMyPortal:
             CookieManager.storeCookiesFromWKWebview() { res in
