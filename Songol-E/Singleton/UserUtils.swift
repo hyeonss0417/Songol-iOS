@@ -9,8 +9,6 @@
 import Foundation
 
 struct UserUtil{
-    static let shared = UserUtil()
-    
     static func getType(id: String, completion: (UserType) -> Void) {
         if id == "guest" {
             completion(.guest)
