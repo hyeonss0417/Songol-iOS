@@ -9,13 +9,13 @@
 import Foundation
 
 class UserInfo : NSObject, NSCoding{
-    var major:String
-    var pw:String
-    var snumber:String
-    var username:String
+    var major: String
+    var pw: String
+    var snumber: String
+    var username: String
     var uid: String
     
-    init(uid:String, major:String, pw:String, snumber:String, username:String) {
+    init(uid: String = "", major: String = "", pw: String, snumber: String = "", username: String) {
         self.uid = uid
         self.major = major
         self.pw = pw

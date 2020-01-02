@@ -9,7 +9,6 @@
 import Foundation
 
 class LoginFailAlert {
-    
     static let shared: LoginFailAlert = LoginFailAlert()
     private init() {}
     

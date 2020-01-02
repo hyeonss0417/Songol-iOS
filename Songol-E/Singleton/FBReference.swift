@@ -9,7 +9,9 @@
 import Firebase
 import FirebaseDatabase
 
-struct FBReference {
-    static let shared = FBReference()
+class FBReference {
+    static var shared = FBReference()
+    private init() {}
+    
     let db = Database.database().reference()
 }

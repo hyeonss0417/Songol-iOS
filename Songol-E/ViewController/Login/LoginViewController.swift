@@ -90,11 +90,9 @@ class LoginViewController: UIViewController {
         var userInfo: UserInfo
         switch type {
         case .guest:
-            userInfo = UserInfo(uid: "", major: "", pw: "", snumber:"0000", username:"guest")
-            break
+            userInfo = UserInfo(pw: "", username:"guest")
         case .normal, .songol:
-            userInfo = UserInfo(uid: "", major: "", pw: self.userPW!, snumber: "", username: self.userID!)
-            break
+            userInfo = UserInfo(pw: self.userPW!, username: self.userID!)
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)

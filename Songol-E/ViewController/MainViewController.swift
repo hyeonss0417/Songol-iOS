@@ -38,7 +38,6 @@ class MainViewController: BaseUIViewController {
    
         //set RevealView Event
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
     }
     
     func initRevealView(){

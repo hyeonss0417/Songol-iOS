@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7uM-hB-Z0J">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7uM-hB-Z0J">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,33 +58,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_kau_logo" translatesAutoresizingMaskIntoConstraints="NO" id="YNL-bQ-yf1">
-                                <rect key="frame" x="67.5" y="150" width="240" height="95"/>
+                                <rect key="frame" x="67.5" y="130" width="240" height="95"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="BZk-0M-nGw"/>
                                     <constraint firstAttribute="width" secondItem="YNL-bQ-yf1" secondAttribute="height" multiplier="48:19" id="Dei-UC-B3n"/>
                                     <constraint firstAttribute="width" constant="240" id="zWe-XI-GNs"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Portal ID를 입력하세요" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-JK-JyQ">
-                                <rect key="frame" x="60.5" y="270" width="254" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="학번을 입력하세요." minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="gQT-JK-JyQ">
+                                <rect key="frame" x="60.5" y="250" width="254" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="Dfx-nf-usU"/>
                                     <constraint firstAttribute="height" constant="50" id="a81-ia-eUM"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="BVo-SN-Cau" id="iIa-lm-kLL"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Portal PW를 입력하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-qI-PqS">
-                                <rect key="frame" x="60.5" y="325" width="254" height="50"/>
+                                <rect key="frame" x="60.5" y="305" width="254" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="254" id="UFL-jc-lHG"/>
                                     <constraint firstAttribute="height" constant="50" id="iw8-Sw-28K"/>
                                 </constraints>
-                                <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
@@ -94,7 +90,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9H-3s-zt6">
-                                <rect key="frame" x="149" y="399" width="77" height="39"/>
+                                <rect key="frame" x="149" y="379" width="77" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -104,7 +100,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMc-eF-tMJ">
-                                <rect key="frame" x="213" y="466" width="110" height="30"/>
+                                <rect key="frame" x="213" y="446" width="110" height="30"/>
                                 <state key="normal" title="Guest로 입장하기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -140,7 +136,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="labelSongol" width="404.6400146484375" height="151.67999267578125"/>
-        <image name="login_kau_logo" width="569.760009765625" height="218.8800048828125"/>
+        <image name="labelSongol" width="843" height="316"/>
+        <image name="login_kau_logo" width="1187" height="456"/>
     </resources>
 </document>
