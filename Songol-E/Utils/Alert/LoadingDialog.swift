@@ -7,8 +7,16 @@
 //
 
 class LoadingDialog {
-    
     var spinner: UIView?
+    private let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    } ()
     
     func displaySpinner(on onView : UIView) {
         let spinner = UIView.init(frame: onView.bounds)
@@ -16,15 +24,22 @@ class LoadingDialog {
         let ai = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
         ai.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         ai.startAnimating()
-        ai.center = CGPoint(x: spinner.bounds.width/2, y: spinner.bounds.height * 0.4)
-        DispatchQueue.main.async {
-            spinner.addSubview(ai)
-            onView.addSubview(spinner)
-            self.spinner = spinner
-        }
+        spinner.addSubview(self.stackView)
+        onView.addSubview(spinner)
+        
+        self.spinner = spinner
+        self.stackView.addArrangedSubview(ai)
+        stackView.leftAnchor.constraint(equalTo: spinner.leftAnchor).isActive = true
+        stackView.rightAnchor.constraint(equalTo: spinner.rightAnchor).isActive = true
+        stackView.centerXAnchor.constraint(equalTo: spinner.centerXAnchor).isActive = true
+        stackView.centerYAnchor.constraint(equalTo: spinner.centerYAnchor, constant: -50).isActive = true
     }
     
-     func removeSpinner() {
+    func addSubview(view: UIView) {
+        stackView.addArrangedSubview(view)
+    }
+    
+    func removeSpinner() {
         DispatchQueue.main.async {
             self.spinner?.removeFromSuperview()
         }

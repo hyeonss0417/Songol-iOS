@@ -42,7 +42,6 @@ let UrlPortalLoginFail = "https://www.kau.ac.kr/page/login.jsp?target_page=act_P
 let UrlTimeTable = "https://portal.kau.ac.kr/sugang/LectStuSchFr.jsp"
 let UrlKAULogin = "https://www.kau.ac.kr/page/login.jsp?target_page=main.jsp"
 let UrlKAU = "http://www.kau.ac.kr/page/main.jsp"
-let UrlExamTable = "https://portal.kau.ac.kr/sugang/SugangExamList.jsp"
 let UrlClub = "http://www.kau.ac.kr/onestopservice/soss_student_group_aero.html"
 let UrlSearchBooks = "http://lib.kau.ac.kr/HAULMS/SlimaDL.csp?HLOC=HAULMS&COUNT=2kij25cp00&Kor=1&frmDLL=frmDLL.csp?Left=Left02&frmDLR=Search/SearchC.csp?Gate=DA"
 let URLCurrentScore = "https://portal.kau.ac.kr/sugang/GradHakList_2018.jsp"

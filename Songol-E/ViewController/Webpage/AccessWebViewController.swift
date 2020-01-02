@@ -105,6 +105,7 @@ extension AccessWebViewController: UIWebViewDelegate {
 extension AccessWebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard let currentUrl = webView.url?.absoluteString else { return }
+        print(currentUrl)
         switch currentUrl {
             case UrlLmsLogin1:
                 JSRequest.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)

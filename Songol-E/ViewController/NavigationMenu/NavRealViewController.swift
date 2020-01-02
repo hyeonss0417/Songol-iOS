@@ -27,7 +27,7 @@ class NavRealViewController: UIViewController, UITableViewDelegate, UITableViewD
         NavigationItemInfo(title: "동아리", target: .accessToWeb, pageUrl: UrlClub),
         NavigationItemInfo(title: "도서관 도서 검색", target: .accessToWeb, pageUrl: UrlSearchBooks),
         NavigationItemInfo(title: "스터디룸 예약현황", target: .accessToWeb, pageUrl: UrlStudyRooms),
-        NavigationItemInfo(title: "시험 시간표", target: .accessToWeb, pageUrl: UrlExamTable),
+        NavigationItemInfo(title: "시험 시간표", target: .accessToWeb, pageUrl: UrlExamTimeTable),
         NavigationItemInfo(title: "학기성적(석차) 조회", target: .accessToWeb, pageUrl: URLCurrentScore),
         NavigationItemInfo(title: "성적 확인", target: .accessToWeb, pageUrl: UrlScore),
         NavigationItemInfo(title: "장학금 수혜내역", target: .accessToWeb, pageUrl: UrlScholarship),

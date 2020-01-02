@@ -96,7 +96,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="LoginButtonOnClick:" destination="BVo-SN-Cau" eventType="touchUpInside" id="Eki-no-3t0"/>
+                                    <action selector="loginButtonOnClick:" destination="BVo-SN-Cau" eventType="touchUpInside" id="Eki-no-3t0"/>
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMc-eF-tMJ">

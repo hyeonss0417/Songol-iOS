@@ -1256,7 +1256,7 @@
                                     <outlet property="delegate" destination="dKN-bD-aH0" id="Trg-24-MGi"/>
                                 </connections>
                             </webView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-R3-RFq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTh-R3-RFq">
                                 <rect key="frame" x="0.0" y="136" width="375" height="504"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dBM-aF-wYI" customClass="ButtonBarView" customModule="XLPagerTabStrip">

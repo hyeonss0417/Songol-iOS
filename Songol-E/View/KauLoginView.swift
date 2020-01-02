@@ -19,6 +19,14 @@ class KauLoginView: UIView {
     private let portalWebview = UIWebView()
     
     private let dialog = LoadingDialog()
+    private let loadingLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.font = label.font.withSize(15)
+        label.text = "KAU 사이트에 접속 중입니다..."
+        label.sizeToFit()
+        return label
+    }()
     private var completion: (UserType, ResultState) -> Void = {_,_ in }
     
     func tryLogin(id: String, pw: String, parent: UIViewController, showDialog: Bool = true, completion: @escaping (UserType, ResultState) -> Void) {
@@ -28,12 +36,32 @@ class KauLoginView: UIView {
         
         parent.view.addSubview(self)
         
-        showDialog ? dialog.displaySpinner(on: parent.view) : nil
+        showDialog ? self.dialog.displaySpinner(on: parent.view) : nil
+        showDialog ? self.addLoadingLabel() : nil
         
         if #available(iOS 11, *) {
             setupPortalWkWebview()
         } else {
             setupPortalWebview()
+        }
+    }
+    
+    private func addLoadingLabel() {
+        dialog.addSubview(view: loadingLabel)
+    }
+    
+    private func changeLabelText(text: String) {
+        UIView.transition(with: self.loadingLabel,
+             duration: 0.25,
+              options: .transitionCrossDissolve,
+           animations: { [unowned self] in
+               self.loadingLabel.text = text
+        }, completion: nil)
+    }
+    
+    public func removeSpinner() {
+        DispatchQueue.main.async {
+            self.dialog.removeSpinner()
         }
     }
     
@@ -56,11 +84,8 @@ class KauLoginView: UIView {
     
     private func loginSuccess() {
         UserUtil.getType(id: id) { type in
-            for subview in self.subviews {
-                subview.removeFromSuperview()
-            }
+            self.changeLabelText(text: "사용자 정보를 안전하게 저장하고 있습니다..")
             self.completion(type, .success)
-            self.dialog.removeSpinner()
         }
     }
 }
@@ -68,7 +93,6 @@ class KauLoginView: UIView {
 extension KauLoginView: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         guard let currentUrl = webView.request?.url?.absoluteString else {return}
-        
         switch currentUrl {
         case UrlPortalLogin:
             JSRequest.macroKauLogin(on: webView, id: id!, pw: pw!)

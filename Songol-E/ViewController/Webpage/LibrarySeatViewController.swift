@@ -25,7 +25,6 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         initTabBar()
         
         do{
-            
             var helpURL = URL(string: "http://ebook.kau.ac.kr:81/domian5.asp")
             
             var data = try Data(contentsOf: helpURL!)
@@ -35,7 +34,6 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         } catch {}
         
         webView.scalesPageToFit = true
-    
     }
     
     func initTabBar(){
@@ -48,8 +46,8 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         settings.style.buttonBarItemTitleColor = .black
         settings.style.buttonBarLeftContentInset = 0
         settings.style.buttonBarRightContentInset = 0
+        settings.style.buttonBarItemLeftRightMargin = 0
         settings.style.buttonBarItemsShouldFillAvailiableWidth = true
-        
         
         changeCurrentIndexProgressive = { [weak self] (oldCell: ButtonBarViewCell?, newCell: ButtonBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
             guard changeCurrentIndex == true else { return }
@@ -83,13 +81,5 @@ class LibrarySeatViewController: ButtonBarPagerTabStripViewController , UIWebVie
         
         self.webView.frame.size.height = 1 // height를 1로 설정하고 나서 다시 height를 바꿔줘야 제대로 동작한다.
         self.webView.frame.size.height = height
-        
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }

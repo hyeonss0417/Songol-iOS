@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     private var userID:String?
     private var userPW:String?
     private var dbRef = Database.database().reference() // 인스턴스 변수
+    private let kauloginView = KauLoginView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,19 +39,23 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func guestButtonOnClick(_ sender: Any) {
+        self.view.endEditing(true)
+        
         labelID.text = "guest"
         labelPW.text = "111111"
         firebaseLoginWithEmail()
     }
     
-    @IBAction func LoginButtonOnClick(_ sender: Any) {
+    @IBAction func loginButtonOnClick(_ sender: Any) {
+        self.view.endEditing(true)
+        
         if labelID.text?.isEmpty ?? true || labelPW.text?.isEmpty ?? true {
             FormNotFilledAlert(vc:self).show()
         } else {
             userID = labelID.text
             userPW = labelPW.text
             
-            KauLoginView().tryLogin(id: userID!, pw: userPW!, parent: self) { type, res in                
+            KauLoginView().tryLogin(id: self.userID!, pw: self.userPW!, parent: self) { type, res in
                 switch res {
                 case .success:
                     self.firebaseLoginWithEmail()
@@ -78,9 +83,9 @@ class LoginViewController: UIViewController {
         }
         
         Auth.auth().createUser(withEmail: "\(self.labelID.text!)\(temp)@kau.ac.kr", password: "\(self.labelPW.text!)\(temp)") { (user, error) in
-            if user !=  nil{//register success
+            if user != nil{ // register id done
                 self.authOnSuccess(type: UserType.normal)
-            }else if count < 100 {// failed
+            }else if count < 100 { // failed
                 self.firebaseCreateUserWithEmail(count: count+1)
             }
         }
@@ -96,6 +101,7 @@ class LoginViewController: UIViewController {
         }
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
+        kauloginView.removeSpinner()
         CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
     }
 }

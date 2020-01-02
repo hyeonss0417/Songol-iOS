@@ -263,6 +263,7 @@
 				AFF0B83F21384E5900D5F9DB /* CalendarViewController.swift */,
 				AFF0B84021384E5900D5F9DB /* DishViewController.swift */,
 				AFF0B83D21384E5900D5F9DB /* LibrarySeatViewController.swift */,
+				AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */,
 				1AC3C60723519113003EC74E /* Web.storyboard */,
 			);
 			path = Webpage;
@@ -324,7 +325,6 @@
 				AF69247622E036B600FA0CFA /* Enums */,
 				AF69247022E032D400FA0CFA /* View */,
 				AF3D5CF6213D4B800090F6A9 /* Utils */,
-				AFE4985C213C17BA0066D36E /* librarySeatChildView */,
 				AF60E9F5213BC08200B6EF56 /* Model */,
 				AF2C414221383C5A000E4215 /* supporting files */,
 				AF2C411421383C0C000E4215 /* AppDelegate.swift */,
@@ -456,14 +456,6 @@
 				AFF0B83B21384CCA00D5F9DB /* NavRealViewController.swift */,
 			);
 			path = NavigationMenu;
-			sourceTree = "<group>";
-		};
-		AFE4985C213C17BA0066D36E /* librarySeatChildView */ = {
-			isa = PBXGroup;
-			children = (
-				AFE4985D213C17E00066D36E /* LibrarySeatChildViewController.swift */,
-			);
-			path = librarySeatChildView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
