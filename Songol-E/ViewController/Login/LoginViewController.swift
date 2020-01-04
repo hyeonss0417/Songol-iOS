@@ -102,7 +102,12 @@ class LoginViewController: UIViewController {
         
         AccountInfo().storeUserInfo(userInfo: userInfo)
         kauloginView.removeSpinner()
-        CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
+        
+        guard let target: UIViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ViewControllerNameType.main.rawValue) else { return }
+        target.modalTransitionStyle = .crossDissolve
+        present(target, animated: true) {
+            CommonUtils.sharedInstance.replaceRootViewController(identifier: .main)
+        }
     }
 }
 

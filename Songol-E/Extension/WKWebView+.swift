@@ -30,6 +30,14 @@ extension WKWebView{
     
         self.load(webrequest)
     }
+    
+    func setHidden(_ hidden: Bool) {
+        UIView.transition(with: self,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: { self.isHidden = hidden },
+                          completion: nil)
+    }
 }
 
 extension UIWebView {

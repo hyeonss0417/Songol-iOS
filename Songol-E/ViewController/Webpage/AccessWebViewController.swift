@@ -87,8 +87,8 @@ extension AccessWebViewController: UIWebViewDelegate {
             JSRequest.macroLMSLogin(on: webView, id: user.username, pw: user.pw)
             break
         case stringURL:
-            webView.isHidden = false
             loadingDialog.removeSpinner()
+            webView.isHidden = false
             allowWebKitGesture(false)
             break 
         case "https://www.kau.ac.kr/page/act_login.jsp":
@@ -108,19 +108,23 @@ extension AccessWebViewController: WKNavigationDelegate {
         print(currentUrl)
         switch currentUrl {
             case UrlLmsLogin1:
-                JSRequest.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)
+                if !wkWebView.isHidden {
+                    self.navigationController?.popViewController(animated: true)
+                } else {
+                    JSRequest.macroLMSLogin(on: wkWebView, id: user.username, pw: user.pw)
+                }
                 break
             case stringURL:
-                wkWebView.isHidden = false
                 loadingDialog.removeSpinner()
-                allowWebKitGesture(false)
+                allowWebKitGesture(stringURL.elementsEqual(UrlMyLms))
+                wkWebView.setHidden(false)
                 break
             case "https://www.kau.ac.kr/page/act_login.jsp":
                 //방화벽 차단 당했을때 처리
                 print("blocked")
                 break
             default:
-                allowWebKitGesture(true)
+                //allowWebKitGesture(true)
                 break
             }
     }
@@ -141,7 +145,7 @@ extension AccessWebViewController: WKNavigationDelegate {
     }
 
     func allowWebKitGesture(_ allow: Bool){
-         wkWebView.allowsBackForwardNavigationGestures = allow
+        wkWebView.allowsBackForwardNavigationGestures = allow
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = !allow
     }
 }
