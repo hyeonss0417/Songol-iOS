@@ -1,4 +1,4 @@
-<p style="text-align: center;">
+<p align="center" >
 <a href="https://itunes.apple.com/us/app/songol/id1436932614#?platform=iphone" align="center"> <img src="https://user-images.githubusercontent.com/9532432/71790917-3dd70f80-3076-11ea-8085-eb53aa4a9c14.png" width="250" height="250" align="center"/></a>
 </p>
 <h1 align="center">
