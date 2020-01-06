@@ -1,4 +1,4 @@
-<center><a href="https://itunes.apple.com/us/app/songol/id1436932614#?platform=iphone"> <img src="https://user-images.githubusercontent.com/9532432/71790917-3dd70f80-3076-11ea-8085-eb53aa4a9c14.png" width="250" height="250"/></a> </center>
+<a href="https://itunes.apple.com/us/app/songol/id1436932614#?platform=iphone" align="center"> <img src="https://user-images.githubusercontent.com/9532432/71790917-3dd70f80-3076-11ea-8085-eb53aa4a9c14.png" width="250" height="250" align="center"/></a>
 
 <h1 align="center">
   송골이  <img alt="Swift" src="https://img.shields.io/badge/swift-5-orange.svg"> <img alt="Platform" src="https://img.shields.io/badge/platform-ios-lightgrey.svg"> 
